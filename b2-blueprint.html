@@ -1,0 +1,1470 @@
+<!doctype html>
+<html lang="en" class="bp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Halo Ventures</title>
+<meta name="description" content="We help technical founders and mission-driven teams go to market, build their playbook and grow fast in competitive markets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<script>document.documentElement.className+=' js'+(matchMedia('(prefers-reduced-motion: reduce)').matches?' rm':' anim');</script>
+<style>
+:root{
+  --hk-bg:#000;--hk-fg:#fff;--hk-fg2:#C7C7C7;--hk-fg3:#8E8E8E;--hk-fg4:#5A5A5A;--hk-rule:#3A3A3A;--hk-rule2:#1C1C1C;
+  --hk-ember:#E83214;--hk-on-ember:#000;
+  --hk-serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --hk-sans:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --hk-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --hk-ease:cubic-bezier(.25,.6,.2,1);
+  --m:16px;--g:16px;--topH:52px;--bot:40px;--pad:16px;
+  --deck:#A3A3A3;
+  --sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--hk-bg:#000;--hk-fg:#fff}}
+:root[data-theme="dark"]{--hk-bg:#000;--hk-fg:#fff}
+@media (min-width:860px){:root{--m:max(40px,6vw);--g:24px;--topH:56px;--bot:56px;--pad:36px}}
+*,*::before,*::after{box-sizing:border-box}
+html{background:#000;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{margin:0;background:#000;color:#fff;font-family:var(--hk-sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-variant-numeric:tabular-nums}
+h1,h2,h3,p,ol,ul,dl,dd,figure,table{margin:0}
+ol,ul{padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+a{color:inherit}
+sup{font-size:.62em;line-height:0;vertical-align:.55em;margin-left:1px;font-family:var(--hk-sans);font-weight:400;color:#8E8E8E;letter-spacing:0}
+:focus-visible{outline:1px solid #fff;outline-offset:4px}
+.hk-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+em{font-style:italic}
+
+/* ---------- stage ---------- */
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0;background:#000}
+#tags{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+#fb{position:absolute;z-index:1;left:0;right:0;top:calc(var(--topH) + var(--sat) + 12px);padding:0 var(--m);pointer-events:none}
+#fb svg{display:block;width:100%;max-width:560px;height:auto;margin:0 auto}
+.gl #fb{display:none}
+.js.nogl #fb{position:fixed}
+@media (min-width:860px){
+  #fb{left:auto;right:var(--m);width:48vw;top:calc(var(--topH) + 16vh);padding:0}
+  #fb svg{max-width:none}
+  .js.nogl #fb{top:50%;transform:translateY(-50%)}
+}
+
+/* ---------- masthead ---------- */
+.top{position:fixed;left:0;right:0;top:0;z-index:30;display:flex;align-items:center;min-height:calc(var(--topH) + var(--sat));padding:var(--sat) var(--m) 0;background:#000;border-bottom:1px solid #3A3A3A}
+.wm{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:var(--hk-mono);font-size:11px;font-weight:500;letter-spacing:.16em;white-space:nowrap;text-decoration:none;color:#fff}
+.wm i{width:8px;height:8px;background:var(--hk-ember);flex:none}
+.wm b{font-weight:500;color:#fff;margin:0 .4em}
+.ctr{margin-left:auto;display:none;align-items:center;min-height:44px;font-family:var(--hk-mono);font-size:11px;letter-spacing:.08em;color:#8E8E8E;white-space:nowrap}
+.ctr b{font-weight:400;color:#fff}
+.js .ctr{display:flex}
+@media (min-width:860px){.wm,.ctr{font-size:12px}}
+
+/* ---------- pills (kit) ---------- */
+.hk-pill{display:inline-flex;align-items:center;gap:14px;min-height:56px;padding:0 24px;border-radius:999px;background:var(--hk-ember);color:var(--hk-on-ember);font-family:var(--hk-mono);font-size:15px;font-weight:500;letter-spacing:.01em;max-width:100%;border:0;cursor:pointer;transition:background .3s,color .3s;-webkit-user-select:none;user-select:none}
+.hk-pill svg{width:18px;height:18px;flex:0 0 auto}
+.hk-pill:focus-visible{outline:1px solid #fff;outline-offset:4px}
+@media (hover:hover) and (pointer:fine){.hk-pill:hover{background:#fff;color:#000}}
+.hk-pill.hk-ok{background:#fff;color:#000}
+@media (min-width:768px){.hk-pill{font-size:16px;min-height:58px;padding:0 28px}}
+@media (max-width:360px){.hk-pill{padding:0 16px;font-size:14px;gap:8px}}
+.hk-pt{display:grid}
+.hk-pt>span{grid-area:1/1;white-space:nowrap}
+.hk-pt .hk-b{visibility:hidden}
+.hk-ok .hk-pt .hk-a{visibility:hidden}
+.hk-ok .hk-pt .hk-b{visibility:visible}
+.hk-toast{position:fixed;left:50%;bottom:calc(24px + var(--sab));z-index:95;display:flex;align-items:center;gap:10px;max-width:calc(100% - 32px);padding:12px 18px;border-radius:999px;background:#fff;color:#000;font-family:var(--hk-mono);font-size:13px;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;visibility:hidden;transform:translateX(-50%);pointer-events:none}
+.hk-toast.hk-on{opacity:1;visibility:visible}
+.hk-toast .hk-sq{display:inline-block;width:8px;height:8px;background:#000;flex:none}
+@media (prefers-reduced-motion:no-preference){.hk-toast{transition:opacity .4s,visibility .4s}}
+
+/* ---------- scenes + 12-column grid ---------- */
+main{position:relative;z-index:10}
+.sc,.xsec{position:relative;display:flex;align-items:flex-end;padding:56px var(--m)}
+.sc--hero{min-height:100vh;min-height:100svh;padding-top:calc(var(--topH) + var(--sat) + 36vw + 24px);padding-bottom:40px}
+.js .sc{padding:62vh var(--m) calc(var(--bot) + var(--sab));padding-top:62svh}
+.js .xsec{padding:30vh var(--m) 24px}
+.js .sc--hero{padding-top:calc(var(--topH) + var(--sat) + 34vh);padding-top:calc(var(--topH) + var(--sat) + 34svh);padding-bottom:40px}
+.pn{width:100%;min-width:0;background:#000;box-shadow:0 0 0 var(--pad) #000}
+.hero-pn{background:#000;box-shadow:0 0 0 16px #000}
+.lbl{display:flex;align-items:baseline;gap:12px;margin:0 0 22px;padding-top:14px;border-top:1px solid #3A3A3A;font-family:var(--hk-mono);font-size:11px;line-height:1.5;letter-spacing:.08em;text-transform:uppercase;color:#C7C7C7}
+.lbl .no{color:#fff}
+.hero-pn .lbl{border-top:0;padding-top:0;color:#8E8E8E}
+.h1{font-family:var(--hk-serif);font-weight:400;font-size:clamp(44px,11.4vw,92px);line-height:.98;letter-spacing:-.02em;color:#fff;text-wrap:balance}
+.h2{font-family:var(--hk-serif);font-weight:400;font-size:clamp(34px,9vw,54px);line-height:1.04;letter-spacing:-.015em;color:#fff;text-wrap:balance}
+.h1 em,.h2 em{font-style:italic}
+.lead{margin-top:22px;font-size:17px;line-height:1.55;color:#C7C7C7;max-width:34em;text-wrap:pretty}
+.deck{margin-top:16px;font-size:17px;line-height:1.55;color:var(--deck);max-width:34em;text-wrap:pretty}
+.tri{margin-top:22px;display:flex;flex-wrap:wrap;gap:4px 10px;font-family:var(--hk-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#C7C7C7}
+.tri span+span::before{content:"·";margin-right:10px;color:#5A5A5A}
+.cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.body{margin-top:16px;font-size:17px;line-height:1.55;color:#C7C7C7;max-width:34em}
+@media (min-width:860px){
+  .lbl{font-size:12px}
+  .lead,.deck,.body{font-size:18px}
+  .sc,.js .sc,.xsec,.js .xsec{min-height:118vh;align-items:center;padding:calc(var(--topH) + 56px) var(--m) calc(var(--bot) + 40px)}
+  .xsec,.js .xsec{min-height:100vh}
+  .sc--hero,.js .sc--hero{min-height:100vh;padding-top:calc(var(--topH) + 24px);padding-bottom:40px}
+  .pn{width:calc((100% - 11 * var(--g)) / 12 * 7 + 6 * var(--g))}
+  .hero-pn{background:none;box-shadow:none}
+  .h1{font-size:clamp(56px,6vw,92px)}
+  .h2{font-size:clamp(40px,3.5vw,54px)}
+}
+@media (min-width:1100px){.pn{width:calc((100% - 11 * var(--g)) / 12 * 6 + 5 * var(--g))}}
+
+/* ---------- executive summary ---------- */
+.xbox{border:1px solid #3A3A3A}
+.xbox li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:0 12px;padding:18px 18px 20px;border-top:1px solid #3A3A3A;font-size:17px;line-height:1.55;color:#fff}
+.xbox li:first-child{border-top:0}
+.xbox .n{font-family:var(--hk-mono);font-size:12px;letter-spacing:.08em;color:#8E8E8E;padding-top:4px}
+@media (min-width:860px){.xbox li{font-size:18px;padding:22px 24px 24px;grid-template-columns:44px minmax(0,1fr)}}
+
+/* ---------- exhibits ---------- */
+.ex{margin-top:32px}
+.exn{font-family:var(--hk-mono);font-size:11px;line-height:1.5;letter-spacing:.08em;text-transform:uppercase;color:#8E8E8E}
+.ext{margin-top:4px;padding-bottom:12px;border-bottom:1px solid #3A3A3A;font-family:var(--hk-sans);font-size:15px;font-weight:500;line-height:1.4;color:#fff}
+.exsrc{margin-top:12px;font-size:12.5px;line-height:1.5;color:#8E8E8E}
+.exsrc sup{color:#8E8E8E}
+@media (min-width:860px){.exn{font-size:12px}.ext{font-size:16px}}
+.bal{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:1px solid #8E8E8E;border-radius:50%;font-family:var(--hk-mono);font-size:10.5px;letter-spacing:0;color:#fff;flex:none}
+
+/* exhibit 1: three facts */
+.facts li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:2px 14px;align-items:center;padding:14px 0 16px;border-bottom:1px solid #3A3A3A}
+.facts p{grid-column:2}
+.facts b{font-family:var(--hk-sans);font-weight:500;font-size:28px;line-height:1.1;letter-spacing:-.02em;color:#fff;white-space:nowrap}
+.facts b small{font-size:15px;letter-spacing:0;color:#C7C7C7;margin-left:4px;font-weight:400}
+.facts p{font-size:15px;line-height:1.45;color:#C7C7C7}
+@media (min-width:860px){.facts li{grid-template-columns:24px 128px minmax(0,1fr);gap:0 18px;align-items:baseline;padding:16px 0}.facts .bal{align-self:center}.facts p{grid-column:auto}.facts b{font-size:34px}.facts p{font-size:16px}}
+.kick{margin-top:28px;font-family:var(--hk-serif);font-size:clamp(24px,5.6vw,30px);line-height:1.18;color:#8E8E8E}
+.kick em{color:#fff}
+
+/* exhibit 2 + why: numbered rows */
+.rows li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:0 12px;padding:16px 0;border-bottom:1px solid #3A3A3A;font-size:16px;line-height:1.5;color:#C7C7C7}
+.rows .n{font-family:var(--hk-mono);font-size:11px;letter-spacing:.08em;color:#8E8E8E;padding-top:4px}
+.rows b,.rows h3{display:block;font-family:var(--hk-sans);font-weight:500;font-size:16px;line-height:1.45;color:#fff}
+.rows h3+p{margin-top:2px}
+.why{margin-top:28px;border-top:1px solid #3A3A3A}
+@media (min-width:860px){.rows li{font-size:17px;padding:18px 0}.rows b,.rows h3{font-size:17px}}
+
+/* exhibit 3: steps */
+.sc--how{display:block;padding:0;min-height:0}
+.js .sc--how{height:330vh;padding:0}
+.how-in{position:relative;display:flex;align-items:flex-end;padding:56px var(--m)}
+.js .how-in{padding:62vh var(--m) calc(var(--bot) + var(--sab));padding-top:62svh}
+.js .sc--how .how-in{position:sticky;top:0;height:100vh;height:100svh;padding-top:calc(var(--topH) + 24px);padding-bottom:16px}
+.steps li{border-bottom:1px solid #3A3A3A}
+.steps .sb{display:grid;grid-template-columns:36px minmax(0,1fr);gap:0 12px;width:100%;min-height:48px;padding:12px 0;text-align:left;color:#8E8E8E;cursor:default}
+.js .steps .sb{cursor:pointer}
+.steps .n{font-family:var(--hk-mono);font-size:11px;letter-spacing:.08em;padding-top:3px;color:#8E8E8E}
+.steps .sn{display:block;font-weight:500;font-size:16px;line-height:1.4;color:#fff}
+.steps .sd{display:block;font-size:15px;line-height:1.45;color:#C7C7C7}
+.js .steps .sb .sn,.js .steps .sb .sd{color:#8E8E8E;transition:color .6s}
+.js .steps .sb[aria-pressed="true"] .sn{color:#fff}
+.js .steps .sb[aria-pressed="true"] .sd{color:#C7C7C7}
+.js .steps .sb[aria-pressed="true"] .n{color:#fff}
+.js .steps .sb .n{position:relative}
+.js .steps .sb[aria-pressed="true"] .n::before{content:"";position:absolute;left:-14px;top:8px;width:6px;height:6px;background:#fff}
+@media (max-width:859px){.js .steps .sb[aria-pressed="true"] .n::before{display:none}.js .steps .sb{min-height:44px;padding:10px 0}.js .steps .sb[aria-pressed="false"] .sd{display:none}.js .sc--how .ex{margin-top:20px}.js .sc--how .deck{margin-top:10px}.js .sc--how .lbl{margin-bottom:14px}}
+@media (min-width:860px){
+  .how-in,.js .how-in{align-items:center;padding:calc(var(--topH) + 56px) var(--m) calc(var(--bot) + 40px)}
+  .js .sc--how .how-in{padding-top:var(--topH);padding-bottom:0}
+  .steps .sb{padding:14px 0}.steps .sn{font-size:17px}.steps .sd{font-size:16px}
+}
+
+/* exhibit 4: results table */
+.tbl{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums lining-nums}
+.tbl th{padding:10px 8px 10px 0;border-bottom:1px solid #3A3A3A;font-family:var(--hk-mono);font-size:10.5px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:#8E8E8E;text-align:left;vertical-align:bottom}
+.tbl td{padding:14px 8px 14px 0;border-bottom:1px solid #3A3A3A;vertical-align:baseline;font-size:15px;line-height:1.35;color:#C7C7C7}
+.tbl th:last-child,.tbl td:last-child{padding-right:0}
+.tbl td.v{font-weight:500;color:#fff;white-space:nowrap}
+.tbl td.b{color:#8E8E8E;white-space:nowrap}
+.tbl td.p{font-size:13.5px;color:#8E8E8E}
+.tbl .na{color:#5A5A5A}
+.tbl th.r,.tbl td.r{text-align:right}
+.tbl col.c1{width:34%}.tbl col.c2{width:17%}.tbl col.c3{width:19%}
+@media (min-width:860px){.tbl td{font-size:16px;padding:16px 12px 16px 0}.tbl td.v{font-size:20px}.tbl td.b{font-size:16px}.tbl td.p{font-size:14px}.tbl th{font-size:11px;padding-right:12px}}
+.small{margin-top:20px;font-family:var(--hk-mono);font-size:11px;line-height:1.6;letter-spacing:.08em;text-transform:uppercase;color:#C7C7C7}
+
+/* ---------- close (kit) ---------- */
+.sc--close,.js .sc--close{display:block;padding-top:52vh;padding-top:52svh}
+.hk-closegrid{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"a" "b" "c";column-gap:var(--g);row-gap:48px;align-items:start}
+.hk-closegrid .hk-ca{grid-area:a;min-width:0}
+.hk-closegrid .hk-cb{grid-area:b;min-width:0}
+.hk-closegrid .hk-cc{grid-area:c;min-width:0}
+.hk-cl1{font-family:var(--hk-serif);font-weight:400;font-size:clamp(42px,10.4vw,84px);line-height:1;letter-spacing:-.02em;color:#fff}
+.hk-cl1>span,.hk-cl1>em{display:block}
+.hk-cl1>span{color:#8E8E8E}
+.hk-cl1>em{font-style:italic;color:#fff}
+.hk-ready{margin-top:48px;margin-bottom:18px;font-family:var(--hk-serif);font-size:clamp(28px,3vw,40px);line-height:1.1;color:#fff}
+.hk-csteps{margin:0;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid #3A3A3A}
+.hk-csteps li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:0 12px;padding:16px 0 18px;border-bottom:1px solid #3A3A3A;font-size:17px;line-height:1.5;color:#C7C7C7}
+.hk-csteps .hk-n{font-family:var(--hk-mono);font-size:11px;letter-spacing:.08em;color:#8E8E8E;padding-top:4px}
+.closewrap{background:#000;box-shadow:0 0 0 var(--pad) #000}
+@media (min-width:860px){.sc--close,.js .sc--close{padding:calc(var(--topH) + 30vh) var(--m) 96px}.closewrap{width:100%}}
+@media (min-width:1024px){
+  .hk-closegrid{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-areas:none;row-gap:0}
+  .hk-closegrid .hk-ca{grid-area:auto;grid-column:1/span 6;grid-row:1}
+  .hk-closegrid .hk-cb{grid-area:auto;grid-column:1/span 6;grid-row:2;margin-top:48px}
+  .hk-closegrid .hk-cc{grid-area:auto;grid-column:8/span 5;grid-row:1/span 2;align-self:center}
+}
+
+/* cube (kit) */
+.hk-cube{--_fg:var(--hk-fg,#fff);--_fg2:var(--hk-fg2,#C7C7C7);--_fg3:var(--hk-fg3,#8E8E8E);--_rule:var(--hk-rule,#2C2C2C);--_em:var(--hk-ember,#E83214);
+  --_mono:var(--hk-mono,"IBM Plex Mono",ui-monospace,Menlo,monospace);--_sans:var(--hk-sans,"Inter",-apple-system,"Helvetica Neue",Arial,sans-serif);
+  margin:0;min-width:0;color:var(--_fg);display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.hk-cube .hk-cube-lbl{display:flex;align-items:flex-start;gap:12px;font-family:var(--_mono);font-size:11px;line-height:1.45;letter-spacing:.12em;text-transform:uppercase;color:var(--_fg)}
+.hk-cube .hk-cube-lbl i{width:8px;height:8px;background:var(--_em);flex:none;margin-top:3px}
+.hk-cube .hk-cube-val{margin-top:12px;font-family:var(--_sans);font-weight:600;font-size:clamp(40px,11vw,76px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums lining-nums;white-space:nowrap;color:var(--_fg)}
+.hk-cube .hk-cube-val.hk-cube-nojs{font-size:clamp(32px,8vw,52px);letter-spacing:-.02em}
+.hk-cube .hk-cube-stage{position:relative;width:100%;max-width:460px;margin:16px auto 0;aspect-ratio:1/1}
+@supports not (aspect-ratio:1/1){ .hk-cube .hk-cube-stage{height:0;padding-top:min(100%,460px)} }
+.hk-cube .hk-cube-stage canvas,.hk-cube .hk-cube-stage .hk-cube-fb{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hk-cube .hk-cube-stage canvas{display:none}
+.hk-cube .hk-cube-fb svg{width:100%;height:100%;display:block}
+.hk-cube.hk-cube--live .hk-cube-stage canvas{display:block}
+.hk-cube.hk-cube--live .hk-cube-fb{display:none}
+.hk-cube .hk-cube-key{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:8px;font-family:var(--_mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--_fg3);font-variant-numeric:tabular-nums}
+.hk-cube .hk-cube-key b{font-weight:500;color:var(--_fg)}
+.hk-cube .hk-cube-src{margin-top:16px;padding-top:12px;border-top:1px solid var(--_rule);font-family:var(--_mono);font-size:11px;line-height:1.55;letter-spacing:.03em;color:var(--_fg3)}
+.hk-band--white .hk-cube .hk-cube-src{border-top-color:var(--hk-rule,#DADADA)}
+@media (min-width:1024px){ .hk-cube .hk-cube-stage{margin-top:8px} }
+.hk-cube .hk-cube-lbl{display:block;margin-top:4px;padding-bottom:12px;border-bottom:1px solid #3A3A3A;font-family:var(--hk-sans);font-size:15px;font-weight:500;line-height:1.4;letter-spacing:0;text-transform:none;color:#fff}
+.hk-cube .hk-cube-lbl i{display:none}
+.hk-cube .hk-cube-val{margin-top:16px;font-weight:500;font-size:clamp(36px,9vw,56px);letter-spacing:-.03em}
+.hk-cube .hk-cube-src{border-top:0;padding-top:0;margin-top:12px;font-family:var(--hk-sans);font-size:12.5px;letter-spacing:0;line-height:1.5}
+.hk-cube .hk-cube-key{letter-spacing:.08em}
+
+/* ---------- sources + footer ---------- */
+.notes{position:relative;z-index:10;background:#000;padding:56px var(--m) 32px}
+.notes .lbl{margin-bottom:16px}
+.notes ol{display:grid;gap:8px;max-width:52em;font-size:13px;line-height:1.55;color:#8E8E8E}
+.notes li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:0 8px}
+.notes li span{font-family:var(--hk-mono);font-size:11px;padding-top:2px;color:#C7C7C7}
+@media (min-width:860px){.notes ol{font-size:13.5px}.notes .wrap{width:calc((100% - 11 * var(--g)) / 12 * 8 + 7 * var(--g))}}
+footer{position:relative;z-index:10;background:#000;border-top:1px solid #3A3A3A;margin:0 var(--m);padding:12px 0 calc(28px + var(--sab));display:flex;flex-wrap:wrap;align-items:center;gap:0 18px;font-family:var(--hk-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8E8E8E}
+footer .ft{display:inline-flex;align-items:center;min-height:44px}
+footer .ft::before{content:"·";margin-right:18px;color:#5A5A5A}
+.foot-bg{position:relative;z-index:10;background:#000}
+
+/* readout: one quiet VIEW line */
+.ro{position:fixed;left:var(--m);top:calc(var(--topH) + var(--sat) + 12px);z-index:31;display:none;gap:10px;align-items:baseline;pointer-events:none;font-family:var(--hk-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#8E8E8E;transition:opacity .6s}
+.ro span{color:#C7C7C7}
+.gl .ro{display:flex}
+@media (min-width:860px){.ro{top:auto;left:auto;bottom:22px;right:var(--m);font-size:11px}}
+
+/* projected annotations (HTML, crisp) */
+.an{position:absolute;left:0;top:0;opacity:0;white-space:nowrap;font-family:var(--hk-mono);font-size:10.5px;line-height:1;letter-spacing:.08em;text-transform:uppercase;color:#C7C7C7;will-change:transform,opacity}
+.an.dim{padding:4px 6px;background:#000}
+.an.ba{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border:1px solid #C7C7C7;border-radius:50%;background:#000;font-size:10.5px;letter-spacing:0;color:#fff}
+.an.sq{width:5px;height:5px;background:#fff}
+.an.st{display:flex;align-items:center;gap:8px;padding:6px 9px;border:1px solid #5A5A5A;background:#000;color:#8E8E8E}
+.an.st b{font-weight:400;color:#8E8E8E}
+.an.st.on{border-color:#C7C7C7;color:#fff}
+.an.st.on b{color:#fff}
+@media (min-width:860px){.an{font-size:11px}}
+
+/* reveal: fade only */
+.anim .rv{opacity:0;transition:opacity 1.4s var(--hk-ease)}
+.anim .rv.in{opacity:1}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1!important;transition:none!important}*{transition:none!important;animation:none!important}}
+
+/* ---------- next-gen: spec block, hero, numbers ---------- */
+.spec{margin-top:28px;border:1px solid #3A3A3A;background:#050505}
+.sp-bar{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid #3A3A3A;font-family:var(--hk-mono);font-size:11px;letter-spacing:.12em;color:#8E8E8E}
+.sp-bar span:first-child{color:#fff}
+.sp-body{padding:10px 0;font-family:var(--hk-mono);font-size:13px;line-height:1.5}
+.sp-body li{display:flex;gap:16px;padding:3px 16px}
+.sp-body .ln{width:20px;flex:none;color:#5A5A5A;text-align:right}
+.sp-body .sp-h{margin-top:10px}.sp-body .sp-h:first-child{margin-top:0}
+.sp-k{color:#fff;font-weight:500;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+.sp-k i{width:8px;height:8px;background:var(--hk-ember);flex:none}
+.sp-v{color:#C7C7C7;padding-left:18px;position:relative}
+.sp-v::before{content:"—";position:absolute;left:0;color:#5A5A5A}
+@media (min-width:860px){.sp-body{font-size:14px}}
+.hero-pn{background:transparent!important;box-shadow:none!important}
+@media (min-width:860px){.h1{font-size:clamp(64px,7vw,112px)}}
+.tbl td.v{font-size:clamp(28px,3.2vw,44px)!important;letter-spacing:-.02em}
+</style>
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="fb" aria-hidden="true"><svg viewBox="-660.0 -410.0 1660.0 850.0" role="img" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs><pattern id="bpg1" width="100" height="100" patternUnits="userSpaceOnUse" x="0" y="0"><path d="M100 0L0 0 0 100" fill="none" stroke="#1C1C1C" stroke-width="1"/></pattern>
+<pattern id="bpg5" width="500" height="500" patternUnits="userSpaceOnUse" x="0" y="0"><path d="M500 0L0 0 0 500" fill="none" stroke="#2C2C2C" stroke-width="1.2"/></pattern></defs>
+<style>#fb path{fill:none;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}#fb .o{stroke:#FFFFFF;stroke-width:1.6}#fb .p{stroke:#C7C7C7;stroke-width:.9}#fb .w{stroke:#FFFFFF;stroke-width:1.1}#fb .c{stroke:#5A5A5A;stroke-width:.7}#fb .cl{stroke:#8E8E8E;stroke-width:.8;stroke-dasharray:30 6 4 6}#fb .d{stroke:#8E8E8E;stroke-width:.8}#fb .t{stroke:#C7C7C7;stroke-width:1.2}#fb .tx{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:24px;letter-spacing:3px;fill:#C7C7C7}@media (max-width:859px){#fb .tx{display:none}}</style>
+<rect x="-660.0" y="-410.0" width="1660.0" height="850.0" fill="url(#bpg1)"/><rect x="-660.0" y="-410.0" width="1660.0" height="850.0" fill="url(#bpg5)"/>
+<path class="o" d="M0.0 -225.0L25.0 -209.4L50.0 -193.8L75.0 -178.1L100.0 -162.5L125.0 -146.9L150.0 -131.3L175.0 -115.6L200.0 -100.0L225.0 -84.4L250.0 -68.8L275.0 -53.1L300.0 -37.5L325.0 -21.9L350.0 -6.3L375.0 9.4L400.0 25.0L425.0 40.6L450.0 56.3L475.0 71.9L500.0 87.5L525.0 103.1L550.0 118.8L575.0 134.4L600.0 150.0L562.0 202.0L365.0 95.0L230.0 205.0L105.0 130.0L0.0 185.0"/><path class="o" d="M0.0 -225.0L-25.0 -209.4L-50.0 -193.8L-75.0 -178.1L-100.0 -162.5L-125.0 -146.9L-150.0 -131.3L-175.0 -115.6L-200.0 -100.0L-225.0 -84.4L-250.0 -68.8L-275.0 -53.1L-300.0 -37.5L-325.0 -21.9L-350.0 -6.3L-375.0 9.4L-400.0 25.0L-425.0 40.6L-450.0 56.3L-475.0 71.9L-500.0 87.5L-525.0 103.1L-550.0 118.8L-575.0 134.4L-600.0 150.0L-562.0 202.0L-365.0 95.0L-230.0 205.0L-105.0 130.0L0.0 185.0"/>
+<path class="c" d="M-216.0 -33.8L-216.9 -30.4M-216.9 -30.4L-218.5 -20.0M-218.5 -20.0L-218.8 -10.0M-218.8 -10.0L-217.9 -0.4M-217.9 -0.4L-216.0 8.8M-210.0 -52.6L-210.6 -51.4M-210.6 -51.4L-214.3 -40.8M-214.3 -40.8L-216.0 -33.8M-216.0 9.0L-216.0 8.8M-216.0 9.0L-213.4 18.3M-213.4 18.3L-210.0 26.8M-204.0 -65.3L-205.9 -62.0M-205.9 -62.0L-210.0 -52.6M-209.9 27.1L-210.0 26.8M-209.9 27.1L-206.0 35.9M-206.0 35.9L-204.0 39.3M-198.0 -75.5L-200.0 -72.6M-200.0 -72.6L-204.0 -65.3M-201.4 44.4L-204.0 39.3M-201.4 44.4L-198.0 49.6M-192.0 -84.3L-192.7 -83.4M-192.7 -83.4L-198.0 -75.5M-196.2 52.4L-198.0 49.6M-196.2 52.4L-192.0 58.0M-186.0 -91.7L-192.0 -84.3M-190.4 60.1L-192.0 58.0M-190.4 60.1L-186.0 64.7M-180.0 -98.2L-183.4 -94.7M-183.4 -94.7L-186.0 -91.7M-183.7 67.1L-186.0 64.7M-183.7 67.1L-180.0 70.1M-174.0 -104.1L-180.0 -98.2M-175.8 73.1L-180.0 70.1M-175.8 73.1L-174.0 74.1M-168.0 -109.6L-170.3 -107.6M-170.3 -107.6L-174.0 -104.1M-168.0 76.9L-174.0 74.1M-162.0 -114.5L-168.0 -109.6M-162.0 -66.6L-162.8 -63.9M-162.8 -63.9L-164.7 -53.3M-164.7 -53.3L-165.4 -43.1M-165.4 -43.1L-164.9 -33.1M-164.9 -33.1L-163.3 -23.4M-163.3 -23.4L-162.0 -18.8M-165.8 77.6L-168.0 76.9M-165.8 77.6L-162.0 78.6M-156.0 -119.1L-162.0 -114.5M-156.0 -81.8L-159.2 -75.0M-159.2 -75.0L-162.0 -66.6M-160.5 -14.3L-162.0 -18.8M-160.5 -14.3L-156.3 -5.8M-156.3 -5.8L-156.0 -5.3M-156.0 79.4L-162.0 78.6M-150.0 -123.6L-156.0 -119.1M-150.0 -91.8L-153.2 -87.1M-153.2 -87.1L-156.0 -81.8M-150.0 1.6L-156.0 -5.3M-150.0 1.6L-150.0 1.6M-151.7 79.4L-156.0 79.4M-151.7 79.4L-150.0 79.3M-144.0 -127.9L-150.0 -123.6M-144.0 -99.5L-150.0 -91.8M-144.0 5.2L-150.0 1.6M-144.0 78.5L-150.0 79.3M-138.0 -132.0L-143.3 -128.4M-143.3 -128.4L-144.0 -127.9M-138.0 -105.8L-142.2 -101.6M-142.2 -101.6L-144.0 -99.5M-139.9 6.7L-144.0 5.2M-139.9 6.7L-138.0 7.2M-138.0 77.2L-144.0 78.5M-132.0 -135.9L-138.0 -132.0M-132.0 -111.3L-138.0 -105.8M-132.0 7.7L-138.0 7.2M-132.0 75.5L-138.0 77.2M-126.0 -139.9L-132.0 -135.9M-126.0 -116.6L-132.0 -111.3M-126.0 7.8L-132.0 7.7M-126.0 73.6L-132.0 75.5M-120.0 -143.8L-126.0 -139.9M-120.0 -121.7L-126.0 -116.6M-123.2 7.8L-126.0 7.8M-123.2 7.8L-120.0 7.6M-125.8 73.5L-126.0 73.6M-125.8 73.5L-120.0 71.6M-114.0 -147.8L-120.0 -143.8M-114.0 -126.9L-117.5 -124.0M-117.5 -124.0L-120.0 -121.7M-114.0 7.6L-120.0 7.6M-114.0 69.7L-120.0 71.6M-108.0 -151.8L-114.0 -147.8M-108.0 -132.1L-114.0 -126.9M-108.0 8.3L-114.0 7.6M-108.0 68.1L-114.0 69.7M-102.0 -155.8L-108.0 -151.8M-102.0 -137.5L-108.0 -132.1M-106.3 8.7L-108.0 8.3M-106.3 8.7L-102.0 11.5M-102.0 69.5L-108.0 68.1M-96.0 -159.9L-102.0 -155.8M-96.0 -143.0L-96.4 -142.7M-96.4 -142.7L-102.0 -137.5M-96.0 17.8L-102.0 11.5M-98.2 72.3L-102.0 69.5M-98.2 72.3L-96.0 73.9M-90.0 -164.0L-96.0 -159.9M-90.0 -148.5L-96.0 -143.0M-90.0 -98.8L-90.9 -95.2M-90.9 -95.2L-92.3 -84.3M-92.3 -84.3L-92.3 -73.5M-92.3 -73.5L-91.0 -62.6M-91.0 -62.6L-90.0 -58.2M-94.2 20.0L-96.0 17.8M-94.2 20.0L-90.0 24.9M-90.0 78.8L-96.0 73.9M-84.0 -168.2L-84.7 -167.7M-84.7 -167.7L-90.0 -164.0M-84.0 -154.3L-90.0 -148.5M-84.0 -118.3L-84.4 -117.4M-84.4 -117.4L-88.3 -106.2M-88.3 -106.2L-90.0 -98.8M-88.7 -51.5L-90.0 -58.2M-88.7 -51.5L-85.5 -40.1M-85.5 -40.1L-84.0 -36.1M-84.0 32.7L-90.0 24.9M-84.0 32.7L-84.0 32.7M-84.0 84.1L-90.0 78.8M-78.0 -172.3L-84.0 -168.2M-78.0 -160.0L-81.5 -156.8M-81.5 -156.8L-84.0 -154.3M-78.0 -131.3L-79.5 -128.6M-79.5 -128.6L-84.0 -118.3M-81.5 -28.3L-84.0 -36.1M-81.5 -28.3L-78.0 -19.6M-78.0 40.8L-84.0 32.7M-80.8 87.1L-84.0 84.1M-80.8 87.1L-78.0 89.6M-72.0 -176.4L-78.0 -172.3M-72.0 -165.5L-78.0 -160.0M-72.0 -142.2L-73.4 -140.1M-73.4 -140.1L-78.0 -131.3M-76.7 -16.1L-78.0 -19.6M-76.7 -16.1L-72.0 -5.1M-74.4 45.9L-78.0 40.8M-74.4 45.9L-72.0 49.1M-72.0 95.2L-78.0 89.6M-66.0 -180.5L-72.0 -176.4M-66.0 -171.0L-66.0 -171.0M-66.0 -171.0L-72.0 -165.5M-66.0 -151.6L-72.0 -142.2M-71.4 -3.5L-72.0 -5.1M-71.4 -3.5L-66.0 7.9M-66.0 57.2L-72.0 49.1M-66.0 100.9L-72.0 95.2M-60.0 -184.6L-66.0 -180.5M-60.0 -176.1L-66.0 -171.0M-60.0 -159.5L-65.7 -152.0M-65.7 -152.0L-66.0 -151.6M-60.0 -121.6L-61.4 -116.7M-61.4 -116.7L-63.6 -104.8M-63.6 -104.8L-64.8 -92.9M-64.8 -92.9L-64.9 -80.9M-64.9 -80.9L-64.1 -68.7M-64.1 -68.7L-62.5 -56.3M-62.5 -56.3L-60.0 -44.3M-65.3 9.5L-66.0 7.9M-65.3 9.5L-60.0 19.6M-64.3 59.6L-66.0 57.2M-64.3 59.6L-60.0 65.1M-64.9 101.9L-66.0 100.9M-64.9 101.9L-60.0 106.4M-54.0 -188.6L-60.0 -184.6M-54.0 -181.0L-60.0 -176.1M-54.0 -166.8L-56.1 -164.5M-56.1 -164.5L-60.0 -159.5M-54.0 -138.6L-58.0 -128.6M-58.0 -128.6L-60.0 -121.6M-59.9 -43.7L-60.0 -44.3M-59.9 -43.7L-56.4 -30.7M-56.4 -30.7L-54.0 -23.5M-58.2 23.0L-60.0 19.6M-58.2 23.0L-54.0 30.2M-54.0 72.5L-60.0 65.1M-54.0 111.8L-60.0 106.4M-48.0 -192.7L-54.0 -188.6M-48.0 -185.8L-54.0 -181.0M-48.0 -173.2L-54.0 -166.8M-48.0 -150.4L-53.1 -140.7M-53.1 -140.7L-54.0 -138.6M-51.9 -17.4L-54.0 -23.5M-51.9 -17.4L-48.0 -7.9M-49.9 37.0L-54.0 30.2M-49.9 37.0L-48.0 39.8M-52.9 73.9L-54.0 72.5M-52.9 73.9L-48.0 79.5M-48.0 116.9L-54.0 111.8M-42.0 -196.6L-45.2 -194.5M-45.2 -194.5L-48.0 -192.7M-42.0 -190.4L-45.5 -187.8M-45.5 -187.8L-48.0 -185.8M-42.0 -179.2L-42.5 -178.8M-42.5 -178.8L-48.0 -173.2M-42.0 -159.6L-46.4 -153.3M-46.4 -153.3L-48.0 -150.4M-42.0 -112.4L-42.0 -112.4M-42.0 -112.4L-43.5 -99.5M-43.5 -99.5L-43.9 -86.6M-43.9 -86.6L-43.1 -73.5M-43.1 -73.5L-42.0 -66.0M-46.2 -3.7L-48.0 -7.9M-46.2 -3.7L-42.0 4.7M-42.0 48.4L-48.0 39.8M-42.0 86.0L-48.0 79.5M-47.0 117.7L-48.0 116.9M-47.0 117.7L-42.0 121.8M-36.0 -200.5L-42.0 -196.6M-36.0 -194.7L-42.0 -190.4M-36.0 -184.5L-42.0 -179.2M-36.0 -167.6L-36.5 -167.1M-36.5 -167.1L-42.0 -159.6M-36.0 -133.7L-39.0 -125.4M-39.0 -125.4L-42.0 -112.4M-41.1 -60.3L-42.0 -66.0M-41.1 -60.3L-37.9 -46.7M-37.9 -46.7L-36.0 -40.6M-38.9 10.5L-42.0 4.7M-38.9 10.5L-36.0 15.2M-39.4 51.8L-42.0 48.4M-39.4 51.8L-36.0 56.0M-38.5 89.4L-42.0 86.0M-38.5 89.4L-36.0 91.9M-36.0 126.5L-42.0 121.8M-30.0 -204.3L-36.0 -200.5M-30.0 -198.9L-36.0 -194.7M-30.0 -189.4L-36.0 -184.5M-30.0 -174.0L-36.0 -167.6M-30.0 -146.4L-34.0 -138.7M-34.0 -138.7L-36.0 -133.7M-33.3 -32.9L-36.0 -40.6M-33.3 -32.9L-30.0 -25.5M-30.0 24.0L-36.0 15.2M-30.0 62.6L-36.0 56.0M-30.0 97.3L-36.0 91.9M-30.0 130.9L-36.0 126.5M-24.0 -208.1L-30.0 -204.3M-24.0 -203.0L-30.0 -198.9M-24.0 -194.1L-30.0 -189.4M-24.0 -179.9L-30.0 -174.0M-24.0 -155.7L-25.9 -153.1M-25.9 -153.1L-30.0 -146.4M-26.5 -18.7L-30.0 -25.5M-26.5 -18.7L-24.0 -14.5M-28.9 25.4L-30.0 24.0M-28.9 25.4L-24.0 31.2M-24.6 67.9L-30.0 62.6M-24.6 67.9L-24.0 68.5M-24.0 102.2L-30.0 97.3M-24.0 135.0L-30.0 130.9M-18.0 -211.9L-24.0 -208.1M-18.0 -207.0L-24.0 -203.0M-18.0 -198.6L-24.0 -194.1M-18.0 -185.1L-18.2 -185.0M-18.2 -185.0L-24.0 -179.9M-18.0 -162.7L-24.0 -155.7M-18.0 -6.4L-24.0 -14.5M-18.0 37.1L-24.0 31.2M-18.0 73.4L-24.0 68.5M-18.0 106.6L-24.0 102.2M-20.1 137.5L-24.0 135.0M-20.1 137.5L-18.0 138.9M-12.0 -215.7L-18.0 -211.9M-12.0 -210.9L-18.0 -207.0M-12.0 -202.6L-14.6 -200.9M-14.6 -200.9L-18.0 -198.6M-12.0 -189.5L-18.0 -185.1M-12.0 -168.4L-18.0 -162.7M-12.0 -119.2L-15.4 -108.3M-15.4 -108.3L-16.8 -93.9M-16.8 -93.9L-15.1 -79.9M-15.1 -79.9L-12.0 -70.2M-15.5 -3.8L-18.0 -6.4M-15.5 -3.8L-12.0 -0.6M-12.1 41.8L-18.0 37.1M-12.1 41.8L-12.0 41.9M-12.0 77.6L-18.0 73.4M-15.8 108.0L-18.0 106.6M-15.8 108.0L-12.0 110.5M-12.0 142.5L-18.0 138.9M-6.0 -219.5L-12.0 -215.7M-6.0 -214.7L-12.0 -210.9M-6.0 -206.4L-12.0 -202.6M-6.0 -193.4L-12.0 -189.5M-6.0 -173.0L-6.1 -172.9M-6.1 -172.9L-12.0 -168.4M-6.0 -128.6L-9.8 -123.7M-9.8 -123.7L-12.0 -119.2M-9.9 -66.0L-12.0 -70.2M-9.9 -66.0L-6.0 -61.5M-6.0 3.1L-12.0 -0.6M-6.0 45.2L-12.0 41.9M-6.0 81.0L-12.0 77.6M-6.0 113.9L-12.0 110.5M-6.0 145.9L-12.0 142.5M0.0 -223.2L-6.0 -219.5M0.0 -218.3L-6.0 -214.7M0.0 -210.0L-6.0 -206.4M0.0 -196.8L-6.0 -193.4M0.0 -176.2L-6.0 -173.0M0.0 -132.4L-6.0 -128.6M0.0 -59.3L-6.0 -61.5M0.0 4.9L-6.0 3.1M0.0 47.4L-6.0 45.2M0.0 83.5L-6.0 81.0M0.0 116.7L-6.0 113.9M0.0 149.0L-6.0 145.9M6.0 -219.5L0.0 -223.2M6.0 -214.7L0.0 -218.3M6.0 -206.4L0.0 -210.0M6.0 -193.4L0.0 -196.8M6.0 -173.0L0.0 -176.2M6.0 -128.6L0.0 -132.4M6.0 -61.5L0.0 -59.3M6.0 3.1L0.0 4.9M6.0 45.2L0.0 47.4M6.0 81.0L0.0 83.5M6.0 113.9L0.0 116.7M6.0 145.9L0.0 149.0M12.0 -215.7L6.0 -219.5M12.0 -210.9L6.0 -214.7M12.0 -202.6L6.0 -206.4M12.0 -189.5L6.0 -193.4M6.1 -172.9L6.0 -173.0M6.1 -172.9L12.0 -168.4M9.8 -123.7L6.0 -128.6M9.8 -123.7L12.0 -119.2M12.0 -70.2L9.9 -66.0M9.9 -66.0L6.0 -61.5M12.0 -0.6L6.0 3.1M12.0 41.9L6.0 45.2M12.0 77.6L6.0 81.0M12.0 110.5L6.0 113.9M12.0 142.5L6.0 145.9M18.0 -211.9L12.0 -215.7M18.0 -207.0L12.0 -210.9M14.6 -200.9L12.0 -202.6M14.6 -200.9L18.0 -198.6M18.0 -185.1L12.0 -189.5M18.0 -162.7L12.0 -168.4M15.4 -108.3L12.0 -119.2M15.4 -108.3L16.8 -93.9M16.8 -93.9L15.1 -79.9M15.1 -79.9L12.0 -70.2M18.0 -6.4L15.5 -3.8M15.5 -3.8L12.0 -0.6M18.0 37.1L12.1 41.8M12.1 41.8L12.0 41.9M18.0 73.4L12.0 77.6M18.0 106.6L15.8 108.0M15.8 108.0L12.0 110.5M18.0 138.9L12.0 142.5M24.0 -208.1L18.0 -211.9M24.0 -203.0L18.0 -207.0M24.0 -194.1L18.0 -198.6M18.2 -185.0L18.0 -185.1M18.2 -185.0L24.0 -179.9M24.0 -155.7L18.0 -162.7M24.0 -14.5L18.0 -6.4M24.0 31.2L18.0 37.1M24.0 68.5L18.0 73.4M24.0 102.2L18.0 106.6M24.0 135.0L20.1 137.5M20.1 137.5L18.0 138.9M30.0 -204.3L24.0 -208.1M30.0 -198.9L24.0 -203.0M30.0 -189.4L24.0 -194.1M30.0 -174.0L24.0 -179.9M25.9 -153.1L24.0 -155.7M25.9 -153.1L30.0 -146.4M30.0 -25.5L26.5 -18.7M26.5 -18.7L24.0 -14.5M30.0 24.0L28.9 25.4M28.9 25.4L24.0 31.2M30.0 62.6L24.6 67.9M24.6 67.9L24.0 68.5M30.0 97.3L24.0 102.2M30.0 130.9L24.0 135.0M36.0 -200.5L30.0 -204.3M36.0 -194.7L30.0 -198.9M36.0 -184.5L30.0 -189.4M36.0 -167.6L30.0 -174.0M34.0 -138.7L30.0 -146.4M34.0 -138.7L36.0 -133.7M36.0 -40.6L33.3 -32.9M33.3 -32.9L30.0 -25.5M36.0 15.2L30.0 24.0M36.0 56.0L30.0 62.6M36.0 91.9L30.0 97.3M36.0 126.5L30.0 130.9M42.0 -196.6L36.0 -200.5M42.0 -190.4L36.0 -194.7M42.0 -179.2L36.0 -184.5M36.5 -167.1L36.0 -167.6M36.5 -167.1L42.0 -159.6M39.0 -125.4L36.0 -133.7M39.0 -125.4L42.0 -112.4M42.0 -66.0L41.1 -60.3M41.1 -60.3L37.9 -46.7M37.9 -46.7L36.0 -40.6M42.0 4.7L38.9 10.5M38.9 10.5L36.0 15.2M42.0 48.4L39.4 51.8M39.4 51.8L36.0 56.0M42.0 86.0L38.5 89.4M38.5 89.4L36.0 91.9M42.0 121.8L36.0 126.5M45.2 -194.5L42.0 -196.6M45.2 -194.5L48.0 -192.7M45.5 -187.8L42.0 -190.4M45.5 -187.8L48.0 -185.8M42.5 -178.8L42.0 -179.2M42.5 -178.8L48.0 -173.2M46.4 -153.3L42.0 -159.6M46.4 -153.3L48.0 -150.4M42.0 -112.4L42.0 -112.4M42.0 -112.4L43.5 -99.5M43.5 -99.5L43.9 -86.6M43.9 -86.6L43.1 -73.5M43.1 -73.5L42.0 -66.0M48.0 -7.9L46.2 -3.7M46.2 -3.7L42.0 4.7M48.0 39.8L42.0 48.4M48.0 79.5L42.0 86.0M48.0 116.9L47.0 117.7M47.0 117.7L42.0 121.8M54.0 -188.6L48.0 -192.7M54.0 -181.0L48.0 -185.8M54.0 -166.8L48.0 -173.2M53.1 -140.7L48.0 -150.4M53.1 -140.7L54.0 -138.6M54.0 -23.5L51.9 -17.4M51.9 -17.4L48.0 -7.9M54.0 30.2L49.9 37.0M49.9 37.0L48.0 39.8M54.0 72.5L52.9 73.9M52.9 73.9L48.0 79.5M54.0 111.8L48.0 116.9M60.0 -184.6L54.0 -188.6M60.0 -176.1L54.0 -181.0M56.1 -164.5L54.0 -166.8M56.1 -164.5L60.0 -159.5M58.0 -128.6L54.0 -138.6M58.0 -128.6L60.0 -121.6M60.0 -44.3L59.9 -43.7M59.9 -43.7L56.4 -30.7M56.4 -30.7L54.0 -23.5M60.0 19.6L58.2 23.0M58.2 23.0L54.0 30.2M60.0 65.1L54.0 72.5M60.0 106.4L54.0 111.8M66.0 -180.5L60.0 -184.6M66.0 -171.0L60.0 -176.1M65.7 -152.0L60.0 -159.5M65.7 -152.0L66.0 -151.6M61.4 -116.7L60.0 -121.6M61.4 -116.7L63.6 -104.8M63.6 -104.8L64.8 -92.9M64.8 -92.9L64.9 -80.9M64.9 -80.9L64.1 -68.7M64.1 -68.7L62.5 -56.3M62.5 -56.3L60.0 -44.3M66.0 7.9L65.3 9.5M65.3 9.5L60.0 19.6M66.0 57.2L64.3 59.6M64.3 59.6L60.0 65.1M66.0 100.9L64.9 101.9M64.9 101.9L60.0 106.4M72.0 -176.4L66.0 -180.5M66.0 -171.0L66.0 -171.0M66.0 -171.0L72.0 -165.5M72.0 -142.2L66.0 -151.6M72.0 -5.1L71.4 -3.5M71.4 -3.5L66.0 7.9M72.0 49.1L66.0 57.2M72.0 95.2L66.0 100.9M78.0 -172.3L72.0 -176.4M78.0 -160.0L72.0 -165.5M73.4 -140.1L72.0 -142.2M73.4 -140.1L78.0 -131.3M78.0 -19.6L76.7 -16.1M76.7 -16.1L72.0 -5.1M78.0 40.8L74.4 45.9M74.4 45.9L72.0 49.1M78.0 89.6L72.0 95.2M84.0 -168.2L78.0 -172.3M81.5 -156.8L78.0 -160.0M81.5 -156.8L84.0 -154.3M79.5 -128.6L78.0 -131.3M79.5 -128.6L84.0 -118.3M84.0 -36.1L81.5 -28.3M81.5 -28.3L78.0 -19.6M84.0 32.7L78.0 40.8M84.0 84.1L80.8 87.1M80.8 87.1L78.0 89.6M84.7 -167.7L84.0 -168.2M84.7 -167.7L90.0 -164.0M90.0 -148.5L84.0 -154.3M84.4 -117.4L84.0 -118.3M84.4 -117.4L88.3 -106.2M88.3 -106.2L90.0 -98.8M90.0 -58.2L88.7 -51.5M88.7 -51.5L85.5 -40.1M85.5 -40.1L84.0 -36.1M90.0 24.9L84.0 32.7M84.0 32.7L84.0 32.7M90.0 78.8L84.0 84.1M96.0 -159.9L90.0 -164.0M96.0 -143.0L90.0 -148.5M90.9 -95.2L90.0 -98.8M90.9 -95.2L92.3 -84.3M92.3 -84.3L92.3 -73.5M92.3 -73.5L91.0 -62.6M91.0 -62.6L90.0 -58.2M96.0 17.8L94.2 20.0M94.2 20.0L90.0 24.9M96.0 73.9L90.0 78.8M102.0 -155.8L96.0 -159.9M96.4 -142.7L96.0 -143.0M96.4 -142.7L102.0 -137.5M102.0 11.5L96.0 17.8M102.0 69.5L98.2 72.3M98.2 72.3L96.0 73.9M108.0 -151.8L102.0 -155.8M108.0 -132.1L102.0 -137.5M108.0 8.3L106.3 8.7M106.3 8.7L102.0 11.5M108.0 68.1L102.0 69.5M114.0 -147.8L108.0 -151.8M114.0 -126.9L108.0 -132.1M114.0 7.6L108.0 8.3M114.0 69.7L108.0 68.1M120.0 -143.8L114.0 -147.8M117.5 -124.0L114.0 -126.9M117.5 -124.0L120.0 -121.7M120.0 7.6L114.0 7.6M120.0 71.6L114.0 69.7M126.0 -139.9L120.0 -143.8M126.0 -116.6L120.0 -121.7M126.0 7.8L123.2 7.8M123.2 7.8L120.0 7.6M126.0 73.6L125.8 73.5M125.8 73.5L120.0 71.6M132.0 -135.9L126.0 -139.9M132.0 -111.3L126.0 -116.6M132.0 7.7L126.0 7.8M132.0 75.5L126.0 73.6M138.0 -132.0L132.0 -135.9M138.0 -105.8L132.0 -111.3M138.0 7.2L132.0 7.7M138.0 77.2L132.0 75.5M143.3 -128.4L138.0 -132.0M143.3 -128.4L144.0 -127.9M142.2 -101.6L138.0 -105.8M142.2 -101.6L144.0 -99.5M144.0 5.2L139.9 6.7M139.9 6.7L138.0 7.2M144.0 78.5L138.0 77.2M150.0 -123.6L144.0 -127.9M150.0 -91.8L144.0 -99.5M150.0 1.6L144.0 5.2M150.0 79.3L144.0 78.5M156.0 -119.1L150.0 -123.6M153.2 -87.1L150.0 -91.8M153.2 -87.1L156.0 -81.8M156.0 -5.3L150.0 1.6M150.0 1.6L150.0 1.6M156.0 79.4L151.7 79.4M151.7 79.4L150.0 79.3M162.0 -114.5L156.0 -119.1M159.2 -75.0L156.0 -81.8M159.2 -75.0L162.0 -66.6M162.0 -18.8L160.5 -14.3M160.5 -14.3L156.3 -5.8M156.3 -5.8L156.0 -5.3M162.0 78.6L156.0 79.4M168.0 -109.6L162.0 -114.5M162.8 -63.9L162.0 -66.6M162.8 -63.9L164.7 -53.3M164.7 -53.3L165.4 -43.1M165.4 -43.1L164.9 -33.1M164.9 -33.1L163.3 -23.4M163.3 -23.4L162.0 -18.8M168.0 76.9L165.8 77.6M165.8 77.6L162.0 78.6M170.3 -107.6L168.0 -109.6M170.3 -107.6L174.0 -104.1M174.0 74.1L168.0 76.9M180.0 -98.2L174.0 -104.1M180.0 70.1L175.8 73.1M175.8 73.1L174.0 74.1M183.4 -94.7L180.0 -98.2M183.4 -94.7L186.0 -91.7M186.0 64.7L183.7 67.1M183.7 67.1L180.0 70.1M192.0 -84.3L186.0 -91.7M192.0 58.0L190.4 60.1M190.4 60.1L186.0 64.7M192.7 -83.4L192.0 -84.3M192.7 -83.4L198.0 -75.5M198.0 49.6L196.2 52.4M196.2 52.4L192.0 58.0M200.0 -72.6L198.0 -75.5M200.0 -72.6L204.0 -65.3M204.0 39.3L201.4 44.4M201.4 44.4L198.0 49.6M205.9 -62.0L204.0 -65.3M205.9 -62.0L210.0 -52.6M210.0 26.8L209.9 27.1M209.9 27.1L206.0 35.9M206.0 35.9L204.0 39.3M210.6 -51.4L210.0 -52.6M210.6 -51.4L214.3 -40.8M214.3 -40.8L216.0 -33.8M216.0 8.8L216.0 9.0M216.0 9.0L213.4 18.3M213.4 18.3L210.0 26.8M216.9 -30.4L216.0 -33.8M216.9 -30.4L218.5 -20.0M218.5 -20.0L218.8 -10.0M218.8 -10.0L217.9 -0.4M217.9 -0.4L216.0 8.8"/>
+<path class="p" d="M95.0 -137.3L115.2 -124.7L135.4 -112.1L155.6 -99.4L175.8 -86.8L196.0 -74.2L216.2 -61.5L236.5 -48.9L256.7 -36.3L276.9 -23.7L297.1 -11.0L317.3 1.6L337.5 14.2L357.7 26.9L377.9 39.5L398.1 52.1L418.3 64.8L438.5 77.4L458.7 90.0L479.0 102.7L499.2 115.3L519.4 127.9L539.6 140.5L559.8 153.2L580.0 165.8"/>
+<path class="p" d="M-95.0 -137.3L-115.2 -124.7L-135.4 -112.1L-155.6 -99.4L-175.8 -86.8L-196.0 -74.2L-216.2 -61.5L-236.5 -48.9L-256.7 -36.3L-276.9 -23.7L-297.1 -11.0L-317.3 1.6L-337.5 14.2L-357.7 26.9L-377.9 39.5L-398.1 52.1L-418.3 64.8L-438.5 77.4L-458.7 90.0L-479.0 102.7L-499.2 115.3L-519.4 127.9L-539.6 140.5L-559.8 153.2L-580.0 165.8"/>
+<path class="p" d="M565.2 165.0L361.2 54.2L227.0 163.6L106.1 91.0L0.0 146.6"/>
+<path class="p" d="M-565.2 165.0L-361.2 54.2L-227.0 163.6L-106.1 91.0L0.0 146.6"/>
+<path class="p" d="M170.0 129.3L170.0 135.9L170.0 142.5L170.0 149.1L170.0 155.6L170.0 162.2L170.0 168.8"/>
+<path class="p" d="M-170.0 129.3L-170.0 135.9L-170.0 142.5L-170.0 149.1L-170.0 155.6L-170.0 162.2L-170.0 168.8"/>
+<path class="p" d="M295.0 108.2L295.0 115.5L295.0 122.7L295.0 130.0L295.0 137.3L295.0 144.6L295.0 151.8"/>
+<path class="p" d="M-295.0 108.2L-295.0 115.5L-295.0 122.7L-295.0 130.0L-295.0 137.3L-295.0 144.6L-295.0 151.8"/>
+<path class="p" d="M465.0 110.6L465.0 117.0L465.0 123.5L465.0 129.9L465.0 136.3L465.0 142.7L465.0 149.1"/>
+<path class="p" d="M-465.0 110.6L-465.0 117.0L-465.0 123.5L-465.0 129.9L-465.0 136.3L-465.0 142.7L-465.0 149.1"/>
+<path class="p" d="M295.0 -12.3L295.0 -0.3L295.0 11.8L295.0 23.8L295.0 35.9L295.0 47.9L295.0 60.0L295.0 72.0L295.0 84.1L295.0 96.1L295.0 108.2"/>
+<path class="p" d="M-295.0 -12.3L-295.0 -0.3L-295.0 11.8L-295.0 23.8L-295.0 35.9L-295.0 47.9L-295.0 60.0L-295.0 72.0L-295.0 84.1L-295.0 96.1L-295.0 108.2"/>
+<path class="p" d="M440.0 78.3L440.0 80.2L440.0 82.1L440.0 83.9L440.0 85.8L440.0 87.7L440.0 89.5L440.0 91.4L440.0 93.3L440.0 95.2L440.0 97.0"/>
+<path class="p" d="M-440.0 78.3L-440.0 80.2L-440.0 82.1L-440.0 83.9L-440.0 85.8L-440.0 87.7L-440.0 89.5L-440.0 91.4L-440.0 93.3L-440.0 95.2L-440.0 97.0"/>
+<path class="p" d="M64.0 -130.0L64.0 -119.8L64.0 -109.6L64.0 -99.4L64.0 -89.2L64.0 -79.0L64.0 -68.8L64.0 -58.5L64.0 -48.3L64.0 -38.1L64.0 -27.9L64.0 -17.7L64.0 -7.5L64.0 2.7L64.0 12.9L64.0 23.1L64.0 33.3L64.0 43.5L64.0 53.8L64.0 64.0L64.0 74.2L64.0 84.4L64.0 94.6L64.0 104.8L64.0 115.0"/>
+<path class="p" d="M-64.0 -130.0L-64.0 -119.8L-64.0 -109.6L-64.0 -99.4L-64.0 -89.2L-64.0 -79.0L-64.0 -68.8L-64.0 -58.5L-64.0 -48.3L-64.0 -38.1L-64.0 -27.9L-64.0 -17.7L-64.0 -7.5L-64.0 2.7L-64.0 12.9L-64.0 23.1L-64.0 33.3L-64.0 43.5L-64.0 53.8L-64.0 64.0L-64.0 74.2L-64.0 84.4L-64.0 94.6L-64.0 104.8L-64.0 115.0"/>
+<path class="p" d="M0.0 32.0L8.0 32.0L16.0 32.0L24.0 32.0L32.0 32.0L40.0 32.0L48.0 32.0L56.0 32.0L64.0 32.0"/>
+<path class="p" d="M0.0 32.0L-8.0 32.0L-16.0 32.0L-24.0 32.0L-32.0 32.0L-40.0 32.0L-48.0 32.0L-56.0 32.0L-64.0 32.0"/>
+<path class="p" d="M0.0 -62.0L8.0 -62.0L16.0 -62.0L24.0 -62.0L32.0 -62.0L40.0 -62.0L48.0 -62.0L56.0 -62.0L64.0 -62.0"/>
+<path class="p" d="M0.0 -62.0L-8.0 -62.0L-16.0 -62.0L-24.0 -62.0L-32.0 -62.0L-40.0 -62.0L-48.0 -62.0L-56.0 -62.0L-64.0 -62.0"/>
+<path class="w" d="M2.0 -173.3L5.3 -172.0L8.5 -170.8L11.8 -169.4L15.0 -168.0L18.3 -166.6L21.5 -165.1L21.5 -136.2L18.3 -137.0L15.0 -137.8L11.8 -138.6L8.5 -139.3L5.2 -140.0L2.0 -140.6L2.0 -173.3"/>
+<path class="w" d="M-2.0 -173.3L-5.3 -172.0L-8.5 -170.8L-11.8 -169.4L-15.0 -168.0L-18.3 -166.6L-21.5 -165.1L-21.5 -136.2L-18.3 -137.0L-15.0 -137.8L-11.8 -138.6L-8.5 -139.3L-5.2 -140.0L-2.0 -140.6L-2.0 -173.3"/>
+<path class="w" d="M25.5 -163.2L29.1 -161.4L32.7 -159.6L36.3 -157.7L39.8 -155.7L43.4 -153.7L47.0 -151.6L47.0 -128.1L43.4 -129.4L39.8 -130.7L36.3 -131.8L32.7 -133.0L29.1 -134.1L25.5 -135.1L25.5 -163.2"/>
+<path class="w" d="M-25.5 -163.2L-29.1 -161.4L-32.7 -159.6L-36.3 -157.7L-39.8 -155.7L-43.4 -153.7L-47.0 -151.6L-47.0 -128.1L-43.4 -129.4L-39.8 -130.7L-36.3 -131.8L-32.7 -133.0L-29.1 -134.1L-25.5 -135.1L-25.5 -163.2"/>
+<path class="p" d="M140.0 29.0L170.0 29.0L170.0 47.0L140.0 47.0L140.0 29.0"/>
+<path class="p" d="M-140.0 29.0L-170.0 29.0L-170.0 47.0L-140.0 47.0L-140.0 29.0"/>
+<path class="p" d="M254.0 -37.0L276.0 -37.0L276.0 -23.0L254.0 -23.0L254.0 -37.0"/>
+<path class="p" d="M-254.0 -37.0L-276.0 -37.0L-276.0 -23.0L-254.0 -23.0L-254.0 -37.0"/>
+<path class="p" d="M18.0 67.0L42.0 67.0L42.0 83.0L18.0 83.0L18.0 67.0"/>
+<path class="p" d="M-18.0 67.0L-42.0 67.0L-42.0 83.0L-18.0 83.0L-18.0 67.0"/>
+<path class="p" d="M82.0 -68.5L88.0 -70.3L94.0 -72.0L100.0 -73.8L106.0 -75.5L112.0 -73.8L118.0 -72.0L124.0 -70.3L130.0 -68.5L136.0 -70.3L142.0 -72.0L148.0 -73.8L154.0 -75.5L160.0 -73.8L166.0 -72.0L172.0 -70.3L178.0 -68.5"/>
+<path class="p" d="M-82.0 -68.5L-88.0 -70.3L-94.0 -72.0L-100.0 -73.8L-106.0 -75.5L-112.0 -73.8L-118.0 -72.0L-124.0 -70.3L-130.0 -68.5L-136.0 -70.3L-142.0 -72.0L-148.0 -73.8L-154.0 -75.5L-160.0 -73.8L-166.0 -72.0L-172.0 -70.3L-178.0 -68.5"/>
+<path class="w" d="M82.0 -65.0L88.0 -66.8L94.0 -68.5L100.0 -70.3L106.0 -72.0L112.0 -70.2L118.0 -68.5L124.0 -66.8L130.0 -65.0L136.0 -66.8L142.0 -68.5L148.0 -70.3L154.0 -72.0L160.0 -70.2L166.0 -68.5L172.0 -66.8L178.0 -65.0"/>
+<path class="w" d="M-82.0 -65.0L-88.0 -66.8L-94.0 -68.5L-100.0 -70.3L-106.0 -72.0L-112.0 -70.2L-118.0 -68.5L-124.0 -66.8L-130.0 -65.0L-136.0 -66.8L-142.0 -68.5L-148.0 -70.3L-154.0 -72.0L-160.0 -70.2L-166.0 -68.5L-172.0 -66.8L-178.0 -65.0"/>
+<path class="p" d="M82.0 -48.0L88.0 -49.7L94.0 -51.5L100.0 -53.3L106.0 -55.0L112.0 -53.2L118.0 -51.5L124.0 -49.7L130.0 -48.0L136.0 -49.7L142.0 -51.5L148.0 -53.3L154.0 -55.0L160.0 -53.2L166.0 -51.5L172.0 -49.7L178.0 -48.0"/>
+<path class="p" d="M-82.0 -48.0L-88.0 -49.7L-94.0 -51.5L-100.0 -53.3L-106.0 -55.0L-112.0 -53.2L-118.0 -51.5L-124.0 -49.7L-130.0 -48.0L-136.0 -49.7L-142.0 -51.5L-148.0 -53.3L-154.0 -55.0L-160.0 -53.2L-166.0 -51.5L-172.0 -49.7L-178.0 -48.0"/>
+<path class="p" d="M82.0 -68.5L82.0 -48.0"/>
+<path class="p" d="M-82.0 -68.5L-82.0 -48.0"/>
+<path class="p" d="M178.0 -68.5L178.0 -48.0"/>
+<path class="p" d="M-178.0 -68.5L-178.0 -48.0"/>
+<path class="w" d="M118.0 88.0L210.0 88.0L210.0 98.0L118.0 98.0L118.0 88.0"/>
+<path class="w" d="M-118.0 88.0L-210.0 88.0L-210.0 98.0L-118.0 98.0L-118.0 88.0"/>
+<path class="p" d="M118.0 98.0L118.0 130.8L125.7 135.4L133.3 140.0L141.0 144.6L148.7 149.2L156.3 153.8L164.0 158.4L171.7 163.0L179.3 167.6L187.0 172.2L194.7 176.8L202.3 181.4L210.0 186.0L210.0 98.0"/>
+<path class="p" d="M-118.0 98.0L-118.0 130.8L-125.7 135.4L-133.3 140.0L-141.0 144.6L-148.7 149.2L-156.3 153.8L-164.0 158.4L-171.7 163.0L-179.3 167.6L-187.0 172.2L-194.7 176.8L-202.3 181.4L-210.0 186.0L-210.0 98.0"/>
+<path class="cl" d="M0 -350.0L0 300.0"/>
+<path class="d" d="M-600.0 355.0L600.0 355.0M-600.0 162.0L-600.0 375.0M600.0 162.0L600.0 375.0M725.0 -225.0L725.0 205.0M30.0 -225.0L745.0 -225.0M250.0 205.0L745.0 205.0"/>
+<path class="t" d="M-612.0 367.0L-588.0 343.0M588.0 367.0L612.0 343.0M713.0 -213.0L737.0 -237.0M713.0 217.0L737.0 193.0"/>
+<text class="tx" x="0" y="398.0" text-anchor="middle">SPAN 172 FT</text>
+<text class="tx" x="745.0" y="8.0">LENGTH 69 FT</text>
+<text class="tx" x="0" y="-366.0" text-anchor="middle">℄</text>
+</svg></div>
+<div id="tags" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="wm" href="#s1" aria-label="Halo Ventures, back to top"><i aria-hidden="true"></i>HALO<b>//</b>VENTURES</a>
+  <p class="ctr" aria-hidden="true"><b id="ctrN">01</b>&nbsp;/&nbsp;07</p>
+</header>
+
+<main id="main">
+  <!-- intro -->
+  <section class="sc sc--hero" id="s1" aria-labelledby="h-s1">
+    <div class="pn hero-pn rv">
+      <p class="lbl">An integrated GTM &amp; development accelerator for startups</p>
+      <h1 class="h1" id="h-s1">Built for those who are <em>built for more.</em></h1>
+      <p class="lead">We help technical founders and mission-driven teams go to market, build their playbook and grow fast in competitive markets.</p>
+      <p class="tri"><span>Find product-market fit</span><span>Win customers</span><span>Scale faster</span></p>
+      <div class="cta">
+        <button type="button" class="hk-pill" data-hk-copy="chris@halovpartners.com" aria-label="Copy email address chris@halovpartners.com">
+          <span class="hk-pt"><span class="hk-a">chris@halovpartners.com</span><span class="hk-b" aria-hidden="true">Copied ✓</span></span>
+          <svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- executive summary -->
+  <section class="xsec" id="xs" aria-labelledby="h-xs">
+    <div class="pn rv">
+      <h2 class="lbl" id="h-xs">Executive summary</h2>
+      <ol class="xbox">
+        <li><span class="n" aria-hidden="true">1</span><span>It's not what you build. It's what they buy. Most startups that fail never find product-market fit.</span></li>
+        <li><span class="n" aria-hidden="true">2</span><span>Halo embeds a senior go-to-market leader inside your company to prove what sells, then builds the playbook with your team.</span></li>
+        <li><span class="n" aria-hidden="true">3</span><span>Your team keeps the system. You hire to proven needs, not guesses.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 01 problem -->
+  <section class="sc" id="s2" aria-labelledby="h-s2">
+    <div class="pn rv">
+      <p class="lbl"><span class="no">01</span><span>— The problem</span></p>
+      <h2 class="h2" id="h-s2">It's not what you build. <em>It's what they buy.</em></h2>
+      <p class="deck">Most startups that fail never prove who buys, or why.</p>
+      <figure class="ex" aria-labelledby="ex1">
+        <p class="exn">Exhibit 1</p>
+        <p class="ext" id="ex1">Three signals of an unproven sales system</p>
+        <ol class="facts">
+          <li><span class="bal" aria-hidden="true">A</span><b>43%</b><p>of failed startups never found product-market fit.<sup>1</sup></p></li>
+          <li><span class="bal" aria-hidden="true">B</span><b>84%</b><p>of sales reps missed their target last year.<sup>2</sup></p></li>
+          <li><span class="bal" aria-hidden="true">C</span><b>19<small>months</small></b><p>How long the average VP of Sales lasts.<sup>3</sup></p></li>
+        </ol>
+        <figcaption class="exsrc">Source: VCBacked, The Startup Graveyard, 2026<sup>1</sup>; Salesforce, State of Sales<sup>2</sup>; Gong<sup>3</sup>. Markers A–C match the section drawing.</figcaption>
+      </figure>
+      <p class="kick">Price is what you pay today. <em>Cost is what you pay tomorrow.</em></p>
+    </div>
+  </section>
+
+  <!-- 02 what we do -->
+  <section class="sc" id="s3" aria-labelledby="h-s3">
+    <div class="pn rv">
+      <p class="lbl"><span class="no">02</span><span>— What we do</span></p>
+      <h2 class="h2" id="h-s3">We don't advise. <em>We take the field.</em></h2>
+      <p class="deck">Halo works inside your company, next to your founder and your team. We do the work, build the system, then hand it to your team.</p>
+      <figure class="ex" aria-labelledby="ex2">
+        <p class="exn">Exhibit 2</p>
+        <p class="ext" id="ex2">Three outcomes</p>
+        <ol class="rows">
+          <li><span class="n" aria-hidden="true">01</span><span><b>Find product-market fit.</b>Know who buys, why they buy and what they pay.</span></li>
+          <li><span class="n" aria-hidden="true">02</span><span><b>Win customers.</b>Sharpen the message and close the first repeatable deals.</span></li>
+          <li><span class="n" aria-hidden="true">03</span><span><b>Scale faster.</b>Turn what works into a playbook your team can run.</span></li>
+        </ol>
+        <figcaption class="exsrc">Note: Exploded view. Callouts 01–03 in the drawing match this list.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 03 how it works -->
+  <section class="sc sc--how" id="s4" aria-labelledby="h-s4">
+    <div class="how-in">
+      <div class="pn rv">
+        <p class="lbl"><span class="no">03</span><span>— How it works</span></p>
+        <h2 class="h2" id="h-s4">Four moves. <em>One playbook.</em></h2>
+        <p class="deck">Early wins become a system your team can repeat.</p>
+        <figure class="ex" aria-labelledby="ex3">
+          <p class="exn">Exhibit 3</p>
+          <p class="ext" id="ex3">Four moves, in sequence</p>
+          <ol class="steps" id="steps">
+            <li><button type="button" class="sb" data-step="0" aria-pressed="true"><span class="n">01</span><span><span class="sn">Embed</span><span class="sd">We join you and your team.</span></span></button></li>
+            <li><button type="button" class="sb" data-step="1" aria-pressed="false"><span class="n">02</span><span><span class="sn">Prove</span><span class="sd">We find what sells and close the first repeatable deals.</span></span></button></li>
+            <li><button type="button" class="sb" data-step="2" aria-pressed="false"><span class="n">03</span><span><span class="sn">Build</span><span class="sd">We write the playbook, set up the pipeline and coach the team.</span></span></button></li>
+            <li><button type="button" class="sb" data-step="3" aria-pressed="false"><span class="n">04</span><span><span class="sn">Scale</span><span class="sd">We hire to proven needs. Your team runs the system.</span></span></button></li>
+          </ol>
+          <figcaption class="exsrc">Note: Route view. Stations 01–04 in the drawing match these steps.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 why halo -->
+  <section class="sc" id="s5" aria-labelledby="h-s5">
+    <div class="pn rv">
+      <p class="lbl"><span class="no">04</span><span>— What you get</span></p>
+      <h2 class="h2" id="h-s5">You get the system. <em>Not a slide deck.</em></h2>
+      <p class="deck">Every engagement ends with working assets your team owns and runs.</p>
+      <figure class="spec" aria-labelledby="spec-t">
+        <figcaption class="sp-bar"><span id="spec-t">HALO / DELIVERABLES</span><span>4 AREAS · 16 ASSETS</span></figcaption>
+        <ol class="sp-body">
+<li class="sp-h"><span class="ln" aria-hidden="true">01</span><span class="sp-k"><i aria-hidden="true"></i>01 · Market validation &amp; GTM strategy</span></li>
+<li><span class="ln" aria-hidden="true">02</span><span class="sp-v">Ideal customer profile</span></li>
+<li><span class="ln" aria-hidden="true">03</span><span class="sp-v">Buyer map</span></li>
+<li><span class="ln" aria-hidden="true">04</span><span class="sp-v">Positioning and sales message</span></li>
+<li><span class="ln" aria-hidden="true">05</span><span class="sp-v">Pricing and offer tests</span></li>
+<li class="sp-h"><span class="ln" aria-hidden="true">06</span><span class="sp-k"><i aria-hidden="true"></i>02 · Sales infrastructure &amp; process</span></li>
+<li><span class="ln" aria-hidden="true">07</span><span class="sp-v">Sales playbook and talk tracks</span></li>
+<li><span class="ln" aria-hidden="true">08</span><span class="sp-v">Pipeline stages and CRM setup</span></li>
+<li><span class="ln" aria-hidden="true">09</span><span class="sp-v">Weekly metrics dashboard</span></li>
+<li><span class="ln" aria-hidden="true">10</span><span class="sp-v">Forecast cadence</span></li>
+<li class="sp-h"><span class="ln" aria-hidden="true">11</span><span class="sp-k"><i aria-hidden="true"></i>03 · Talent &amp; team development</span></li>
+<li><span class="ln" aria-hidden="true">12</span><span class="sp-v">Hiring plan and role scorecards</span></li>
+<li><span class="ln" aria-hidden="true">13</span><span class="sp-v">Interview process</span></li>
+<li><span class="ln" aria-hidden="true">14</span><span class="sp-v">Onboarding program</span></li>
+<li><span class="ln" aria-hidden="true">15</span><span class="sp-v">Weekly coaching</span></li>
+<li class="sp-h"><span class="ln" aria-hidden="true">16</span><span class="sp-k"><i aria-hidden="true"></i>04 · Revenue execution &amp; scale</span></li>
+<li><span class="ln" aria-hidden="true">17</span><span class="sp-v">First repeatable closed deals</span></li>
+<li><span class="ln" aria-hidden="true">18</span><span class="sp-v">Outbound and referral engine</span></li>
+<li><span class="ln" aria-hidden="true">19</span><span class="sp-v">Account expansion plan</span></li>
+<li><span class="ln" aria-hidden="true">20</span><span class="sp-v">Handoff to your team</span></li>
+        </ol>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 05 track record -->
+  <section class="sc" id="s6" aria-labelledby="h-s6">
+    <div class="pn rv">
+      <p class="lbl"><span class="no">05</span><span>— Track record</span></p>
+      <h2 class="h2" id="h-s6">We have built this <em>before.</em></h2>
+      <p class="deck">Nearly ten years building sales teams inside early-stage companies.</p>
+      <figure class="ex" aria-labelledby="ex4">
+        <p class="exn">Exhibit 4</p>
+        <p class="ext" id="ex4">Selected results</p>
+        <table class="tbl">
+          <colgroup><col class="c1"><col class="c2"><col class="c3"><col></colgroup>
+          <thead><tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Period</th></tr></thead>
+          <tbody>
+            <tr><td>Revenue</td><td class="b">$50K</td><td class="v">$7M+</td><td class="p">9 months</td></tr>
+            <tr><td>Sales reps</td><td class="b">20</td><td class="v">100+</td><td class="p">at 150% of target</td></tr>
+            <tr><td>National rank</td><td class="b">#195</td><td class="v">#8</td><td class="p">12 months</td></tr>
+            <tr><td>Capital raised by founders we advised</td><td class="b"><span class="na" aria-label="not applicable">—</span></td><td class="v">$140M+</td><td class="p"><span class="na" aria-label="not applicable">—</span></td></tr>
+          </tbody>
+        </table>
+        <figcaption class="exsrc">Note: — = not applicable.</figcaption>
+      </figure>
+      <p class="small">We work with about 10 companies at a time.</p>
+    </div>
+  </section>
+
+  <!-- close -->
+  <section class="sc sc--close" id="s7" aria-labelledby="h-s7">
+    <div class="closewrap">
+      <div class="hk-closegrid">
+        <div class="hk-ca rv">
+          <h2 class="hk-cl1" id="h-s7"><span>Change is inevitable.</span> <em>Growth is optional.</em></h2>
+          <p class="hk-ready">Ready to grow?</p>
+          <button type="button" class="hk-pill" data-hk-copy="chris@halovpartners.com" aria-label="Copy email address chris@halovpartners.com">
+            <span class="hk-pt"><span class="hk-a">chris@halovpartners.com</span><span class="hk-b" aria-hidden="true">Copied ✓</span></span>
+            <svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg>
+          </button>
+        </div>
+        <div class="hk-cb">
+          <ol class="hk-csteps">
+            <li><span class="hk-n">1</span><span>Copy the email.</span></li>
+            <li><span class="hk-n">2</span><span>Send two lines about your goal.</span></li>
+            <li><span class="hk-n">3</span><span>We meet on a short call to see if we fit.</span></li>
+          </ol>
+        </div>
+        <div class="hk-cc">
+<figure class="hk-cube" data-hk-cube aria-label="Money failed startups lost since you opened this page. About $933 a second.">
+  <p class="exn">Exhibit 5</p><p class="hk-cube-lbl"><span>Money failed startups lost since you opened this page</span></p>
+  <p class="hk-cube-val hk-cube-nojs" aria-hidden="true">≈ $933 a second</p>
+  <div class="hk-cube-stage" aria-hidden="true">
+    <canvas></canvas>
+    <div class="hk-cube-fb"><svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><rect x="192.9" y="245.7" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="178.5" y="253.9" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="163.5" y="262.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="148.1" y="271.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="132.0" y="280.3" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="115.5" y="289.8" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="98.3" y="299.6" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="80.4" y="309.8" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="61.9" y="320.3" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="210.9" y="252.0" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="196.6" y="260.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="181.7" y="269.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="166.4" y="278.3" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="150.5" y="287.7" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="134.0" y="297.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="116.9" y="307.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="99.1" y="317.9" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="80.7" y="328.8" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="229.4" y="258.6" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="215.2" y="267.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="200.5" y="276.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="185.2" y="285.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="169.4" y="295.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="153.1" y="305.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="136.1" y="315.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="118.4" y="326.3" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="100.1" y="337.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="248.3" y="265.3" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="234.3" y="274.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="219.7" y="283.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="204.6" y="293.0" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="188.9" y="302.9" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="172.7" y="313.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="155.8" y="323.9" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="138.3" y="335.0" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="120.1" y="346.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="267.8" y="272.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="253.9" y="281.3" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="239.5" y="290.8" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="224.5" y="300.6" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="209.0" y="310.8" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="192.9" y="321.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="176.2" y="332.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="158.8" y="343.9" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="140.7" y="355.8" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="287.8" y="279.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="274.0" y="288.6" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="259.8" y="298.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="245.0" y="308.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="229.7" y="319.0" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="213.7" y="329.9" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="197.1" y="341.3" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="179.9" y="353.1" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="162.0" y="365.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="308.4" y="286.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="294.8" y="296.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="280.7" y="306.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="266.1" y="316.6" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="250.9" y="327.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="235.2" y="338.7" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="218.8" y="350.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="201.7" y="362.6" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="183.9" y="375.2" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="329.5" y="294.0" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="316.1" y="303.9" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="302.2" y="314.3" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="287.8" y="325.0" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="272.9" y="336.1" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="257.3" y="347.7" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="241.1" y="359.8" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="224.2" y="372.4" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="206.6" y="385.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="351.2" y="301.7" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="338.1" y="311.9" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="324.4" y="322.6" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="310.2" y="333.6" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="295.5" y="345.1" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="280.1" y="357.1" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="264.1" y="369.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="247.4" y="382.5" width="2.0" height="2.0" fill="#2C2C2C"/><rect x="230.0" y="396.0" width="2.0" height="2.0" fill="#2C2C2C"/><path d="M192.7 241.7L364.4 301.9" fill="none" stroke="#484848" stroke-width="1" stroke-dasharray="3 4"/><path d="M192.7 241.7L191.1 50.6" fill="none" stroke="#484848" stroke-width="1" stroke-dasharray="3 4"/><path d="M192.7 241.7L49.9 322.1" fill="none" stroke="#484848" stroke-width="1" stroke-dasharray="3 4"/><path d="M194.4 230.6L174.4 241.6L245.8 267.0L265.0 254.8Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M220.4 239.5L200.7 250.9L217.8 257.0L237.3 245.3Z" fill="#D1D1D1"/><path d="M264.6 269.7L265.0 254.8L245.8 267.0L245.5 282.1Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M174.7 256.2L245.5 282.1L245.8 267.0L174.4 241.6Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M200.7 265.7L200.7 250.9L217.8 257.0L217.7 271.9Z" fill="#D1D1D1"/><path d="M176.5 251.9L200.7 260.7" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M217.8 266.9L243.5 276.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M176.4 247.3L200.7 256.0" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M217.8 262.1L243.6 271.4" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M194.2 213.9L174.1 224.6L246.1 249.3L265.5 237.4Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M220.5 222.6L200.6 233.7L217.9 239.6L237.6 228.2Z" fill="#8E8E8E"/><path d="M265.1 252.5L265.5 237.4L246.1 249.3L245.8 264.7Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M174.4 239.4L245.8 264.7L246.1 249.3L174.1 224.6Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M200.7 248.7L200.6 233.7L217.9 239.6L217.8 254.8Z" fill="#8E8E8E"/><path d="M176.2 235.1L200.6 243.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M217.8 249.6L243.8 258.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M176.1 230.3L200.6 238.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M217.8 244.8L243.9 253.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M194.1 196.9L173.8 207.3L246.4 231.3L266.0 219.8Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M220.6 205.3L200.5 216.1L217.9 221.9L237.8 210.8Z" fill="#D1D1D1"/><path d="M265.5 235.1L266.0 219.8L246.4 231.3L246.1 246.9Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M174.1 222.4L246.1 246.9L246.4 231.3L173.8 207.3Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M200.6 231.4L200.5 216.1L217.9 221.9L217.9 237.3Z" fill="#D1D1D1"/><path d="M175.9 217.9L200.6 226.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M217.9 232.1L244.1 240.9" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M175.8 213.1L200.5 221.3" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M217.9 227.1L244.2 235.9" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M194.0 179.7L173.5 189.7L246.7 213.0L266.4 201.8Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M220.7 187.8L200.4 198.3L218.0 203.8L238.0 193.1Z" fill="#8E8E8E"/><path d="M266.0 217.4L266.4 201.8L246.7 213.0L246.4 228.9Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M173.8 205.0L246.4 228.9L246.7 213.0L173.5 189.7Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M200.5 213.8L200.4 198.3L218.0 203.8L217.9 219.5Z" fill="#8E8E8E"/><path d="M175.6 200.5L200.5 208.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M217.9 214.2L244.4 222.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M175.6 195.6L200.5 203.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M218.0 209.2L244.5 217.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M170.7 243.6L149.7 255.3L221.8 282.1L242.2 269.2Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M197.0 253.0L176.2 265.1L193.5 271.6L214.2 259.2Z" fill="#D1D1D1"/><path d="M242.0 284.4L242.2 269.2L221.8 282.1L221.7 297.6Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M150.1 270.1L221.7 297.6L221.8 282.1L149.7 255.3Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M176.4 280.2L176.2 265.1L193.5 271.6L193.6 286.8Z" fill="#D1D1D1"/><path d="M151.8 265.8L176.3 275.1" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M193.6 281.7L219.6 291.5" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M151.7 261.1L176.3 270.3" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M193.5 276.8L219.7 286.6" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M193.9 162.2L173.2 171.9L247.0 194.3L266.9 183.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M220.7 170.0L200.4 180.1L218.1 185.5L238.3 175.2Z" fill="#8E8E8E"/><path d="M266.5 199.4L266.9 183.5L247.0 194.3L246.7 210.5Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M173.5 187.4L246.7 210.5L247.0 194.3L173.2 171.9Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M200.4 195.9L200.4 180.1L218.1 185.5L218.0 201.5Z" fill="#8E8E8E"/><path d="M175.4 182.8L200.4 190.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M218.0 196.1L244.7 204.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M175.3 177.8L200.4 185.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M218.0 191.0L244.8 199.2" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M170.4 226.6L149.2 237.9L221.9 264.0L242.5 251.4Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M196.9 235.7L175.9 247.5L193.3 253.7L214.2 241.7Z" fill="#8E8E8E"/><path d="M242.2 266.9L242.5 251.4L221.9 264.0L221.8 279.7Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M149.6 253.0L221.8 279.7L221.9 264.0L149.2 237.9Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M176.1 262.8L175.9 247.5L193.3 253.7L193.5 269.3Z" fill="#8E8E8E"/><path d="M151.4 248.6L176.1 257.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M193.4 264.0L219.7 273.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M151.2 243.7L176.0 252.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M193.4 259.0L219.7 268.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M170.1 209.2L148.7 220.2L222.0 245.6L242.8 233.4Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M196.8 218.1L175.6 229.5L193.2 235.6L214.3 223.9Z" fill="#8E8E8E"/><path d="M242.5 249.1L242.8 233.4L222.0 245.6L221.9 261.6Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M149.1 235.6L221.9 261.6L222.0 245.6L148.7 220.2Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M175.9 245.2L175.6 229.5L193.2 235.6L193.3 251.4Z" fill="#8E8E8E"/><path d="M150.9 231.1L175.8 239.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M193.3 246.1L219.8 255.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M150.7 226.1L175.7 234.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M193.2 241.0L219.8 250.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M169.8 191.6L148.1 202.2L222.1 226.9L243.0 215.0Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M196.7 200.2L175.3 211.3L193.1 217.2L214.3 205.8Z" fill="#D1D1D1"/><path d="M242.8 231.0L243.0 215.0L222.1 226.9L222.0 243.2Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M148.6 217.9L222.0 243.2L222.1 226.9L148.1 202.2Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M175.6 227.2L175.3 211.3L193.1 217.2L193.2 233.2Z" fill="#D1D1D1"/><path d="M150.4 213.3L175.5 221.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M193.1 227.8L219.9 236.9" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M150.2 208.2L175.4 216.7" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M193.1 222.7L219.9 231.7" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M270.2 256.6L251.0 268.8L330.8 297.2L349.1 283.5Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M299.2 266.5L280.4 279.2L299.5 286.0L318.1 273.0Z" fill="#D1D1D1"/><path d="M348.0 299.0L349.1 283.5L330.8 297.2L329.9 313.0Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M250.7 284.0L329.9 313.0L330.8 297.2L251.0 268.8Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M279.8 294.7L280.4 279.2L299.5 286.0L298.8 301.6Z" fill="#D1D1D1"/><path d="M252.9 279.6L280.0 289.4" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M299.1 296.3L327.9 306.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M253.0 274.8L280.2 284.5" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M299.3 291.4L328.2 301.7" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M145.8 257.4L123.5 269.7L196.4 298.2L218.0 284.5Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M172.3 267.4L150.2 280.2L167.7 287.0L189.7 273.9Z" fill="#D1D1D1"/><path d="M218.0 300.0L218.0 284.5L196.4 298.2L196.5 314.0Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M124.1 284.9L196.5 314.0L196.4 298.2L123.5 269.7Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M150.7 295.6L150.2 280.2L167.7 287.0L168.0 302.6Z" fill="#D1D1D1"/><path d="M125.8 280.5L150.5 290.4" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M167.9 297.3L194.3 307.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M125.6 275.7L150.4 285.4" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M167.8 292.3L194.2 302.7" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M270.7 239.1L251.4 251.1L331.9 278.7L350.3 265.4Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M300.0 248.8L281.0 261.2L300.3 267.8L319.1 255.1Z" fill="#8E8E8E"/><path d="M349.2 281.2L350.3 265.4L331.9 278.7L331.0 294.8Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M251.1 266.5L331.0 294.8L331.9 278.7L251.4 251.1Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M280.4 276.9L281.0 261.2L300.3 267.8L299.6 283.7Z" fill="#8E8E8E"/><path d="M253.3 262.0L280.6 271.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M299.8 278.3L329.0 288.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M253.4 257.1L280.8 266.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M300.0 273.3L329.2 283.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M145.2 240.0L122.7 251.9L196.2 279.6L218.1 266.3Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M172.0 249.7L149.7 262.1L167.3 268.8L189.5 256.0Z" fill="#8E8E8E"/><path d="M218.0 282.1L218.1 266.3L196.2 279.6L196.3 295.8Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M123.4 267.4L196.3 295.8L196.2 279.6L122.7 251.9Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M150.2 277.8L149.7 262.1L167.3 268.8L167.7 284.6Z" fill="#8E8E8E"/><path d="M125.1 262.9L150.0 272.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M167.6 279.3L194.1 289.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M124.9 258.0L149.9 267.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M167.5 274.2L194.1 284.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M271.2 221.4L251.7 233.0L333.0 259.9L351.5 247.0Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M300.7 230.8L281.6 242.9L301.1 249.3L320.0 236.9Z" fill="#8E8E8E"/><path d="M350.5 263.0L351.5 247.0L333.0 259.9L332.1 276.3Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M251.4 248.7L332.1 276.3L333.0 259.9L251.7 233.0Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M281.0 258.8L281.6 242.9L301.1 249.3L300.4 265.4Z" fill="#8E8E8E"/><path d="M253.7 244.1L281.2 253.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M300.6 260.0L330.0 269.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M253.8 239.1L281.4 248.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M300.8 254.8L330.3 264.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M144.7 222.2L122.0 233.9L196.1 260.8L218.2 247.8Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M171.7 231.6L149.2 243.8L167.0 250.2L189.3 237.8Z" fill="#D1D1D1"/><path d="M218.1 263.9L218.2 247.8L196.1 260.8L196.2 277.2Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M122.6 249.6L196.2 277.2L196.1 260.8L122.0 233.9Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M149.7 259.7L149.2 243.8L167.0 250.2L167.3 266.4Z" fill="#D1D1D1"/><path d="M124.4 245.0L149.5 254.3" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M167.2 260.9L194.0 270.9" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M124.2 240.0L149.4 249.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M167.1 255.7L194.0 265.6" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M271.8 203.4L252.1 214.7L334.2 240.7L352.8 228.2Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M301.5 212.5L282.2 224.2L301.9 230.5L321.0 218.5Z" fill="#D1D1D1"/><path d="M351.7 244.5L352.8 228.2L334.2 240.7L333.2 257.4Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M251.8 230.7L333.2 257.4L334.2 240.7L252.1 214.7Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M281.7 240.5L282.2 224.2L301.9 230.5L301.2 246.9Z" fill="#D1D1D1"/><path d="M254.0 225.9L281.8 235.0" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M301.4 241.3L331.1 251.0" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M254.1 220.8L282.0 229.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M301.6 236.1L331.4 245.6" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M144.1 204.2L121.2 215.5L196.0 241.6L218.2 229.0Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M171.4 213.3L148.7 225.1L166.6 231.3L189.1 219.3Z" fill="#8E8E8E"/><path d="M218.2 245.4L218.2 229.0L196.0 241.6L196.1 258.3Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M121.9 231.5L196.1 258.3L196.0 241.6L121.2 215.5Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M149.1 241.3L148.7 225.1L166.6 231.3L166.9 247.8Z" fill="#8E8E8E"/><path d="M123.6 226.8L149.0 235.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M166.8 242.2L193.9 251.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M123.4 221.6L148.8 230.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M166.7 237.0L193.8 246.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M247.5 271.1L227.1 284.1L308.1 314.2L327.5 299.7Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M276.9 281.6L256.8 295.1L276.3 302.3L296.0 288.5Z" fill="#8E8E8E"/><path d="M326.6 315.6L327.5 299.7L308.1 314.2L307.3 330.4Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M227.0 299.6L307.3 330.4L308.1 314.2L227.1 284.1Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M256.5 310.9L256.8 295.1L276.3 302.3L275.7 318.3Z" fill="#8E8E8E"/><path d="M229.2 295.2L256.6 305.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M275.9 312.9L305.2 324.0" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M229.2 290.2L256.7 300.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M276.1 307.8L305.4 318.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M119.3 272.0L95.7 285.0L169.3 315.2L192.3 300.7Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M146.2 282.5L122.7 296.1L140.4 303.4L163.7 289.4Z" fill="#8E8E8E"/><path d="M192.5 316.6L192.3 300.7L169.3 315.2L169.6 331.4Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M96.6 300.6L169.6 331.4L169.3 315.2L95.7 285.0Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M123.4 311.9L122.7 296.1L140.4 303.4L140.9 319.3Z" fill="#8E8E8E"/><path d="M98.2 296.1L123.2 306.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M140.7 313.9L167.4 325.0" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M97.9 291.1L122.9 301.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M140.5 308.8L167.3 319.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M272.3 185.1L252.5 196.0L335.3 221.2L354.1 209.1Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M302.3 193.9L282.8 205.2L302.7 211.3L321.9 199.7Z" fill="#8E8E8E"/><path d="M353.0 225.7L354.1 209.1L335.3 221.2L334.3 238.2Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M252.1 212.3L334.3 238.2L335.3 221.2L252.5 196.0Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M282.3 221.8L282.8 205.2L302.7 211.3L302.0 228.0Z" fill="#8E8E8E"/><path d="M254.4 207.4L282.5 216.2" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M302.2 222.3L332.2 231.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M254.5 202.2L282.7 210.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M302.5 217.0L332.5 226.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M247.8 253.3L227.3 265.9L309.0 295.3L328.5 281.1Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M277.4 263.5L257.3 276.7L276.9 283.7L296.8 270.2Z" fill="#D1D1D1"/><path d="M327.6 297.3L328.5 281.1L309.0 295.3L308.2 311.7Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M227.1 281.7L308.2 311.7L309.0 295.3L227.3 265.9Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M256.9 292.7L257.3 276.7L276.9 283.7L276.3 299.9Z" fill="#D1D1D1"/><path d="M229.3 277.2L257.0 287.3" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M276.5 294.5L306.1 305.3" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M229.4 272.1L257.1 282.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M276.7 289.3L306.3 300.0" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M118.6 254.1L94.7 266.8L168.9 296.3L192.2 282.1Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M145.6 264.4L121.9 277.6L139.7 284.7L163.3 271.1Z" fill="#8E8E8E"/><path d="M192.3 298.3L192.2 282.1L168.9 296.3L169.3 312.8Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M95.6 282.7L169.3 312.8L168.9 296.3L94.7 266.8Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M122.6 293.7L121.9 277.6L139.7 284.7L140.3 300.9Z" fill="#8E8E8E"/><path d="M97.2 278.1L122.4 288.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M140.1 295.4L167.0 306.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M97.0 273.0L122.2 283.1" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M139.9 290.3L166.9 301.1" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M248.1 235.2L227.4 247.5L309.9 276.0L329.6 262.3Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M278.0 245.1L257.7 257.9L277.5 264.8L297.6 251.6Z" fill="#8E8E8E"/><path d="M328.7 278.7L329.6 262.3L309.9 276.0L309.1 292.8Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M227.3 263.5L309.1 292.8L309.9 276.0L227.4 247.5Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M257.3 274.3L257.7 257.9L277.5 264.8L276.9 281.3Z" fill="#8E8E8E"/><path d="M229.5 258.9L257.4 268.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M277.1 275.7L307.0 286.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M229.5 253.7L257.5 263.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M277.3 270.4L307.2 280.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M117.8 236.0L93.7 248.4L168.5 277.0L192.0 263.2Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M145.0 246.0L121.1 258.9L139.1 265.7L162.8 252.5Z" fill="#D1D1D1"/><path d="M192.2 279.7L192.0 263.2L168.5 277.0L168.9 293.8Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M94.6 264.4L168.9 293.8L168.5 277.0L93.7 248.4Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M121.8 275.2L121.1 258.9L139.1 265.7L139.7 282.3Z" fill="#D1D1D1"/><path d="M96.2 259.8L121.6 269.7" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M139.5 276.7L166.6 287.3" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M96.0 254.6L121.4 264.4" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M139.3 271.4L166.5 281.9" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M248.4 216.7L227.6 228.7L310.9 256.4L330.7 243.0Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M278.6 226.4L258.1 238.8L278.1 245.5L298.4 232.7Z" fill="#D1D1D1"/><path d="M329.7 259.8L330.7 243.0L310.9 256.4L310.0 273.5Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M227.4 245.0L310.0 273.5L310.9 256.4L227.6 228.7Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M257.7 255.5L258.1 238.8L278.1 245.5L277.5 262.3Z" fill="#D1D1D1"/><path d="M229.7 240.2L257.9 249.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M277.7 256.6L307.9 266.9" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M229.7 235.0L258.0 244.5" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M277.9 251.2L308.1 261.4" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M117.0 217.6L92.7 229.5L168.2 257.3L191.9 243.9Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M144.5 227.2L120.3 239.7L138.4 246.4L162.4 233.6Z" fill="#8E8E8E"/><path d="M192.0 260.7L191.9 243.9L168.2 257.3L168.5 274.5Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M93.6 245.9L168.5 274.5L168.2 257.3L92.7 229.5Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M121.0 256.4L120.3 239.7L138.4 246.4L139.0 263.2Z" fill="#8E8E8E"/><path d="M95.2 241.1L120.8 250.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M138.8 257.5L166.2 267.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M94.9 235.9L120.6 245.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M138.6 252.2L166.0 262.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M223.4 286.5L201.7 300.3L283.8 332.3L304.5 316.9Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M253.1 297.6L231.8 312.0L251.5 319.7L272.6 304.9Z" fill="#8E8E8E"/><path d="M303.8 333.1L304.5 316.9L283.8 332.3L283.2 348.8Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M201.8 316.1L283.2 348.8L283.8 332.3L201.7 300.3Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M231.7 328.1L231.8 312.0L251.5 319.7L251.2 336.0Z" fill="#8E8E8E"/><path d="M203.9 311.6L231.7 322.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M251.3 330.5L281.0 342.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M203.9 306.5L231.8 317.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M251.4 325.3L281.2 337.0" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M91.3 287.4L66.2 301.3L140.5 333.4L165.0 317.9Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M118.4 298.6L93.5 313.0L111.3 320.8L136.1 305.9Z" fill="#8E8E8E"/><path d="M165.4 334.2L165.0 317.9L140.5 333.4L141.1 350.0Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M67.3 317.2L141.1 350.0L140.5 333.4L66.2 301.3Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M94.4 329.2L93.5 313.0L111.3 320.8L112.1 337.1Z" fill="#8E8E8E"/><path d="M68.9 312.6L94.1 323.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M111.8 331.6L138.7 343.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M68.6 307.5L93.8 318.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M111.5 326.3L138.5 338.1" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M248.8 198.0L227.7 209.5L311.8 236.4L331.8 223.4Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M279.2 207.3L258.5 219.4L278.7 225.8L299.2 213.4Z" fill="#8E8E8E"/><path d="M330.8 240.5L331.8 223.4L311.8 236.4L311.0 253.8Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M227.6 226.2L311.0 253.8L311.8 236.4L227.7 209.5Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M258.2 236.3L258.5 219.4L278.7 225.8L278.2 242.9Z" fill="#8E8E8E"/><path d="M229.8 221.3L258.3 230.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M278.3 237.1L308.8 247.1" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M229.9 215.9L258.4 225.2" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M278.5 231.7L309.1 241.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M116.2 198.8L91.6 210.4L167.8 237.3L191.7 224.3Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M143.9 208.2L119.5 220.3L137.8 226.7L162.0 214.3Z" fill="#D1D1D1"/><path d="M191.8 241.4L191.7 224.3L167.8 237.3L168.1 254.8Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M92.5 227.1L168.1 254.8L167.8 237.3L91.6 210.4Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M120.2 237.2L119.5 220.3L137.8 226.7L138.4 243.9Z" fill="#D1D1D1"/><path d="M94.2 222.1L120.0 231.5" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M138.2 238.1L165.8 248.0" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M93.9 216.8L119.8 226.0" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M138.0 232.6L165.6 242.5" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M223.5 268.3L201.7 281.7L284.6 312.9L305.4 297.9Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M253.5 279.1L232.0 293.1L251.9 300.6L273.2 286.2Z" fill="#D1D1D1"/><path d="M304.6 314.4L305.4 297.9L284.6 312.9L283.9 329.8Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M201.7 297.9L283.9 329.8L284.6 312.9L201.7 281.7Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M231.9 309.6L232.0 293.1L251.9 300.6L251.6 317.2Z" fill="#D1D1D1"/><path d="M203.9 293.2L231.9 304.0" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M251.7 311.6L281.7 323.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M203.9 288.1L232.0 298.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M251.8 306.3L281.9 317.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M90.3 269.2L64.9 282.7L139.8 314.0L164.6 298.9Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M117.6 280.1L92.4 294.2L110.3 301.7L135.4 287.2Z" fill="#D1D1D1"/><path d="M165.0 315.5L164.6 298.9L139.8 314.0L140.4 330.9Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M66.1 298.9L140.4 330.9L139.8 314.0L64.9 282.7Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M93.3 310.6L92.4 294.2L110.3 301.7L111.1 318.3Z" fill="#D1D1D1"/><path d="M67.7 294.2L93.0 305.0" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M110.9 312.7L138.0 324.3" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M67.3 289.0L92.7 299.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M110.6 307.4L137.8 318.9" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M223.6 249.7L201.6 262.8L285.3 293.2L306.3 278.6Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M253.9 260.3L232.2 273.9L252.3 281.2L273.7 267.2Z" fill="#8E8E8E"/><path d="M305.5 295.4L306.3 278.6L285.3 293.2L284.6 310.4Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M201.7 279.3L284.6 310.4L285.3 293.2L201.6 262.8Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M232.1 290.7L232.2 273.9L252.3 281.2L252.0 298.1Z" fill="#8E8E8E"/><path d="M203.8 274.5L232.1 285.0" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M252.1 292.4L282.4 303.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M203.8 269.2L232.2 279.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M252.2 287.0L282.6 298.2" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M89.2 250.6L63.6 263.7L139.2 294.3L164.2 279.6Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M116.7 261.2L91.3 274.9L109.4 282.2L134.7 268.2Z" fill="#8E8E8E"/><path d="M164.6 296.4L164.2 279.6L139.2 294.3L139.7 311.5Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M64.8 280.2L139.7 311.5L139.2 294.3L63.6 263.7Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M92.2 291.7L91.3 274.9L109.4 282.2L110.2 299.2Z" fill="#8E8E8E"/><path d="M66.4 275.5L91.9 286.0" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M109.9 293.4L137.3 304.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M66.0 270.2L91.6 280.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M109.7 288.0L137.1 299.2" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M223.7 230.9L201.5 243.6L286.0 273.1L307.2 258.9Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M254.3 241.1L232.5 254.4L252.7 261.5L274.3 247.8Z" fill="#D1D1D1"/><path d="M306.4 276.0L307.2 258.9L286.0 273.1L285.4 290.6Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M201.6 260.3L285.4 290.6L286.0 273.1L201.5 243.6Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M232.3 271.4L232.5 254.4L252.7 261.5L252.4 278.7Z" fill="#D1D1D1"/><path d="M203.8 255.4L232.3 265.6" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M252.5 272.9L283.1 283.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M203.8 250.1L232.4 260.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M252.6 267.3L283.3 278.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M88.1 231.7L62.3 244.5L138.5 274.1L163.8 259.8Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M115.9 242.0L90.2 255.3L108.4 262.4L134.0 248.8Z" fill="#8E8E8E"/><path d="M164.1 277.0L163.8 259.8L138.5 274.1L139.1 291.7Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M63.4 261.3L139.1 291.7L138.5 274.1L62.3 244.5Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M91.1 272.4L90.2 255.3L108.4 262.4L109.3 279.7Z" fill="#8E8E8E"/><path d="M65.0 256.4L90.8 266.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M109.0 273.9L136.6 284.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M64.7 251.0L90.5 261.2" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M108.7 268.3L136.4 279.2" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M197.7 302.8L174.8 317.5L258.0 351.6L280.0 335.2Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M227.9 314.7L205.2 330.0L225.2 338.2L247.6 322.4Z" fill="#8E8E8E"/><path d="M279.4 351.8L280.0 335.2L258.0 351.6L257.6 368.6Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M175.0 333.7L257.6 368.6L258.0 351.6L174.8 317.5Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M205.3 346.5L205.2 330.0L225.2 338.2L225.1 354.8Z" fill="#8E8E8E"/><path d="M177.1 329.1L205.3 340.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M225.1 349.2L255.3 361.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M177.0 323.9L205.2 335.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M225.1 343.9L255.4 356.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M223.8 211.7L201.4 224.0L286.7 252.6L308.1 238.8Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M254.7 221.6L232.7 234.4L253.1 241.3L274.9 228.1Z" fill="#8E8E8E"/><path d="M307.3 256.3L308.1 238.8L286.7 252.6L286.1 270.4Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M201.5 241.0L286.1 270.4L286.7 252.6L201.4 224.0Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M232.5 251.8L232.7 234.4L253.1 241.3L252.8 258.8Z" fill="#8E8E8E"/><path d="M203.7 236.0L232.5 245.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M252.9 252.9L283.8 263.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M203.7 230.5L232.6 240.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M253.0 247.3L284.0 257.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M87.1 212.5L60.9 224.8L137.8 253.6L163.3 239.7Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M115.0 222.5L89.0 235.4L107.5 242.3L133.3 229.0Z" fill="#D1D1D1"/><path d="M163.7 257.2L163.3 239.7L137.8 253.6L138.4 271.5Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M62.1 241.9L138.4 271.5L137.8 253.6L60.9 224.8Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M90.0 252.7L89.0 235.4L107.5 242.3L108.3 259.8Z" fill="#D1D1D1"/><path d="M63.7 236.9L89.7 246.9" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M108.0 253.9L135.9 264.6" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M63.3 231.4L89.4 241.3" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M107.8 248.3L135.7 258.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M197.6 284.2L174.4 298.5L258.5 331.8L280.7 315.7Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M228.1 295.7L205.2 310.7L225.3 318.7L248.0 303.3Z" fill="#D1D1D1"/><path d="M280.1 332.7L280.7 315.7L258.5 331.8L258.0 349.1Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M174.7 315.0L258.0 349.1L258.5 331.8L174.4 298.5Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M205.2 327.5L205.2 310.7L225.3 318.7L225.2 335.7Z" fill="#D1D1D1"/><path d="M176.8 310.3L205.2 321.8" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M225.2 329.9L255.7 342.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M176.7 305.0L205.2 316.4" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M225.3 324.5L255.8 336.7" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M197.5 265.2L174.1 279.1L258.9 311.6L281.4 295.9Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M228.2 276.5L205.1 291.0L225.5 298.8L248.3 283.8Z" fill="#8E8E8E"/><path d="M280.8 313.2L281.4 295.9L258.9 311.6L258.5 329.2Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M174.4 296.0L258.5 329.2L258.9 311.6L174.1 279.1Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M205.2 308.1L205.1 291.0L225.5 298.8L225.4 316.1Z" fill="#8E8E8E"/><path d="M176.5 291.1L205.2 302.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M225.4 310.3L256.2 322.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M176.4 285.7L205.2 296.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M225.4 304.7L256.3 316.6" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M197.4 245.9L173.8 259.4L259.4 291.0L282.1 275.7Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M228.4 256.8L205.1 271.0L225.6 278.5L248.7 264.0Z" fill="#8E8E8E"/><path d="M281.5 293.3L282.1 275.7L259.4 291.0L259.0 308.9Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M174.1 276.6L259.0 308.9L259.4 291.0L173.8 259.4Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M205.1 288.4L205.1 271.0L225.6 278.5L225.5 296.2Z" fill="#8E8E8E"/><path d="M176.2 271.6L205.1 282.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M225.5 290.2L256.6 301.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M176.1 266.1L205.1 276.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M225.6 284.6L256.8 296.2" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M170.5 320.2L146.0 335.8L230.3 372.3L253.9 354.7Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M201.0 332.8L176.8 349.2L197.1 357.9L221.0 341.1Z" fill="#8E8E8E"/><path d="M253.5 371.7L253.9 354.7L230.3 372.3L230.1 389.7Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M146.5 352.4L230.1 389.7L230.3 372.3L146.0 335.8Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M177.1 366.0L176.8 349.2L197.1 357.9L197.2 375.0Z" fill="#8E8E8E"/><path d="M148.6 347.8L177.0 360.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M197.1 369.2L227.7 382.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M148.4 342.5L176.9 354.9" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M197.1 363.8L227.8 377.2" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M170.1 301.1L145.4 316.4L230.5 352.0L254.3 334.8Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M200.9 313.4L176.5 329.4L196.9 337.9L221.1 321.5Z" fill="#8E8E8E"/><path d="M253.9 352.1L254.3 334.8L230.5 352.0L230.3 369.7Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M145.9 333.3L230.3 369.7L230.5 352.0L145.4 316.4Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M176.8 346.6L176.5 329.4L196.9 337.9L197.0 355.3Z" fill="#8E8E8E"/><path d="M148.0 328.5L176.7 340.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M197.0 349.5L227.9 362.7" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M147.8 323.1L176.6 335.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M197.0 343.9L227.9 357.0" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M169.8 281.7L144.8 296.5L230.7 331.3L254.8 314.5Z" fill="#8E8E8E" stroke="#000000" stroke-width="0.6"/><path d="M200.9 293.7L176.2 309.2L196.8 317.6L221.2 301.6Z" fill="#D1D1D1"/><path d="M254.4 332.2L254.8 314.5L230.7 331.3L230.5 349.3Z" fill="#484848" stroke="#000000" stroke-width="0.6"/><path d="M145.3 313.8L230.5 349.3L230.7 331.3L144.8 296.5Z" fill="#636363" stroke="#000000" stroke-width="0.6"/><path d="M176.5 326.8L176.2 309.2L196.8 317.6L196.9 335.3Z" fill="#D1D1D1"/><path d="M147.4 308.9L176.4 320.9" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M196.9 329.3L228.1 342.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M147.2 303.4L176.3 315.2" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M196.8 323.6L228.1 336.4" fill="none" stroke="#3A3A3A" stroke-width="0.6"/><path d="M169.4 261.9L144.1 276.3L230.9 310.1L255.2 293.8Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.6"/><path d="M200.8 273.6L175.8 288.7L196.7 296.8L221.4 281.2Z" fill="#8E8E8E"/><path d="M254.8 311.8L255.2 293.8L230.9 310.1L230.8 328.5Z" fill="#AEAEAE" stroke="#000000" stroke-width="0.6"/><path d="M144.7 293.9L230.8 328.5L230.9 310.1L144.1 276.3Z" fill="#D1D1D1" stroke="#000000" stroke-width="0.6"/><path d="M176.1 306.6L175.8 288.7L196.7 296.8L196.8 314.9Z" fill="#8E8E8E"/><path d="M146.8 288.9L176.0 300.5" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M196.7 308.8L228.3 321.3" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M146.6 283.2L175.9 294.8" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M196.7 303.0L228.3 315.4" fill="none" stroke="#8E8E8E" stroke-width="0.6"/><path d="M364.4 301.9L380.2 90.8L236.0 162.3L233.2 405.7Z" fill="rgb(255,255,255)" fill-opacity="0.018"/><path d="M191.1 50.6L32.8 104.5L236.0 162.3L380.2 90.8Z" fill="rgb(255,255,255)" fill-opacity="0.018"/><path d="M49.9 322.1L233.2 405.7L236.0 162.3L32.8 104.5Z" fill="rgb(255,255,255)" fill-opacity="0.018"/><path d="M49.9 322.1L233.2 405.7" fill="none" stroke="#AEAEAE" stroke-width="1.25"/><path d="M191.1 50.6L380.2 90.8" fill="none" stroke="#AEAEAE" stroke-width="1.25"/><path d="M32.8 104.5L236.0 162.3" fill="none" stroke="#AEAEAE" stroke-width="1.25"/><path d="M49.9 322.1L32.8 104.5" fill="none" stroke="#AEAEAE" stroke-width="1.25"/><path d="M364.4 301.9L380.2 90.8" fill="none" stroke="#AEAEAE" stroke-width="1.25"/><path d="M233.2 405.7L236.0 162.3" fill="none" stroke="#AEAEAE" stroke-width="1.25"/><path d="M191.1 50.6L32.8 104.5" fill="none" stroke="#AEAEAE" stroke-width="1.25"/><path d="M364.4 301.9L233.2 405.7" fill="none" stroke="#AEAEAE" stroke-width="1.25"/><path d="M380.2 90.8L236.0 162.3" fill="none" stroke="#AEAEAE" stroke-width="1.25"/><rect x="189.5" y="49.0" width="3.2" height="3.2" fill="#AEAEAE"/><rect x="378.6" y="89.2" width="3.2" height="3.2" fill="#AEAEAE"/><rect x="234.4" y="160.7" width="3.2" height="3.2" fill="#AEAEAE"/><rect x="31.2" y="102.9" width="3.2" height="3.2" fill="#AEAEAE"/><rect x="191.1" y="240.1" width="3.2" height="3.2" fill="#AEAEAE"/><rect x="362.8" y="300.3" width="3.2" height="3.2" fill="#AEAEAE"/><rect x="231.6" y="404.1" width="3.2" height="3.2" fill="#AEAEAE"/><rect x="48.3" y="320.5" width="3.2" height="3.2" fill="#AEAEAE"/></svg></div>
+  </div>
+  <p class="hk-cube-key" aria-hidden="true"><span>1 bundle = $1,000</span><span>Full cube = $100,000</span><span>Cubes filled: <b class="hk-cube-n">0</b></span></p>
+  <figcaption class="hk-cube-src">Source: VCBacked, The Startup Graveyard, 2026<sup>1</sup>. ≈ $933 a second: $147.2B raised by 2,293 failed startups, 2021–2025.</figcaption>
+</figure>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="foot-bg">
+<section class="notes" id="sources" aria-labelledby="h-src">
+  <div class="wrap">
+    <h2 class="lbl" id="h-src">Sources and notes</h2>
+    <ol>
+      <li><span>1</span>VCBacked, The Startup Graveyard, 2026. Exhibit 5 counter: ≈ $933 a second, from $147.2B raised by 2,293 failed startups, 2021–2025.</li>
+      <li><span>2</span>Salesforce, State of Sales.</li>
+      <li><span>3</span>Gong.</li>
+    </ol>
+  </div>
+</section>
+<footer>
+  <span class="wm"><i aria-hidden="true"></i>HALO<b>//</b>VENTURES</span>
+  <span class="ft">Portland, Oregon</span>
+  <span class="ft">Brick by brick. Rain or shine.</span>
+</footer>
+</div>
+
+<div class="ro" aria-hidden="true">View<span id="roV">Plan</span></div>
+<p id="hk-live" class="hk-sr" role="status" aria-live="polite"></p>
+
+<script>
+(function(){
+  'use strict';
+  /* HKCube core: draws a glass cube filling with banknote bundles.
+   Backend-agnostic: emits primitives to a "pen" with poly(pts, fill, stroke, lw, dash) and dot(x,y,r,fill). */
+var HKCubeCore = (function(){
+  var CAP = 100, COLS = 2, ROWS = 5, LAYERS = 10;
+  var IN = 0.46; /* inner half-size used for bundles */
+  /* deterministic fill order inside each layer, so the pile looks hand-stacked */
+  var ORDER = [3,6,1,8,0,5,9,2,7,4];
+  function slot(n){
+    var layer = Math.floor(n / (COLS*ROWS)), k = ORDER[n % (COLS*ROWS)];
+    var c = k % COLS, r = Math.floor(k / COLS);
+    var cw = (IN*2) / COLS, rd = (IN*2) / ROWS, lh = (IN*2) / LAYERS;
+    return { x: -IN + cw*(c+.5), z: -IN + rd*(r+.5), y: -0.5 + 0.02 + lh*layer, w: cw - 0.03, d: rd - 0.028, h: lh - 0.012,
+             white: ((n*7 + layer*3) % 5) < 3 };
+  }
+  function makeCam(W, H, yaw, pitch){
+    var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+    var D = 4.2, S = W * 0.56;
+    function tr(p){ /* p = [x,y,z] */
+      var x1 = p[0]*cy - p[2]*sy, z1 = p[0]*sy + p[2]*cy, y1 = p[1];
+      var y2 = y1*cp - z1*sp, z2 = z1*cp + y1*sp;
+      return [x1, y2, z2];
+    }
+    function pr(p){ var t = tr(p), s = D / (D - t[2]); return [W/2 + t[0]*s*S, H*0.5 - t[1]*s*S, t[2]]; }
+    function vis(center, normal){ /* face faces camera? */
+      var c = tr(center), n = tr(normal);
+      return n[0]*(0 - c[0]) + n[1]*(0 - c[1]) + n[2]*(D - c[2]) > 0;
+    }
+    return { pr: pr, tr: tr, vis: vis };
+  }
+  var FACES = [ /* normal, 4 corners as sign triples */
+    {n:[1,0,0],  v:[[1,-1,-1],[1,1,-1],[1,1,1],[1,-1,1]], k:'x'},
+    {n:[-1,0,0], v:[[-1,-1,-1],[-1,-1,1],[-1,1,1],[-1,1,-1]], k:'x'},
+    {n:[0,1,0],  v:[[-1,1,-1],[-1,1,1],[1,1,1],[1,1,-1]], k:'y'},
+    {n:[0,-1,0], v:[[-1,-1,-1],[1,-1,-1],[1,-1,1],[-1,-1,1]], k:'b'},
+    {n:[0,0,1],  v:[[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]], k:'z'},
+    {n:[0,0,-1], v:[[-1,-1,-1],[-1,1,-1],[1,1,-1],[1,-1,-1]], k:'z'}
+  ];
+  /* cube edges: [a, b, faceA, faceB] using corner sign triples */
+  var EDGES = [];
+  (function(){
+    var s = [-1,1];
+    s.forEach(function(y){ s.forEach(function(z){ EDGES.push([[-1,y,z],[1,y,z], y>0?2:3, z>0?4:5]); }); });
+    s.forEach(function(x){ s.forEach(function(z){ EDGES.push([[x,-1,z],[x,1,z], x>0?0:1, z>0?4:5]); }); });
+    s.forEach(function(x){ s.forEach(function(y){ EDGES.push([[x,y,-1],[x,y,1], x>0?0:1, y>0?2:3]); }); });
+  })();
+
+  function draw(pen, o){
+    /* o: {W,H,yaw,pitch,count,drop:{n,k},pal} */
+    var cam = makeCam(o.W, o.H, o.yaw, o.pitch), P = o.pal, half = 0.5;
+    var faceVis = FACES.map(function(f){ return cam.vis([f.n[0]*half,f.n[1]*half,f.n[2]*half], f.n); });
+    function cp(sg){ return cam.pr([sg[0]*half, sg[1]*half, sg[2]*half]); }
+    /* floor dot grid */
+    for (var i = 0; i <= 8; i++) for (var j = 0; j <= 8; j++){
+      var q = cam.pr([-0.46 + i*0.115, -0.5, -0.46 + j*0.115]); pen.dot(q[0], q[1], o.W/420, P.dot);
+    }
+    /* back edges */
+    EDGES.forEach(function(e){ if (!faceVis[e[2]] && !faceVis[e[3]]) pen.poly([cp(e[0]), cp(e[1])], null, P.back, 1, [3,4]); });
+    /* back glass faces: a whisper of tint so the volume reads */
+    
+    /* bundles */
+    var n = Math.max(0, Math.min(CAP, o.count|0)), list = [];
+    for (var b = 0; b < n; b++){
+      var s = slot(b), yOff = 0;
+      if (o.drop && o.drop.n === b){ var k = o.drop.k; yOff = (1 - (1 - Math.pow(1 - k, 3))) * 0.62; }
+      s.y += yOff;
+      s.depth = cam.tr([s.x, s.y + s.h/2, s.z])[2];
+      list.push(s);
+    }
+    list.sort(function(a, b){ return a.depth - b.depth; });
+    list.forEach(function(s){ bundle(pen, cam, s, P); });
+    /* front glass faces + front edges */
+    FACES.forEach(function(f, fi){ if (faceVis[fi]) pen.poly(f.v.map(cp), P.glass, null, 0); });
+    EDGES.forEach(function(e){ if (faceVis[e[2]] || faceVis[e[3]]) pen.poly([cp(e[0]), cp(e[1])], null, P.edge, 1.25); });
+    /* corner ticks on the 4 top corners (instrument feel) */
+    [[-1,1,-1],[1,1,-1],[1,1,1],[-1,1,1],[-1,-1,-1],[1,-1,-1],[1,-1,1],[-1,-1,1]].forEach(function(c){ var p = cp(c); pen.dot(p[0], p[1], o.W/260, P.edge); });
+  }
+  function bundle(pen, cam, s, P){
+    var x0 = s.x - s.w/2, x1 = s.x + s.w/2, y0 = s.y, y1 = s.y + s.h, z0 = s.z - s.d/2, z1 = s.z + s.d/2;
+    var col = s.white ? P.white : P.grey;
+    var faces = [
+      {n:[0,1,0], c:[s.x,y1,s.z], v:[[x0,y1,z0],[x0,y1,z1],[x1,y1,z1],[x1,y1,z0]], f:col.top},
+      {n:[1,0,0], c:[x1,(y0+y1)/2,s.z], v:[[x1,y0,z0],[x1,y1,z0],[x1,y1,z1],[x1,y0,z1]], f:col.end},
+      {n:[-1,0,0],c:[x0,(y0+y1)/2,s.z], v:[[x0,y0,z0],[x0,y0,z1],[x0,y1,z1],[x0,y1,z0]], f:col.end},
+      {n:[0,0,1], c:[s.x,(y0+y1)/2,z1], v:[[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]], f:col.side, long:1},
+      {n:[0,0,-1],c:[s.x,(y0+y1)/2,z0], v:[[x0,y0,z0],[x0,y1,z0],[x1,y1,z0],[x1,y0,z0]], f:col.side, long:1}
+    ];
+    var bw = s.w * 0.12;
+    faces.forEach(function(f){
+      if (!cam.vis(f.c, f.n)) return;
+      pen.poly(f.v.map(cam.pr), f.f, P.outline, 0.6);
+      if (f.n[1] === 1){ /* strap across the top */
+        pen.poly([[s.x-bw,y1,z0],[s.x-bw,y1,z1],[s.x+bw,y1,z1],[s.x+bw,y1,z0]].map(cam.pr), col.strap, null, 0);
+      } else if (f.long){ /* strap down the long side + note edges */
+        var z = f.n[2] > 0 ? z1 : z0;
+        pen.poly([[s.x-bw,y0,z],[s.x-bw,y1,z],[s.x+bw,y1,z],[s.x+bw,y0,z]].map(cam.pr), col.strap, null, 0);
+        [0.34, 0.66].forEach(function(t){
+          var yy = y0 + (y1 - y0)*t;
+          pen.poly([cam.pr([x0+0.012,yy,z]), cam.pr([s.x-bw,yy,z])], null, col.lines, 0.6);
+          pen.poly([cam.pr([s.x+bw,yy,z]), cam.pr([x1-0.012,yy,z])], null, col.lines, 0.6);
+        });
+      }
+    });
+  }
+  var PAL_DARK = {
+    dot:'#2C2C2C', back:'#484848', edge:'#AEAEAE', glass:'rgba(255,255,255,0.018)', glassBack:'rgba(255,255,255,0.0)', outline:'#000000',
+    white:{top:'#FFFFFF', side:'#D1D1D1', end:'#AEAEAE', strap:'#8E8E8E', lines:'#8E8E8E'},
+    grey: {top:'#8E8E8E', side:'#636363', end:'#484848', strap:'#D1D1D1', lines:'#3A3A3A'}
+  };
+  var PAL_LIGHT = {
+    dot:'#D1D1D1', back:'#AEAEAE', edge:'#3A3A3A', glass:'rgba(0,0,0,0.012)', glassBack:'rgba(0,0,0,0.0)', outline:'#3A3A3A',
+    white:{top:'#FFFFFF', side:'#E5E5E5', end:'#C7C7C7', strap:'#8E8E8E', lines:'#AEAEAE'},
+    grey: {top:'#8E8E8E', side:'#636363', end:'#484848', strap:'#E5E5E5', lines:'#3A3A3A'}
+  };
+  return { draw: draw, CAP: CAP, PAL_DARK: PAL_DARK, PAL_LIGHT: PAL_LIGHT };
+})();
+  var RATE = 933;
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function secs(){ return (window.performance && performance.now ? performance.now() : Date.now() - T0) / 1000; }
+  var T0 = Date.now();
+  function money(v){ var s = String(Math.floor(v)), o = ''; while (s.length > 3){ o = ',' + s.slice(-3) + o; s = s.slice(0, -3); } return '$' + s + o; }
+  function init(cubeEl){
+    if (cubeEl.getAttribute('data-hk-on')) return;
+    cubeEl.setAttribute('data-hk-on', '1');
+    var cv = cubeEl.querySelector('canvas'), val = cubeEl.querySelector('.hk-cube-val'), nEl = cubeEl.querySelector('.hk-cube-n');
+    var ctx = cv && cv.getContext ? cv.getContext('2d') : null;
+    if (!ctx) return;
+    var pal = cubeEl.closest('.hk-band--white') ? HKCubeCore.PAL_LIGHT : HKCubeCore.PAL_DARK;
+    var W = 0, dpr = 1, visible = true, last = -1, dropN = -1, dropT = 0, lastText = '';
+    function size(){
+      var w = cv.clientWidth || 360; if (w === W) return;
+      W = w; dpr = Math.min(2, window.devicePixelRatio || 1);
+      cv.width = Math.round(W * dpr); cv.height = Math.round(W * dpr);
+    }
+    var pen = {
+      poly: function(pts, fill, stroke, lw, dash){
+        ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]);
+        for (var i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+        if (pts.length > 2) ctx.closePath();
+        if (fill){ ctx.fillStyle = fill; ctx.fill(); }
+        if (stroke){ if (ctx.setLineDash) ctx.setLineDash(dash || []); ctx.lineWidth = lw || 1; ctx.strokeStyle = stroke; ctx.stroke(); }
+      },
+      dot: function(x, y, r, fill){ ctx.fillStyle = fill; ctx.fillRect(x - r, y - r, r*2, r*2); }
+    };
+    function state(){
+      var s = secs(), amount = RATE * s, bundles = Math.floor(amount / 1000), cubes = Math.floor(bundles / HKCubeCore.CAP), count = bundles % HKCubeCore.CAP;
+      if (cubes > 0 && count < 2) count = HKCubeCore.CAP; /* hold the full cube for a beat before it empties */
+      return { s: s, amount: amount, cubes: cubes, count: count };
+    }
+    function text(st){
+      var t = money(st.amount);
+      if (t !== lastText){ val.textContent = t; lastText = t; }
+      if (nEl) nEl.textContent = st.cubes;
+    }
+    function paint(now){
+      var st = state();
+      text(st);
+      if (st.count !== last){ if (st.count > last && last >= 0 && !RM){ dropN = st.count - 1; dropT = now; } last = st.count; }
+      size();
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, W, W);
+      var k = dropN >= 0 ? Math.min(1, (now - dropT) / 520) : 1;
+      HKCubeCore.draw(pen, { W: W, H: W, yaw: RM ? 0.66 : 0.70 + 0.30 * Math.sin(st.s * 2 * Math.PI / 28), pitch: 0.43, count: st.count, drop: k < 1 ? { n: dropN, k: k } : null, pal: pal });
+    }
+    val.classList.remove('hk-cube-nojs');
+    cubeEl.classList.add('hk-cube--live');
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }, { threshold: 0 }).observe(cubeEl);
+    if (RM){
+      paint(0);
+      setInterval(function(){ paint(0); }, 1000);
+    } else {
+      var loop = function(now){ if (visible) paint(now); requestAnimationFrame(loop); };
+      requestAnimationFrame(loop);
+      /* the tally keeps counting off-screen (time-based); refresh the text even when hidden */
+      setInterval(function(){ if (!visible) text(state()); }, 500);
+    }
+    window.addEventListener('resize', function(){ W = 0; });
+  }
+  function boot(){
+    var cubes = document.querySelectorAll('.hk-cube[data-hk-cube]');
+    for (var i = 0; i < cubes.length; i++){
+      try { init(cubes[i]); } catch(e){ cubes[i].classList.remove('hk-cube--live'); }
+    }
+  }
+  try { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot(); } catch(e){}
+})();
+</script>
+<script>
+/* =====================================================================
+   HALO v16 DESIGN KIT · kit.js  (core behaviour; components carry their own script)
+   - copy pills / copy-note buttons:  [data-hk-copy="text"]  or  [data-hk-copy-from="#id"]
+     shows "Copied ✓" (.hk-ok + .hk-pt .hk-a/.hk-b swap), toast, aria-live (#hk-live)
+   - reveal:      [data-hk-rv]  and  .hk-lines (line-by-line headline)
+   - HUD:         .hk-hud .hk-n / .hk-t  +  .hk-prog i   fed by  section[data-hk-loc="02|The problem"]
+   - mobile nav:  details.hk-mnav (works without JS; JS closes it after a tap)
+   - accordion:   details[data-hk-acc]  (open without JS; JS keeps only the first open)
+   Safe on iPhone Safari: everything is visible without JS; any error removes .hk-anim.
+   ===================================================================== */
+(function(){
+  'use strict';
+  var root = document.documentElement;
+  function unhide(){ root.classList.remove('hk-anim'); }
+  window.addEventListener('error', unhide);
+  try {
+    root.classList.add('hk-js');
+    var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    if (!RM) root.classList.add('hk-anim'); else unhide();
+    var $  = function(s,c){ return (c||document).querySelector(s); };
+    var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+    var EMAIL = 'chris@halovpartners.com';
+
+    /* ---------- live region + toast ---------- */
+    var live = $('#hk-live');
+    if (!live){ live = document.createElement('p'); live.id = 'hk-live'; live.className = 'hk-sr'; live.setAttribute('role','status'); live.setAttribute('aria-live','polite'); document.body.appendChild(live); }
+    var toast = $('.hk-toast');
+    if (!toast){ toast = document.createElement('div'); toast.className = 'hk-toast'; toast.setAttribute('aria-hidden','true'); toast.innerHTML = '<span class="hk-sq"></span><span class="hk-tt"></span>'; document.body.appendChild(toast); }
+    var toastT = 0;
+    function say(msg){
+      live.textContent = '';
+      setTimeout(function(){ live.textContent = msg; }, 30);
+      var tt = toast.querySelector('.hk-tt'); if (tt) tt.textContent = msg;
+      toast.classList.add('hk-on');
+      clearTimeout(toastT); toastT = setTimeout(function(){ toast.classList.remove('hk-on'); }, 2400);
+    }
+
+    /* ---------- copy ---------- */
+    function legacyCopy(text){
+      try {
+        var t = document.createElement('textarea');
+        t.value = text; t.setAttribute('readonly','');
+        t.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px';
+        document.body.appendChild(t);
+        t.focus(); t.select(); try { t.setSelectionRange(0, text.length); } catch(_){}
+        var ok = document.execCommand('copy'); t.remove(); return !!ok;
+      } catch(e){ return false; }
+    }
+    function selectText(el){
+      try { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch(e){}
+    }
+    function textFor(btn){
+      var from = btn.getAttribute('data-hk-copy-from');
+      if (from){ var src = $(from); if (src) return (src.innerText || src.textContent || '').replace(/ /g,' ').trim(); }
+      return btn.getAttribute('data-hk-copy') || EMAIL;
+    }
+    function copied(btn, ok, text){
+      var isNote = text.indexOf('\n') >= 0 || text.length > EMAIL.length;
+      if (ok){
+        btn.classList.add('hk-ok');
+        say(isNote ? 'Note copied. Send to: ' + EMAIL : 'Copied ✓ ' + EMAIL);
+        clearTimeout(btn._hkT); btn._hkT = setTimeout(function(){ btn.classList.remove('hk-ok'); }, 2400);
+      } else {
+        var src = btn.getAttribute('data-hk-copy-from');
+        selectText(src ? $(src) : (btn.querySelector('.hk-a') || btn));
+        say('Copy failed. The address is ' + EMAIL);
+      }
+    }
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest ? e.target.closest('[data-hk-copy],[data-hk-copy-from]') : null;
+      if (!btn) return;
+      e.preventDefault();
+      var text = textFor(btn);
+      if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(function(){ copied(btn, true, text); }, function(){ copied(btn, legacyCopy(text), text); });
+      } else copied(btn, legacyCopy(text), text);
+    });
+
+    /* ---------- reveal ---------- */
+    var rv = $$('[data-hk-rv],.hk-lines');
+    function show(el){ el.classList.add('hk-in'); }
+    if ('IntersectionObserver' in window && !RM){
+      var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting){ show(en.target); io.unobserve(en.target); } }); }, {rootMargin:'0px 0px -6% 0px', threshold:0.04});
+      rv.forEach(function(el){ io.observe(el); });
+    } else rv.forEach(show);
+    /* safety net: anything on screen is shown, and every element is shown after 4s of no scroll */
+    function sweep(){ rv.forEach(function(el){ var r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) show(el); }); }
+    setTimeout(sweep, 1400);
+    window.addEventListener('scroll', function(){ clearTimeout(window._hkSw); window._hkSw = setTimeout(sweep, 120); }, {passive:true});
+
+    /* ---------- HUD: where am I + progress ---------- */
+    var hudN = $('.hk-hud .hk-n'), hudT = $('.hk-hud .hk-t'), prog = $('.hk-prog i');
+    var locs = $$('[data-hk-loc]');
+    var ticking = false;
+    function hud(){
+      ticking = false;
+      var h = document.documentElement.scrollHeight - innerHeight;
+      if (prog) prog.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, Math.max(0, scrollY / h)) : 0).toFixed(4) + ')';
+      if (!locs.length || !hudT) return;
+      var y = innerHeight * 0.4, cur = locs[0];
+      for (var i = 0; i < locs.length; i++){ if (locs[i].getBoundingClientRect().top <= y) cur = locs[i]; }
+      var p = (cur.getAttribute('data-hk-loc') || '').split('|');
+      if (hudN) hudN.textContent = p[0] || '';
+      hudT.textContent = p[1] || '';
+    }
+    window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(hud); } }, {passive:true});
+    window.addEventListener('resize', hud);
+    hud();
+
+    /* ---------- mobile nav ---------- */
+    $$('.hk-mnav').forEach(function(d){
+      $$('a', d).forEach(function(a){ a.addEventListener('click', function(){ d.removeAttribute('open'); }); });
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') d.removeAttribute('open'); });
+    });
+
+    /* ---------- accordion ---------- */
+    var acc = $$('details[data-hk-acc]');
+    acc.forEach(function(d, i){ if (i > 0) d.removeAttribute('open'); });
+
+    window.HK = { say: say, email: EMAIL };
+  } catch(err){ unhide(); }
+})();
+</script>
+<script>
+/* Shared flying-wing geometry (engine + build-time SVG fallback). Half span 6, nose at -z, y up. */
+var GEOM=(function(){
+'use strict';
+var LE0=-2.25,LES=3.75/6;
+var TEP=[[0,1.85],[1.05,1.3],[2.3,2.05],[3.65,.95],[5.62,2.02],[6,1.5]];
+var XB=[-3.65,-1.05,1.05,3.65];
+function zLE(x){return LE0+Math.abs(x)*LES;}
+function zTE(x){x=Math.abs(x);for(var i=0;i<TEP.length-1;i++){var a=TEP[i],b=TEP[i+1];if(x<=b[0])return a[1]+(b[1]-a[1])*(x-a[0])/(b[0]-a[0]);}return 1.5;}
+function tTop(x){return (.066+.43*Math.exp(-Math.pow(x/.86,2))+.10*Math.exp(-Math.pow((x-1.45)/.55,2)))*(1-.3*Math.pow(x/6,2));}
+function tBot(x){return .034+.15*Math.exp(-Math.pow(x/1.1,2))+.04*Math.exp(-Math.pow((x-1.45)/.6,2));}
+function prof(v,vp,p){if(v<=0||v>=1)return 0;var q=p*(1-vp)/vp;return Math.pow(v/vp,p)*Math.pow((1-v)/(1-vp),q);}
+function S(x,v,top){var ax=Math.min(6,Math.abs(x));var zl=zLE(ax),zt=zTE(ax);var ch=zt-zl;var cf=Math.min(1,ch/.75);
+  var y=top?tTop(ax)*cf*prof(v,.31-.05*Math.min(1,ax/2.4),.52):-tBot(ax)*cf*prof(v,.36,.7);
+  return [x,y,zl+ch*v];}
+function sub(a,b){return [a[0]-b[0],a[1]-b[1],a[2]-b[2]];}
+function cross(a,b){return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}
+function norm(a){var l=Math.hypot(a[0],a[1],a[2])||1;return [a[0]/l,a[1]/l,a[2]/l];}
+function SN(x,v,top){var e=1.5e-3;var dx=sub(S(x+e,v,top),S(x-e,v,top));var dv=sub(S(x,Math.min(1,v+e),top),S(x,Math.max(0,v-e),top));
+  return norm(top?cross(dv,dx):cross(dx,dv));}
+/* point on a skin at plan position (x,z), lifted along the normal */
+function surfAt(x,z,top,lift){var ax=Math.abs(x),zl=zLE(ax),zt=zTE(ax);var v=Math.max(0,Math.min(1,(z-zl)/Math.max(1e-4,zt-zl)));
+  var p=S(x,v,top),n=SN(x,v,top);lift=lift||0;return [p[0]+n[0]*lift,p[1]+n[1]*lift,p[2]+n[2]*lift];}
+/* closed section profile at span station x (top LE->TE, bottom TE->LE) */
+function section(x,n){var P=[],j,v;for(j=0;j<=n;j++){v=.5-.5*Math.cos(Math.PI*j/n);P.push(S(x,v,true));}
+  for(j=n-1;j>=0;j--){v=.5-.5*Math.cos(Math.PI*j/n);P.push(S(x,v,false));}return P;}
+function modOf(x){var a=Math.abs(x);if(a<1.05-1e-6)return 0;if(a<3.65-1e-6)return x>0?1:2;return x>0?3:4;}
+
+/* ---------- plan-view detail curves (right half, x>=0). s: 't' top, 'b' bottom, 'tb' both. c: centred (no mirror) ---------- */
+function lineP(a,b,n){var P=[];for(var i=0;i<=n;i++){var t=i/n;P.push([a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]);}return P;}
+function rect(cx,cz,hx,hz){return [[cx-hx,cz-hz],[cx+hx,cz-hz],[cx+hx,cz+hz],[cx-hx,cz+hz],[cx-hx,cz-hz]];}
+function fnP(f,xa,xb,n){var P=[];for(var i=0;i<=n;i++){var x=xa+(xb-xa)*i/n;P.push([x,f(x)]);}return P;}
+/* hinge line: TE chain offset forward by d (miter joins), ending on the centreline */
+function hinge(d){var C=[[5.62,2.02],[3.65,.95],[2.3,2.05],[1.05,1.3],[0,1.85]];var N=[];
+  for(var i=0;i<C.length-1;i++){var a=C[i],b=C[i+1];var dx=b[0]-a[0],dz=b[1]-a[1];var l=Math.hypot(dx,dz);var n=[-dz/l,dx/l];if(n[1]>0)n=[-n[0],-n[1]];N.push(n);}
+  var P=[];for(var k=0;k<C.length;k++){var n;
+    if(k===0)n=N[0];else if(k===C.length-1)n=N[N.length-1];
+    else{var m=[N[k-1][0]+N[k][0],N[k-1][1]+N[k][1]];var ml=Math.hypot(m[0],m[1]);m=[m[0]/ml,m[1]/ml];var c=m[0]*N[k][0]+m[1]*N[k][1];n=[m[0]/c,m[1]/c];}
+    P.push([C[k][0]+n[0]*d,C[k][1]+n[1]*d]);}
+  /* first point: slide along first offset segment so it sits inside the tip; last: land on x=0 */
+  var a=P[P.length-2],b=P[P.length-1];var t=(0-a[0])/(b[0]-a[0]);P[P.length-1]=[0,a[1]+(b[1]-a[1])*t];
+  var p0=P[0],p1=P[1];P[0]=[p0[0]+(p1[0]-p0[0])*.06,p0[1]+(p1[1]-p0[1])*.06];
+  return P;}
+function hingeZ(H,x){for(var i=0;i<H.length-1;i++){var a=H[i],b=H[i+1];if((x-a[0])*(x-b[0])<=0&&a[0]!==b[0])return a[1]+(b[1]-a[1])*(x-a[0])/(b[0]-a[0]);}return null;}
+function plan(){
+  var C=[];var H=hinge(.34);
+  var leo=.24*Math.sqrt(1+LES*LES);
+  C.push({p:fnP(function(x){return zLE(x)+leo;},.95,5.8,24),s:'tb',k:'pan'});
+  C.push({p:H,s:'tb',k:'pan'});
+  [1.7,2.95,4.65].forEach(function(x){var hz=hingeZ(H,x);if(hz!==null)C.push({p:lineP([x,hz],[x,zTE(x)-.002],6),s:'tb',k:'pan'});});
+  [2.95,4.4].forEach(function(x){var hz=hingeZ(H,x);if(hz!==null)C.push({p:lineP([x,zLE(x)+leo],[x,hz],10),s:'tb',k:'pan'});});
+  /* top: spine + canopy frame */
+  C.push({p:lineP([.64,-1.3],[.64,1.15],24),s:'t',k:'pan'});
+  C.push({p:lineP([0,.32],[.64,.32],8),s:'t',k:'pan'});
+  C.push({p:lineP([0,-.62],[.64,-.62],8),s:'t',k:'pan'});
+  /* windows */
+  var zf=function(x){return -1.74+.36*Math.abs(x)+.25*x*x;},zr=function(x){return -1.41+.18*Math.abs(x)+.2*x*x;};
+  [[.02,.215],[.255,.47]].forEach(function(w){var a=w[0],b=w[1];var P=fnP(zf,a,b,6).concat(fnP(zr,b,a,6));P.push(P[0]);C.push({p:P,s:'t',k:'win'});});
+  /* access doors (top) */
+  [[1.55,.38,.15,.09],[2.65,-.3,.11,.07],[.3,.75,.12,.08]].forEach(function(r){C.push({p:rect(r[0],r[1],r[2],r[3]),s:'t',k:'door'});});
+  /* intake: serrated lip + mouth */
+  var lip=function(x){var u=(x-.82)/.96;return -.72+.07*Math.abs(((u*2)%1)*2-1);};
+  C.push({p:fnP(function(x){return lip(x)-.035;},.82,1.78,16),s:'t',k:'pan'});
+  C.push({p:fnP(lip,.82,1.78,16),s:'t',k:'win'});
+  C.push({p:fnP(function(x){return lip(x)+.17;},.82,1.78,16),s:'t',k:'pan'});
+  C.push({p:[[.82,lip(.82)-.035],[.82,lip(.82)+.17]],s:'t',k:'pan'});
+  C.push({p:[[1.78,lip(1.78)-.035],[1.78,lip(1.78)+.17]],s:'t',k:'pan'});
+  /* exhaust slot + deck */
+  C.push({p:rect(1.64,.93,.46,.05),s:'t',k:'win'});
+  C.push({p:[[1.18,.98]].concat(fnP(function(x){return zTE(x)-.07;},1.18,2.1,12)).concat([[2.1,.98]]),s:'t',k:'pan'});
+  /* bottom: bays, gear doors, nose gear */
+  C.push({p:rect(.56,.08,.37,.64),s:'b',k:'door'});
+  C.push({p:lineP([.56,-.56],[.56,.72],10),s:'b',k:'pan'});
+  C.push({p:rect(1.52,-.22,.22,.5),s:'b',k:'door'});
+  C.push({p:lineP([1.52,-.72],[1.52,.28],8),s:'b',k:'pan'});
+  C.push({p:rect(0,-1.45,.18,.3),s:'b',k:'door',c:1});
+  return C;}
+return {LE0:LE0,LES:LES,TEP:TEP,XB:XB,zLE:zLE,zTE:zTE,tTop:tTop,tBot:tBot,S:S,SN:SN,surfAt:surfAt,section:section,modOf:modOf,plan:plan,hinge:hinge};
+})();
+(function(){
+'use strict';
+var root=document.documentElement;
+try{
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s),$$=s=>Array.prototype.slice.call(document.querySelectorAll(s));
+const D2R=Math.PI/180,cl=(x,a,b)=>x<a?a:x>b?b:x,lerp=(a,b,t)=>a+(b-a)*t;
+const ss=(a,b,x)=>{const t=cl((x-a)/(b-a),0,1);return t*t*(3-2*t);};
+const plat=(q,c,h,f)=>1-ss(h,h+f,Math.abs(q-c));
+const NSC=7,HOW=3;
+const VIEWS=['Plan','Section A–A','Exploded','Route','Front 3/4','Underside','Departure'];
+
+/* =========================== scroll model (DOM only, works without WebGL) =========================== */
+const G={qT:0,q:0,howT:0,howS:0,step:0,keys:[],ready:false};
+window.__bp=G;
+const secs=$$('main .sc');
+const ctrN=$('#ctrN');
+let W=innerWidth,H=innerHeight,portrait=W<860,howStart=0,howEnd=1,need=true,lastInput=0;
+const docTop=el=>{let y=0;while(el){y+=el.offsetTop;el=el.offsetParent;}return y;};
+let panRects=[];const xsP=$('#xs .pn');
+function measure(){
+  W=innerWidth;H=innerHeight;portrait=W<860;
+  const max=Math.max(0,document.documentElement.scrollHeight-H);
+  const bot=parseFloat(getComputedStyle(root).getPropertyValue('--bot'))||56;
+  const keys=[];
+  secs.forEach((s,i)=>{
+    if(i===HOW){const t=docTop(s);howStart=t;howEnd=Math.max(t+1,t+s.offsetHeight-H);keys.push({y:howStart,q:i},{y:howEnd,q:i});return;}
+    let y=0;
+    if(i>0){const pn=s.querySelector('.pn,.closewrap');const t=docTop(pn),h=pn.offsetHeight;
+      y=portrait?t+Math.min(h,H*.62)+bot+8-H:t+h/2-H/2;
+      if(i===NSC-1)y=portrait?t-110:t-H*.18;}
+    keys.push({y:cl(y,0,max),q:i});
+    if(i===0&&xsP){const t=docTop(xsP),h=xsP.offsetHeight;keys.push({y:cl(portrait?t+Math.min(h,H*.62)+bot+8-H:t+h/2-H/2,1,max),q:0});}
+  });
+  for(let k=1;k<keys.length;k++)if(keys[k].y<=keys[k-1].y)keys[k].y=keys[k-1].y+1;
+  G.keys=keys;
+}
+function qAt(y){const K=G.keys;if(!K.length)return 0;if(y<=K[0].y)return K[0].q;
+  for(let k=0;k<K.length-1;k++)if(y<K[k+1].y)return lerp(K[k].q,K[k+1].q,(y-K[k].y)/(K[k+1].y-K[k].y));return K[K.length-1].q;}
+const stepBtns=$$('[data-step]'),hcN=null;
+const STEPS=stepBtns.map(b=>({t:b.querySelector('.sn').textContent,d:b.querySelector('.sd').textContent}));
+function setStep(k){if(k===G.step&&G.ready)return;G.step=k;stepBtns.forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.step===k)));
+  if(hcN){hcN.textContent='0'+(k+1);hcT.textContent=STEPS[k].t;hcD.textContent=STEPS[k].d;}need=true;}
+let lastCtr=-1;
+function onScroll(){
+  const y=scrollY;G.qT=qAt(y);G.howT=cl((y-howStart)/(howEnd-howStart),0,1);
+  const n=Math.round(cl(G.qT,0,NSC-1));if(n!==lastCtr){lastCtr=n;ctrN.textContent='0'+(n+1);}
+  setStep(Math.min(3,Math.floor(G.howT*4)));G.ready=true;
+  need=true;lastInput=performance.now();
+}
+stepBtns.forEach(b=>b.addEventListener('click',()=>{const k=+b.dataset.step;setStep(k);
+  const y=howStart+(k+.5)/4*(howEnd-howStart);scrollTo({top:y,behavior:RM?'auto':'smooth'});}));
+addEventListener('scroll',onScroll,{passive:true});
+
+/* reveal */
+const rvs=$$('.rv');
+if('IntersectionObserver' in window&&!RM){const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{rootMargin:'0px 0px -4% 0px',threshold:.02});rvs.forEach(el=>io.observe(el));}
+else rvs.forEach(el=>el.classList.add('in'));
+const sweep=()=>rvs.forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('in');});
+setTimeout(sweep,1200);addEventListener('scroll',()=>{clearTimeout(sweep._t);sweep._t=setTimeout(sweep,150);},{passive:true});
+
+measure();onScroll();G.q=G.qT;G.howS=G.howT;
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{measure();onScroll();});
+setTimeout(()=>{measure();onScroll();},700);
+addEventListener('load',()=>{measure();onScroll();});
+
+/* =========================== math =========================== */
+const v3={add:(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]],sub:(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]],sc:(a,s)=>[a[0]*s,a[1]*s,a[2]*s],cross:(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],dot:(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],norm:a=>{const l=Math.hypot(a[0],a[1],a[2])||1;return [a[0]/l,a[1]/l,a[2]/l];},len:a=>Math.hypot(a[0],a[1],a[2])};
+const Q={
+  ax:(x,y,z,a)=>{const s=Math.sin(a/2);return [x*s,y*s,z*s,Math.cos(a/2)];},
+  mul:(a,b)=>[a[3]*b[0]+a[0]*b[3]+a[1]*b[2]-a[2]*b[1],a[3]*b[1]-a[0]*b[2]+a[1]*b[3]+a[2]*b[0],a[3]*b[2]+a[0]*b[1]-a[1]*b[0]+a[2]*b[3],a[3]*b[3]-a[0]*b[0]-a[1]*b[1]-a[2]*b[2]],
+  conj:q=>[-q[0],-q[1],-q[2],q[3]],
+  rot:(q,v)=>{const u=[q[0],q[1],q[2]],s=q[3];const t=v3.sc(v3.cross(u,v),2);return v3.add(v3.add(v,v3.sc(t,s)),v3.cross(u,t));},
+  euler:(yaw,pitch,roll)=>Q.mul(Q.mul(Q.ax(0,1,0,yaw),Q.ax(1,0,0,pitch)),Q.ax(0,0,1,roll)),
+  fromBasis:(x,y,z)=>{const m00=x[0],m11=y[1],m22=z[2],tr=m00+m11+m22;let q;
+    if(tr>0){const s=Math.sqrt(tr+1)*2;q=[(y[2]-z[1])/s,(z[0]-x[2])/s,(x[1]-y[0])/s,.25*s];}
+    else if(m00>m11&&m00>m22){const s=Math.sqrt(1+m00-m11-m22)*2;q=[.25*s,(y[0]+x[1])/s,(z[0]+x[2])/s,(y[2]-z[1])/s];}
+    else if(m11>m22){const s=Math.sqrt(1+m11-m00-m22)*2;q=[(y[0]+x[1])/s,.25*s,(z[1]+y[2])/s,(z[0]-x[2])/s];}
+    else{const s=Math.sqrt(1+m22-m00-m11)*2;q=[(z[0]+x[2])/s,(z[1]+y[2])/s,.25*s,(x[1]-y[0])/s];}
+    const l=Math.hypot(q[0],q[1],q[2],q[3]);return q.map(v=>v/l);},
+  look:(eye,tgt,up)=>{up=up||[0,1,0];const z=v3.norm(v3.sub(eye,tgt)),x=v3.norm(v3.cross(up,z)),y=v3.cross(z,x);return Q.fromBasis(x,y,z);}
+};
+const M4={
+  qt(q,t,o){o=o||new Float32Array(16);const x=q[0],y=q[1],z=q[2],w=q[3],x2=x+x,y2=y+y,z2=z+z,xx=x*x2,xy=x*y2,xz=x*z2,yy=y*y2,yz=y*z2,zz=z*z2,wx=w*x2,wy=w*y2,wz=w*z2;
+    o[0]=1-(yy+zz);o[1]=xy+wz;o[2]=xz-wy;o[3]=0;o[4]=xy-wz;o[5]=1-(xx+zz);o[6]=yz+wx;o[7]=0;o[8]=xz+wy;o[9]=yz-wx;o[10]=1-(xx+yy);o[11]=0;o[12]=t[0];o[13]=t[1];o[14]=t[2];o[15]=1;return o;},
+  view(q,e,o){o=o||new Float32Array(16);const c=Q.conj(q);M4.qt(c,[0,0,0],o);const t=Q.rot(c,e);o[12]=-t[0];o[13]=-t[1];o[14]=-t[2];return o;},
+  persp(fy,a,n,f,sx,sy,o){const t=1/Math.tan(fy/2),nf=1/(n-f);o.fill(0);o[0]=t/a;o[5]=t;o[8]=sx;o[9]=sy;o[10]=(f+n)*nf;o[11]=-1;o[14]=2*f*n*nf;return o;},
+  mul(a,b,o){for(let c=0;c<4;c++)for(let r=0;r<4;r++)o[c*4+r]=a[r]*b[c*4]+a[4+r]*b[c*4+1]+a[8+r]*b[c*4+2]+a[12+r]*b[c*4+3];return o;}
+};
+
+/* =========================== WebGL context =========================== */
+const cv=$('#gl');
+let gl=null;
+try{gl=cv.getContext('webgl',{antialias:true,alpha:false,depth:true,powerPreference:'high-performance'})||cv.getContext('experimental-webgl');}catch(e){gl=null;}
+function noGL(){root.classList.add('nogl');root.classList.remove('gl');cv.style.display='none';}
+if(!gl||/[?&]nogl\b/.test(location.search)){noGL();return;}
+const HD=!!gl.getExtension('OES_standard_derivatives');
+const LITE=matchMedia('(max-width:859px), (pointer:coarse)').matches;
+
+/* =========================== geometry =========================== */
+const GM=GEOM,S=GM.S,SN=GM.SN;
+const GROUND=-2.6;
+/* groups */
+const GR={GRID:0,OUT:1,PAN:2,CON:3,CL:4,DIMP:5,SEC:6,PRB:7,EXP:8,OUTC:9,STA:10,ELV:11,PRF:12,DROP:13,SIL:14,PROJ:15};
+const NG=16;
+
+/* ---- fills: skins per module + exploded caps ---- */
+const XS=(function(){const P=[];const fine=LITE?.09:.05,coarse=LITE?.2:.11;
+  for(let x=0;x<2.6;x+=fine)P.push(+x.toFixed(4));for(let x=2.6;x<6;x+=coarse)P.push(+x.toFixed(4));
+  [1.05,2.3,3.65,5.62,6].forEach(k=>P.push(k));const u=[...new Set(P)].sort((a,b)=>a-b);return u.slice(1).reverse().map(x=>-x).concat(u);})();
+const NV=LITE?20:34;const VS=[];for(let j=0;j<=NV;j++)VS.push(.5-.5*Math.cos(Math.PI*j/NV));
+const MODR=[[-1.05,1.05],[1.05,3.65],[-3.65,-1.05],[3.65,6],[-6,-3.65]];
+function Fill(){this.v=[];this.i=[];this.n=0;}
+Fill.prototype.vert=function(p,m,h){this.v.push(p[0],p[1],p[2],m,h);return this.n++;};
+/* silhouette source data (CPU) */
+const SP=[],SNo=[],SM=[],STr=[];
+const FILL=new Fill();
+MODR.forEach((r,m)=>{const xs=XS.filter(x=>x>=r[0]-1e-6&&x<=r[1]+1e-6);
+  [true,false].forEach(top=>{const base=FILL.n,sb=SP.length/3;
+    xs.forEach(x=>VS.forEach(v=>{const p=S(x,v,top),n=SN(x,v,top);FILL.vert(p,m,0);SP.push(p[0],p[1],p[2]);SNo.push(n[0],n[1],n[2]);SM.push(m);}));
+    const R=VS.length;for(let i=0;i<xs.length-1;i++)for(let j=0;j<R-1;j++){const a=i*R+j,b=a+R;
+      FILL.i.push(base+a,base+b,base+b+1,base+a,base+b+1,base+a+1);STr.push(sb+a,sb+b,sb+b+1,sb+a,sb+b+1,sb+a+1);}});
+});
+/* caps at module joints (hatched, seen only when exploded) */
+const CAPN=LITE?18:30;
+function capFan(F,x,m){const P=GM.section(x,CAPN);let c=[0,0,0];P.forEach(p=>{c=v3.add(c,p);});c=v3.sc(c,1/P.length);
+  const b=F.n;F.vert(c,m,1);P.forEach(p=>F.vert(p,m,1));for(let k=0;k<P.length;k++)F.i.push(b,b+1+k,b+1+(k+1)%P.length);}
+capFan(FILL,-1.05,0);capFan(FILL,1.05,0);capFan(FILL,1.05,1);capFan(FILL,3.65,1);capFan(FILL,-1.05,2);capFan(FILL,-3.65,2);capFan(FILL,3.65,3);capFan(FILL,-3.65,4);
+
+/* ---- lines ---- */
+/* per vertex: A3 B3 | side end LA LB | mod grp w k | dash t0 total modB(+10 if B on ground) = 18 floats */
+const LST=18;
+const CORN=[[0,-1],[0,1],[1,1],[0,-1],[1,1],[1,-1]];
+function LB(){this.a=[];this.n=0;}
+LB.prototype.seg=function(A,B,o,la,lb,tot){const m=o.m,mb=o.mb===undefined?m:o.mb;const w=(o.w||1)*(LITE&&o.w<1?1.15:1);
+  for(let c=0;c<6;c++)this.a.push(A[0],A[1],A[2],B[0],B[1],B[2],CORN[c][1],CORN[c][0],la,lb,m,o.g,w,o.k,o.d||0,o.t0||0,tot,mb+(o.gb?10:0));this.n+=6;};
+LB.prototype.poly=function(P,o){if(P.length<2)return;let pts=[P[0]];
+  if(o.m==='auto'){for(let i=1;i<P.length;i++){const a=P[i-1],b=P[i];const cr=[];GM.XB.forEach(xb=>{if((a[0]-xb)*(b[0]-xb)<0)cr.push((xb-a[0])/(b[0]-a[0]));});cr.sort((x,y)=>x-y).forEach(t=>pts.push([lerp(a[0],b[0],t),lerp(a[1],b[1],t),lerp(a[2],b[2],t)]));pts.push(b);}}
+  else pts=P.slice();
+  const L=[0];for(let i=1;i<pts.length;i++)L.push(L[i-1]+v3.len(v3.sub(pts[i],pts[i-1])));const tot=L[L.length-1]||1;
+  for(let i=0;i<pts.length-1;i++){const a=pts[i],b=pts[i+1];const oo=o.m==='auto'?Object.assign({},o,{m:GM.modOf((a[0]+b[0])/2)}):o;this.seg(a,b,oo,L[i],L[i+1],tot);}};
+LB.prototype.loop=function(P,o){this.poly(P.concat([P[0]]),o);};
+
+const CL=new LB();
+const ST={w:{OUT:1.6,SIL:1.5,PAN:.85,WIN:1.05,CON:.7,DIM:.8,TICK:1.2,LEAD:.9}};
+/* outline: leading edges + sawtooth trailing edge (both skins meet at y=0) */
+(function(){
+  const le=[];for(let i=0;i<=40;i++){const x=6*i/40;le.push([x,0,GM.zLE(x)]);}
+  CL.poly(le,{m:'auto',g:GR.OUT,w:ST.w.OUT,k:1,t0:0});CL.poly(le.map(p=>[-p[0],p[1],p[2]]),{m:'auto',g:GR.OUT,w:ST.w.OUT,k:1,t0:0});
+  const te=GM.TEP.map(p=>[p[0],0,p[1]]);const teF=[];for(let i=0;i<te.length-1;i++){const a=te[i],b=te[i+1];for(let k=0;k<8;k++)teF.push([lerp(a[0],b[0],k/8),0,lerp(a[2],b[2],k/8)]);}teF.push(te[te.length-1]);
+  CL.poly(teF,{m:'auto',g:GR.OUT,w:ST.w.OUT,k:1,t0:.18});CL.poly(teF.map(p=>[-p[0],p[1],p[2]]),{m:'auto',g:GR.OUT,w:ST.w.OUT,k:1,t0:.18});
+})();
+/* panel lines projected onto the skins */
+(function(){
+  const C=GM.plan();const n=C.length;
+  C.forEach((c,ci)=>{const t0=.05+.6*ci/n;
+    const dens=[];for(let i=0;i<c.p.length-1;i++){const a=c.p[i],b=c.p[i+1];const k=Math.max(1,Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/.05));for(let j=0;j<k;j++)dens.push([lerp(a[0],b[0],j/k),lerp(a[1],b[1],j/k)]);}dens.push(c.p[c.p.length-1]);
+    const sides=c.s==='tb'?[true,false]:[c.s==='t'];
+    const w=c.k==='win'?ST.w.WIN:ST.w.PAN,k=c.k==='win'?1:c.k==='door'?.86:.8;
+    sides.forEach(top=>{[1,-1].forEach(sg=>{if(c.c&&sg<0)return;
+      CL.poly(dens.map(p=>GM.surfAt(p[0]*sg,p[1],top,.002)),{m:'auto',g:GR.PAN,w,k,t0});});});});
+  /* centreline seam on both skins */
+  const cs=[],cb=[];for(let j=0;j<=40;j++){const v=j/40;cs.push(S(0,v,true));cb.push(S(0,v,false));}
+  CL.poly(cs,{m:0,g:GR.CL,w:.8,k:.72,d:-.9,t0:.1});CL.poly(cb,{m:0,g:GR.CL,w:.8,k:.72,d:-.9,t0:.1});
+  CL.poly([[0,0,-3.5],[0,0,GM.zLE(0)-.12]],{m:0,g:GR.CL,w:.8,k:.72,d:-.9,t0:.4});
+  CL.poly([[0,0,GM.zTE(0)+.12],[0,0,3.0]],{m:0,g:GR.CL,w:.8,k:.72,d:-.9,t0:.4});
+})();
+/* height contours (level sets) + ribs */
+(function(){
+  const xs=[];MODR.slice().sort((a,b)=>a[0]-b[0]).forEach(r=>{const n=Math.ceil((r[1]-r[0])/(LITE?.08:.045));for(let i=0;i<=n;i++){const x=+(r[0]+(r[1]-r[0])*i/n).toFixed(5);if(!xs.length||Math.abs(xs[xs.length-1]-x)>1e-6)xs.push(x);}});
+  const nv=LITE?26:44,vs=[];for(let j=0;j<=nv;j++)vs.push(.5-.5*Math.cos(Math.PI*j/nv));
+  [[true,[.04,.08,.12,.16,.2,.24,.28,.32,.36,.40,.44,.48]],[false,[-.035,-.07,-.105,-.14,-.175]]].forEach(([top,levels])=>{
+    const Y=xs.map(x=>vs.map(v=>S(x,v,top)[1]));
+    for(let i=0;i<xs.length-1;i++){const xm=(xs[i]+xs[i+1])/2;if(GM.modOf(xm)!==GM.modOf(xs[i]+1e-4)&&Math.abs(xs[i])>1e-6){}
+      for(let j=0;j<vs.length-1;j++){const c=[Y[i][j],Y[i+1][j],Y[i+1][j+1],Y[i][j+1]];const P=[[xs[i],vs[j]],[xs[i+1],vs[j]],[xs[i+1],vs[j+1]],[xs[i],vs[j+1]]];
+        levels.forEach(L=>{const pts=[];for(let e=0;e<4;e++){const a=c[e],b=c[(e+1)%4];if((a-L)*(b-L)<0){const t=(L-a)/(b-a);pts.push([lerp(P[e][0],P[(e+1)%4][0],t),lerp(P[e][1],P[(e+1)%4][1],t)]);}}
+          for(let s=0;s+1<pts.length;s+=2){const A=S(pts[s][0],pts[s][1],top),B=S(pts[s+1][0],pts[s+1][1],top);const nA=SN(pts[s][0],pts[s][1],top);
+            const lift=.002;const a3=v3.add(A,v3.sc(nA,lift)),b3=v3.add(B,v3.sc(nA,lift));const m=GM.modOf(xm);const t0=.65*Math.abs(xm)/6;
+            CL.seg(a3,b3,{m,g:GR.CON,w:ST.w.CON,k:top?.46:.4,t0},0,1,1);}});}}});
+  [.5,1.7,2.95,4.4,5.2].forEach(x=>[1,-1].forEach(sg=>[true,false].forEach(top=>{const P=[];for(let j=0;j<=30;j++){const v=.5-.5*Math.cos(Math.PI*j/30);P.push(S(x*sg,v,top));}
+    CL.poly(P,{m:GM.modOf(x*sg),g:GR.CON,w:.6,k:.28,t0:.55*x/6});})));
+})();
+/* dimension helper (in plane, with extension lines + 45° ticks) */
+function dimLine(B,a,b,ea,eb,g,o){o=o||{};const k=o.k||.66,t0=o.t0||0;
+  B.poly([a,b],{m:5,g,w:ST.w.DIM,k,t0});
+  if(ea)B.poly(ea,{m:5,g,w:.7,k:k*.8,t0});if(eb)B.poly(eb,{m:5,g,w:.7,k:k*.8,t0});
+  const d=v3.norm(v3.sub(b,a));const up=o.up||[0,1,0];const nrm=v3.norm(v3.cross(d,up));const tk=v3.sc(v3.norm(v3.add(d,nrm)),.16);
+  [a,b].forEach(p=>B.poly([v3.sub(p,tk),v3.add(p,tk)],{m:5,g,w:ST.w.TICK,k:Math.min(1,k+.2),t0}));}
+/* plan dims: span + length */
+dimLine(CL,[-6,0,3.55],[6,0,3.55],[[-6,0,1.62],[-6,0,3.75]],[[6,0,1.62],[6,0,3.75]],GR.DIMP,{t0:.2});
+dimLine(CL,[7.25,0,-2.25],[7.25,0,2.05],[[.3,0,-2.25],[7.45,0,-2.25]],[[2.5,0,2.05],[7.45,0,2.05]],GR.DIMP,{t0:.3});
+/* reference balloons: leaders from parts to balloon centres (y=0 plane, ahead/aft of the wing) */
+const BAL=[{a:GM.surfAt(.22,-1.56,true,.004),b:[-1.9,0,-3.35],n:'1'},{a:GM.surfAt(1.3,-.56,true,.004),b:[2.9,0,-2.0],n:'2'},{a:GM.surfAt(1.64,1.2,true,.004),b:[2.3,0,2.85],n:'3'},{a:GM.surfAt(4.8,1.72,true,.004),b:[5.5,0,2.75],n:'4'}];
+
+/* problem markers: anchors on the right half, leaders rising to label shelves */
+const PRB=[{a:GM.surfAt(.34,-1.05,true,.004),b:[.34,2.0,-1.05],s:[1.0,2.0,-1.05]},{a:GM.surfAt(1.35,-.5,true,.004),b:[1.35,1.35,-.5],s:[2.0,1.35,-.5]},{a:GM.surfAt(4.9,1.25,true,.004),b:[4.9,1.0,1.25],s:[5.55,1.0,1.25]}];
+PRB.forEach((p,i)=>{const m=GM.modOf(p.a[0]);CL.poly([p.a,p.b,p.s],{m,g:GR.PRB,w:ST.w.LEAD,k:.9,t0:i*.12});});
+/* exploded: joint profiles + dashed assembly guides between neighbours */
+const JOINTS=[[-1.05,0,2],[1.05,0,1],[3.65,1,3],[-3.65,2,4]];
+JOINTS.forEach(([x,ma,mb],ji)=>{const P=GM.section(x,CAPN);
+  CL.poly(P,{m:ma,g:GR.EXP,w:1.05,k:.95,t0:.0});CL.poly(P,{m:mb,g:GR.EXP,w:1.05,k:.95,t0:0});
+  [S(x,0,true),S(x,.3,true),S(x,1,true)].forEach((p,i)=>{CL.seg(p,p,{m:ma,mb,g:GR.EXP,w:.8,k:.6,d:.22,t0:.2+i*.1},0,0,1);});});
+/* outcome callouts: anchored on modules, label shelves above */
+const OUTC=[{a:S(0,.34,true),m:0,b:[0,1.55,-.8],s:[-1.0,1.55,-.8]},{a:GM.surfAt(2.3,0,true,.004),m:1,b:[2.3,2.0,-.2],s:[3.0,2.0,-.2]},{a:GM.surfAt(4.7,1.2,true,.004),m:3,b:[4.7,.75,1.0],s:[4.2,.75,1.0]}];
+OUTC.forEach((c,i)=>CL.poly([c.a,c.b,c.s],{m:c.m,g:GR.OUTC,w:ST.w.LEAD,k:.9,t0:i*.12}));
+/* front 3/4: span dim below the wing + height dim */
+dimLine(CL,[-6,-1.15,1.5],[6,-1.15,1.5],[[-6,-.12,1.5],[-6,-1.35,1.5]],[[6,-.12,1.5],[6,-1.35,1.5]],GR.ELV,{up:[0,0,1]});
+/* underside: length dim along the centreline */
+dimLine(CL,[-7.0,0,-2.25],[-7.0,0,1.85],[[-.3,0,-2.25],[-7.2,0,-2.25]],[[-.3,0,1.85],[-7.2,0,1.85]],GR.PRF,{});
+/* drop lines to the ground */
+[[6,0,1.5],[-6,0,1.5],[0,0,-2.25],[0,0,1.85]].forEach(p=>CL.seg(p,p,{m:5,g:GR.DROP,w:.7,k:.45,d:.18,gb:1},0,3,3));
+
+/* ---- world lines: stations + route ---- */
+const STN=[[0,0],[9,-20],[-7,-40],[5,-60]];
+function cr(p0,p1,p2,p3,t){const t2=t*t,t3=t2*t;return [0,1].map(i=>.5*((2*p1[i])+(-p0[i]+p2[i])*t+(2*p0[i]-5*p1[i]+4*p2[i]-p3[i])*t2+(-p0[i]+3*p1[i]-3*p2[i]+p3[i])*t3));}
+function route(u){u=cl(u,0,3);const k=Math.min(2,Math.floor(u)),t=u-k;const P=[STN[Math.max(0,k-1)],STN[k],STN[k+1],STN[Math.min(3,k+2)]];
+  if(k===0)P[0]=[2*STN[0][0]-STN[1][0],2*STN[0][1]-STN[1][1]];if(k===2)P[3]=[2*STN[3][0]-STN[2][0],2*STN[3][1]-STN[2][1]];return cr(P[0],P[1],P[2],P[3],t);}
+const WL=new LB();
+(function(){const y=GROUND+.002;
+  STN.forEach((s,i)=>{const c=[];for(let k=0;k<=96;k++){const a=k/96*Math.PI*2;c.push([s[0]+Math.cos(a)*3.0,y,s[1]+Math.sin(a)*3.0]);}
+    WL.poly(c,{m:5,g:GR.STA,w:1.1,k:.9,t0:i*.1});
+    const c2=[];for(let k=0;k<=64;k++){const a=k/64*Math.PI*2;c2.push([s[0]+Math.cos(a)*1.9,y,s[1]+Math.sin(a)*1.9]);}
+    WL.poly(c2,{m:5,g:GR.STA,w:.7,k:.5,d:.2,t0:i*.1});
+    for(let k=0;k<4;k++){const a=k*Math.PI/2;WL.poly([[s[0]+Math.cos(a)*3.2,y,s[1]+Math.sin(a)*3.2],[s[0]+Math.cos(a)*4.0,y,s[1]+Math.sin(a)*4.0]],{m:5,g:GR.STA,w:1.0,k:.85,t0:i*.1});}
+    for(let k=0;k<72;k++){const a=k/72*Math.PI*2,r1=3.0,r2=k%6===0?2.55:2.78;WL.poly([[s[0]+Math.cos(a)*r1,y,s[1]+Math.sin(a)*r1],[s[0]+Math.cos(a)*r2,y,s[1]+Math.sin(a)*r2]],{m:5,g:GR.STA,w:.6,k:.5,t0:i*.1});}
+    WL.poly([[s[0]-.35,y,s[1]],[s[0]+.35,y,s[1]]],{m:5,g:GR.STA,w:.9,k:.9,t0:i*.1});WL.poly([[s[0],y,s[1]-.35],[s[0],y,s[1]+.35]],{m:5,g:GR.STA,w:.9,k:.9,t0:i*.1});
+  });
+  const P=[];for(let k=0;k<=180;k++){const p=route(k/60);P.push([p[0],y,p[1]]);}
+  /* break the route inside each station ring */
+  let cur=[];const runs=[];P.forEach(p=>{const inS=STN.some(s=>Math.hypot(p[0]-s[0],p[2]-s[1])<3.2);if(inS){if(cur.length>1)runs.push(cur);cur=[];}else cur.push(p);});if(cur.length>1)runs.push(cur);
+  runs.forEach((r,i)=>WL.poly(r,{m:5,g:GR.STA,w:.9,k:.62,d:.55,t0:.15+i*.12}));
+})();
+
+/* ---- dynamic: silhouette + section outline ---- */
+const DMAX=LITE?3500:7000;const DYN=new Float32Array(DMAX*6*LST);let dynN=0;
+function dynSeg(A,B,m,g,w,k){if(dynN>=DMAX*6)return;let o=dynN*LST;for(let c=0;c<6;c++){DYN.set([A[0],A[1],A[2],B[0],B[1],B[2],CORN[c][1],CORN[c][0],0,0,m,g,w,k,0,0,1,m],o);o+=LST;}dynN+=6;}
+const SPf=new Float32Array(SP),SNf=new Float32Array(SNo),SMa=new Uint8Array(SM),STa=new Uint32Array(STr);const FV=new Float32Array(SM.length);
+function silhouette(camObj,off,cut){const n=SM.length;
+  for(let i=0;i<n;i++){const m=SMa[i],o=off[m];FV[i]=SNf[i*3]*(camObj[0]-o[0]-SPf[i*3])+SNf[i*3+1]*(camObj[1]-o[1]-SPf[i*3+1])+SNf[i*3+2]*(camObj[2]-o[2]-SPf[i*3+2]);}
+  const T=STa,pt=(a,b)=>{const t=FV[a]/(FV[a]-FV[b]);return [SPf[a*3]+(SPf[b*3]-SPf[a*3])*t,SPf[a*3+1]+(SPf[b*3+1]-SPf[a*3+1])*t,SPf[a*3+2]+(SPf[b*3+2]-SPf[a*3+2])*t];};
+  for(let t=0;t<T.length;t+=3){const a=T[t],b=T[t+1],c=T[t+2];const sa=FV[a]>0,sb=FV[b]>0,sc=FV[c]>0;if(sa===sb&&sb===sc)continue;
+    let p,q;if(sa===sb){p=pt(a,c);q=pt(b,c);}else if(sa===sc){p=pt(a,b);q=pt(c,b);}else{p=pt(b,a);q=pt(c,a);}
+    dynSeg(p,q,SMa[a],GR.SIL,ST.w.SIL,1);}}
+/* dynamic cap at the section cut */
+const CAPV=new Float32Array((CAPN*2+1+1)*5);const CAPI=[];for(let k=0;k<CAPN*2;k++)CAPI.push(0,1+k,1+(k+1)%(CAPN*2));
+function capAt(x){const P=GM.section(x,CAPN);P.pop();let c=[0,0,0];P.forEach(p=>{c=v3.add(c,p);});c=v3.sc(c,1/P.length);const m=GM.modOf(x);
+  CAPV.set([c[0],c[1],c[2],m,1],0);P.forEach((p,k)=>CAPV.set([p[0],p[1],p[2],m,1],(k+1)*5));return P;}
+
+/* =========================== shaders =========================== */
+const FVS=`precision highp float;attribute vec3 aP;attribute vec2 aF;uniform mat4 uVP,uM;uniform vec3 uOff[6];varying vec3 vO;varying float vH,vMod;
+void main(){int m=int(aF.x+.5);vO=aP;vH=aF.y;vMod=aF.x;gl_Position=uVP*uM*vec4(aP+uOff[m],1.);}`;
+const FFS=(HD?'#extension GL_OES_standard_derivatives : enable\n#define HD 1\n':'')+`precision highp float;
+uniform float uCut,uWin,uWout;uniform vec3 uEmb;varying vec3 vO;varying float vH,vMod;
+void main(){if(vO.x<uCut-.0015)discard;
+ bool em=vMod<.5&&vO.z<uWin&&vO.z>uWout;vec3 c=em?uEmb:vec3(0.);
+#ifdef HD
+ if(em&&vH<.5){float h=(vO.x*.7+vO.z*.7)/.06;float fw=fwidth(h);float d=abs(fract(h-.5)-.5);float l=1.-smoothstep(fw*.45,fw*1.35,d);c=mix(c,vec3(.38),l*step(fw,.45));}
+ if(vH>.5){float h=(vO.z+vO.y*1.2)/.07;float fw=fwidth(h);float d=abs(fract(h-.5)-.5);float l=1.-smoothstep(fw*.45,fw*1.35,d);c=mix(c,vec3(.46),l*step(fw,.45));}
+#endif
+ gl_FragColor=vec4(c,1.);}`;
+const LVS=`precision highp float;
+attribute vec3 aA,aB;attribute vec4 aS,aM,aE;
+uniform mat4 uVP,uM;uniform vec3 uOff[6];uniform vec2 uRes;uniform float uDpr,uGround,uFlat,uHid;uniform float uGA[16],uGD[16];
+varying float vD,vHW,vL,vFr,vR,vK,vA,vDash,vX,vZ,vMod,vGh;
+void main(){
+ int m=int(aM.x+.5);float mbF=mod(aE.w,10.);int mb=int(mbF+.5);float gb=step(9.5,aE.w);int g=int(aM.y+.5);
+ float ga=0.,gd=0.;for(int i=0;i<16;i++){if(i==g){ga=uGA[i];gd=uGD[i];}}
+ vec3 off=vec3(0.),offB=vec3(0.);for(int i=0;i<6;i++){if(i==m)off=uOff[i];if(i==mb)offB=uOff[i];}
+ vec4 wa=uM*vec4(aA+off,1.),wb=uM*vec4(aB+offB,1.);
+ if(gb>.5)wb.y=uGround;if(uFlat>.5){wa.y=uGround+.004;wb.y=uGround+.004;}
+ vec4 ca=uVP*wa,cb=uVP*wb;
+ float hide=ga<.003?1.:0.;if(uHid>.5&&!(g==1||g==2))hide=1.;
+ if(ca.w<.05||cb.w<.05||hide>.5){gl_Position=vec4(2.,2.,2.,1.);vR=0.;return;}
+ vec2 sa=ca.xy/ca.w*uRes*.5,sb=cb.xy/cb.w*uRes*.5;vec2 d=sb-sa;float l=length(d);d=l>1e-4?d/l:vec2(1.,0.);vec2 n=vec2(-d.y,d.x);
+ float e=aS.y,s=aS.x;float wpx=aM.z*uDpr;float hw=max(wpx*.5,.5);
+ vec4 c=e<.5?ca:cb;vec2 o=n*s*(hw+1.)+d*(e*2.-1.)*hw*.9;c.xy+=o/(uRes*.5)*c.w;c.z-=4e-5*c.w;gl_Position=c;
+ vD=s*(hw+1.);vHW=hw;float L=mix(aS.z,aS.w,e);vL=L;vFr=aE.z>0.?L/aE.z:0.;vR=clamp((gd-aE.y)/.35,0.,1.);
+ vK=aM.w;vA=ga*min(1.,wpx);vDash=aE.x;vX=mix(aA.x,aB.x,e);vZ=mix(aA.z,aB.z,e);vMod=aM.x;vGh=(g==1||g==2||g==14)?1.:0.;}`;
+const LFS=`precision highp float;uniform float uCut,uHid,uWin,uWout,uFlat;
+varying float vD,vHW,vL,vFr,vR,vK,vA,vDash,vX,vZ,vMod,vGh;
+void main(){if(vFr>vR+1e-4)discard;
+ float a=clamp(vHW+.5-abs(vD),0.,1.)*vA;float dash=vDash;
+ if(uHid>.5){a*=.2;dash=.12;}
+ if(uFlat<.5&&vX<uCut-.002){if(vGh<.5)discard;a*=.2;dash=.16;}
+ if(dash>0.){if(mod(vL,dash)>dash*.56)discard;}
+ else if(dash<0.){float P=-dash;float ph=mod(vL,P)/P;if((ph>.62&&ph<.72)||ph>.8)discard;}
+ vec3 col=vec3(vK);
+ if(a<.004)discard;gl_FragColor=vec4(col,a);}`;
+const GVS=`precision highp float;attribute vec2 aQ;uniform mat4 uVP;uniform float uGround;uniform vec2 uFoc;varying vec2 vP;
+void main(){vec3 p=vec3(aQ.x*260.+uFoc.x,uGround,aQ.y*260.+uFoc.y);vP=p.xz;gl_Position=uVP*vec4(p,1.);}`;
+const GFS='#extension GL_OES_standard_derivatives : enable\n'+`precision highp float;uniform vec2 uFoc;uniform float uA,uR0,uR1;varying vec2 vP;
+float gl1(vec2 p,float s){vec2 q=p/s;vec2 fw=fwidth(q);vec2 d=abs(fract(q-.5)-.5)/fw;float l=1.-min(min(d.x,d.y),1.);return l*(1.-smoothstep(.12,.4,max(fw.x,fw.y)));}
+void main(){float r=length(vP-uFoc);float f=1.-smoothstep(uR0,uR1,r);
+ float mi=gl1(vP,1.)*.075,ma=gl1(vP,5.)*.17;
+ vec2 q=vP/5.;vec2 fw=fwidth(q);vec2 dd=abs(fract(q-.5)-.5);vec2 dp=dd/fw;vec2 dw=dd*5.;
+ float fade=1.-smoothstep(.12,.4,max(fw.x,fw.y));
+ float pl=max((1.-min(dp.x/1.2,1.))*step(dw.y,.17),(1.-min(dp.y/1.2,1.))*step(dw.x,.17))*.42*fade;
+ float c=max(max(mi,ma),pl);if(c*f<.003)discard;gl_FragColor=vec4(vec3(1.),c*f*uA);}`;
+
+function sh(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s;}
+function prog(vs,fs){const p=gl.createProgram();gl.attachShader(p,sh(gl.VERTEX_SHADER,vs));gl.attachShader(p,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));const u={},a={};
+  for(let i=0;i<gl.getProgramParameter(p,gl.ACTIVE_UNIFORMS);i++){const n=gl.getActiveUniform(p,i).name;u[n.replace(/\[0\]$/,'')]=gl.getUniformLocation(p,n);}
+  for(let i=0;i<gl.getProgramParameter(p,gl.ACTIVE_ATTRIBUTES);i++){const n=gl.getActiveAttrib(p,i).name;a[n]=gl.getAttribLocation(p,n);}return {p,u,a};}
+let PF,PL,PG=null;
+try{PF=prog(FVS,FFS);PL=prog(LVS,LFS);if(HD)PG=prog(GVS,GFS);}catch(e){console.warn(e);noGL();return;}
+const ext32=gl.getExtension('OES_element_index_uint');
+function buf(data,el){const b=gl.createBuffer();const t=el?gl.ELEMENT_ARRAY_BUFFER:gl.ARRAY_BUFFER;gl.bindBuffer(t,b);gl.bufferData(t,data,gl.STATIC_DRAW);return b;}
+const fillVB=buf(new Float32Array(FILL.v)),useU32=FILL.n>65535;
+if(useU32&&!ext32){noGL();return;}
+const fillIB=buf(useU32?new Uint32Array(FILL.i):new Uint16Array(FILL.i),true),fillN=FILL.i.length;
+const capVB=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,capVB);gl.bufferData(gl.ARRAY_BUFFER,CAPV.byteLength,gl.DYNAMIC_DRAW);const capIB=buf(new Uint16Array(CAPI),true);
+const craftLB=buf(new Float32Array(CL.a)),craftLN=CL.n;
+const worldLB=buf(new Float32Array(WL.a)),worldLN=WL.n;
+const dynLB=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,dynLB);gl.bufferData(gl.ARRAY_BUFFER,DYN.byteLength,gl.DYNAMIC_DRAW);
+const gridB=buf(new Float32Array([-1,-1,1,-1,1,1,-1,-1,1,1,-1,1]));
+
+/* =========================== choreography =========================== */
+/* camera: az (0 = behind the tail), el, f = share of frame width the 12-unit span fills, sx/sy = frame shift; craft attitude + offset */
+const BASE={az:0,el:20,f:.5,sx:0,sy:0,roll:0,pitch:0,yaw:0,ox:0,oy:0,oz:0,fol:1,tx:0};
+const KD=[
+  {az:0,el:78,f:.37,sx:-.5,sy:-.05},
+  {az:-64,el:22,f:.92,sx:-.46,sy:-.02,tx:2.5},
+  {az:-34,el:42,f:.36,sx:-.4,sy:-.04},
+  {az:14,el:52,f:.24,sx:-.42,sy:.08},
+  {az:146,el:13,f:.52,sx:-.44,sy:.02,roll:-3},
+  {az:214,el:-34,f:.42,sx:-.48,sy:-.02},
+  {az:318,el:16,f:.46,sx:-.4,sy:-.04,pitch:4,ox:2,oy:9,oz:-140,fol:.1}
+];
+const KP=[
+  {az:0,el:76,f:.7,sy:-.5},
+  {az:-64,el:22,f:1.3,sy:-.5,tx:1.9},
+  {az:-34,el:46,f:.68,sx:.03,sy:-.6},
+  {az:14,el:52,f:.52,sy:-.64},
+  {az:146,el:13,f:.9,sy:-.52,roll:-3},
+  {az:214,el:-34,f:.8,sy:-.52},
+  {az:318,el:16,f:.8,sy:-.5,pitch:4,ox:2,oy:9,oz:-140,fol:.1}
+];
+function pose(q){const K=portrait?KP:KD;const i=Math.min(K.length-2,Math.max(0,Math.floor(q))),f=ss(0,1,q-i);const a=K[i],b=K[i+1],o={};
+  for(const k in BASE){const va=k in a?a[k]:BASE[k],vb=k in b?b[k]:BASE[k];o[k]=lerp(va,vb,f);}return o;}
+
+/* =========================== HTML annotations =========================== */
+const tagWrap=$('#tags');
+function mk(cls,html){const d=document.createElement('div');d.className='an '+cls;d.innerHTML=html;tagWrap.appendChild(d);return d;}
+const ANN=[];
+function ann(o){o.el=mk(o.cls,o.html);o.on=false;const c=' '+o.cls+' ';o.suf=c.indexOf(' l ')>=0?' translate(8px,-50%)':c.indexOf(' r ')>=0?' translate(calc(-100% - 8px),-50%)':' translate(-50%,-50%)';ANN.push(o);return o;}
+ann({sp:'c',p:[0,0,3.55],m:5,g:GR.DIMP,cls:'dim c',html:'SPAN 172 FT'});
+ann({sp:'c',p:[7.25,0,-.1],m:5,g:GR.DIMP,cls:'dim l',html:'LENGTH 69 FT',desk:1});
+ann({sp:'c',p:[0,0,-3.7],m:5,g:GR.DIMP,cls:'dim c',html:'℄'});
+['A · 43%','B · 84%','C · 19 months'].forEach((t,i)=>{ann({sp:'c',p:PRB[i].s,m:5,g:GR.PRB,cls:'ba l',html:t[0]});ann({sp:'c',p:PRB[i].a,m:5,g:GR.PRB,cls:'sq',html:''});});
+ann({sp:'c',p:[0,-.55,1.25],m:5,g:GR.SEC,cls:'dim c',html:'SECTION A–A'});
+['01 · Find product-market fit','02 · Win customers','03 · Scale faster'].forEach((t,i)=>{const sd=(i===1?'l':'r');ann({sp:'c',p:OUTC[i].s,m:OUTC[i].m,g:GR.OUTC,cls:'ba '+sd,html:t.slice(0,2)});});
+ann({sp:'c',p:OUTC[0].a,m:0,g:GR.OUTC,cls:'sq',html:''});
+STEPS.forEach((s,k)=>{ann({sp:'w',p:[STN[k][0]+3.4,GROUND,STN[k][1]],m:5,g:GR.STA,cls:'st l',html:'<b>0'+(k+1)+'</b>'+s.t,k,desk:1});ann({sp:'w',p:[STN[k][0]+3.4,GROUND,STN[k][1]],m:5,g:GR.STA,cls:'st l',html:'<b>0'+(k+1)+'</b>',k,mob:1});});
+ann({sp:'c',p:[0,-1.15,1.5],m:5,g:GR.ELV,cls:'dim c',html:'SPAN 172 FT'});
+ann({sp:'c',p:[-7.0,0,-.2],m:5,g:GR.PRF,cls:'dim r',html:'LENGTH 69 FT'});
+
+/* =========================== sizing =========================== */
+let dpr=1,qLevel=0;const DPRS=LITE?[1.5,1.25,1]:[2,1.75,1.5,1.25,1];
+const P=new Float32Array(16),V=new Float32Array(16),VP=new Float32Array(16),MM=new Float32Array(16),I4=new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]);
+let vfov=24*D2R;
+function resize(){W=innerWidth;H=innerHeight;portrait=W<860;
+  dpr=Math.min(window.devicePixelRatio||1,DPRS[qLevel],2);cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);gl.viewport(0,0,cv.width,cv.height);
+  vfov=(portrait?34:24)*D2R;need=true;}
+addEventListener('resize',()=>{resize();measure();onScroll();});
+resize();
+function project(p){const x=VP[0]*p[0]+VP[4]*p[1]+VP[8]*p[2]+VP[12],y=VP[1]*p[0]+VP[5]*p[1]+VP[9]*p[2]+VP[13],w=VP[3]*p[0]+VP[7]*p[1]+VP[11]*p[2]+VP[15];if(w<.2)return null;return [(x/w*.5+.5)*W,(1-(y/w*.5+.5))*H,w];}
+
+/* =========================== draw helpers =========================== */
+function unbindAll(){for(let i=0;i<8;i++)gl.disableVertexAttribArray(i);}
+function bindLines(b){gl.bindBuffer(gl.ARRAY_BUFFER,b);const a=PL.a,st=LST*4;
+  gl.enableVertexAttribArray(a.aA);gl.vertexAttribPointer(a.aA,3,gl.FLOAT,false,st,0);
+  gl.enableVertexAttribArray(a.aB);gl.vertexAttribPointer(a.aB,3,gl.FLOAT,false,st,12);
+  gl.enableVertexAttribArray(a.aS);gl.vertexAttribPointer(a.aS,4,gl.FLOAT,false,st,24);
+  gl.enableVertexAttribArray(a.aM);gl.vertexAttribPointer(a.aM,4,gl.FLOAT,false,st,40);
+  gl.enableVertexAttribArray(a.aE);gl.vertexAttribPointer(a.aE,4,gl.FLOAT,false,st,56);}
+function bindFill(vb,ib){gl.bindBuffer(gl.ARRAY_BUFFER,vb);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);
+  gl.enableVertexAttribArray(PF.a.aP);gl.vertexAttribPointer(PF.a.aP,3,gl.FLOAT,false,20,0);gl.enableVertexAttribArray(PF.a.aF);gl.vertexAttribPointer(PF.a.aF,2,gl.FLOAT,false,20,12);}
+const EMB=[.09,.09,.09];
+
+/* =========================== frame =========================== */
+const T0=performance.now();let lastT=T0,tm=0,frameN=0,fpsAcc=[],idleSkip=false;
+const roV=$('#roV'),roEl=$('.ro');
+let camPos=[0,0,30],camQ=[0,0,0,1];
+const GA=new Float32Array(NG),GD=new Float32Array(NG),OFF=new Float32Array(18);
+G.snap=()=>{G.q=G.qT;G.howS=G.howT;need=true;};
+let panR=null,panQ=-1;
+function frame(now){requestAnimationFrame(frame);
+  if(document.hidden)return;
+  try{body(now);}catch(err){if(!frame._e){frame._e=1;console.warn(err);}}}
+function body(now){
+  let dt=Math.min(.05,(now-lastT)/1000);
+  const intro=(now-T0)/1000;
+  const idle=now-lastInput>4000&&Math.abs(G.qT-G.q)<.0005&&Math.abs(G.howT-G.howS)<.0005&&intro>5;
+  if(RM&&!need&&intro>1)return;
+  if(idle&&G.q>6.4&&!need){lastT=now;return;}
+  if(idle&&LITE){idleSkip=!idleSkip;if(idleSkip)return;}
+  lastT=now;frameN++;
+  if(!RM){fpsAcc.push(dt);if(fpsAcc.length>=40){const avg=fpsAcc.reduce((a,b)=>a+b,0)/fpsAcc.length;fpsAcc=[];if(avg>.024&&qLevel<DPRS.length-1){qLevel++;resize();}}}
+  if(RM){G.q=Math.round(G.qT);G.howS=(G.step+.5)/4;}
+  else{const k=1-Math.exp(-dt*2.3);G.q+=(G.qT-G.q)*k;G.howS+=(G.howT-G.howS)*k;if(Math.abs(G.qT-G.q)<1e-4)G.q=G.qT;}
+  if(!RM)tm+=dt;
+  const t=RM?0:tm,q=G.q;
+  const ps=pose(q);
+  const iv=RM?1e3:intro; /* intro clock: the plan view draws itself */
+  /* ---- state ---- */
+  const cutK=ss(0,1,plat(q,1,.18,.5));const cut=lerp(-7,0,cutK);
+  const ex=plat(q,2,.22,.55);
+  const lift=2.3*ss(1.2,1.62,q)*(1-ss(1.8,2.02,q));
+  const wIn=ss(1.62,1.82,q),wOut=ss(.8,.97,G.howS);
+  const winZ=lerp(-2.5,2.3,wIn),woutZ=lerp(-2.5,2.3,wOut);
+  const off=[[0,lift,0],[.85*ex,0,.35*ex],[-.85*ex,0,.35*ex],[1.9*ex,0,.95*ex],[-1.9*ex,0,.95*ex],[0,0,0]];
+  off.forEach((o,i)=>{OFF[i*3]=o[0];OFF[i*3+1]=o[1];OFF[i*3+2]=o[2];});
+  /* route */
+  const u=G.howS*4-.5,uk=Math.floor(cl(u,0,2.999)),uu=cl(u,0,3);const ue=uu<=0?0:uk+ss(.18,.82,uu-uk)+(uu>=3?0:0);
+  const rp=route(Math.min(3,ue)),rp2=route(Math.min(3,ue+.02)),rp0=route(Math.max(0,ue-.02));
+  const tx=rp2[0]-rp0[0],tz=rp2[1]-rp0[1];const hdg=(Math.abs(tx)+Math.abs(tz)>1e-5)?Math.atan2(-tx,-tz):0;
+  const hdgW=ss(2.6,3,q)*(1-ss(3,3.4,q));
+  const yaw=(ps.yaw+(RM?0:Math.sin(t*.09)*.5))*D2R+hdg*hdgW;
+  const rollR=(ps.roll+(RM?0:Math.sin(t*.21)*.35))*D2R-hdg*hdgW*.35;
+  const pitchR=(ps.pitch+(RM?0:Math.sin(t*.17)*.25))*D2R;
+  const craftQ=Q.euler(yaw,pitchR,rollR);
+  const bob=RM?0:Math.sin(t*.33)*.04;
+  const craftP=[rp[0]+ps.ox,ps.oy+bob,rp[1]+ps.oz];
+  /* camera */
+  const tanH=(W/H)*Math.tan(vfov/2);const dist=12/(ps.f*2*tanH);
+  const tl=Math.hypot(tx,tz)||1,look=(portrait?2.5:5)*hdgW;const tgt=[rp[0]+ps.ox*ps.fol+ps.tx+tx/tl*look,ps.oy*ps.fol,rp[1]+ps.oz*ps.fol+tz/tl*look];
+  const az=(ps.az+(RM?0:Math.sin(t*.05)*1.6))*D2R,el=(ps.el+(RM?0:Math.sin(t*.04)*.6))*D2R;
+  camPos=v3.add(tgt,[Math.sin(az)*Math.cos(el)*dist,Math.sin(el)*dist,Math.cos(az)*Math.cos(el)*dist]);
+  camQ=Q.look(camPos,tgt);
+  const near=Math.max(.5,dist*.2),far=dist+320;
+  M4.persp(vfov,W/H,near,far,ps.sx,ps.sy,P);M4.view(camQ,camPos,V);M4.mul(P,V,VP);
+  /* groups: alpha + draw progress */
+  const it=k=>ss(0,1,(iv-k[0])/(k[1]-k[0]));
+  const pI=it([.2,2.2]),pP=it([1.2,3.8]),pC=it([2.0,4.6]),pD=it([3.2,4.8]),pS=it([1.2,2.4]);
+  const sc=(c,h,f)=>plat(q,c,h,f);
+  GA.fill(0);GD.fill(0);
+  GA[GR.GRID]=ss(0,1.2,iv)*(1-.55*ss(4.5,5,q)*(1-ss(5,5.6,q)))*(1-ss(5.45,5.95,q));
+  GA[GR.OUT]=1;GD[GR.OUT]=pI;GA[GR.SIL]=1;GD[GR.SIL]=pS;
+  GA[GR.PAN]=1;GD[GR.PAN]=pP;
+  GA[GR.CON]=.62+.38*sc(1,.25,.45);GD[GR.CON]=pC;
+  GA[GR.CL]=.4+.6*Math.max(sc(0,.25,.5),sc(5,.25,.5));GD[GR.CL]=pD;
+  GA[GR.DIMP]=sc(0,.25,.45);GD[GR.DIMP]=Math.min(pD,GA[GR.DIMP]);
+  GA[GR.SEC]=cutK;GD[GR.SEC]=1;
+  GA[GR.PRB]=sc(1,.22,.4);GD[GR.PRB]=GA[GR.PRB];
+  GA[GR.EXP]=ex;GD[GR.EXP]=ex;
+  GA[GR.OUTC]=sc(2,.2,.4);GD[GR.OUTC]=GA[GR.OUTC];
+  GA[GR.STA]=sc(3,.3,.5);GD[GR.STA]=GA[GR.STA];
+  GA[GR.ELV]=sc(4,.22,.4);GD[GR.ELV]=GA[GR.ELV];
+  GA[GR.PRF]=sc(5,.22,.4);GD[GR.PRF]=GA[GR.PRF];
+  GA[GR.DROP]=.8*sc(3,.4,.5);GD[GR.DROP]=1;
+  const projA=.55*Math.max(sc(3,.4,.5),sc(4,.2,.5));
+  /* ---- draw ---- */
+  gl.clearColor(0,0,0,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+  gl.disable(gl.CULL_FACE);gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);
+  const MC=M4.qt(craftQ,craftP,MM);
+  /* fills (depth + black / ember) */
+  gl.useProgram(PF.p);unbindAll();gl.disable(gl.BLEND);gl.depthMask(true);
+  gl.enable(gl.POLYGON_OFFSET_FILL);gl.polygonOffset(1.5,4);
+  gl.uniformMatrix4fv(PF.u.uVP,false,VP);gl.uniformMatrix4fv(PF.u.uM,false,MC);gl.uniform3fv(PF.u.uOff,OFF);
+  gl.uniform1f(PF.u.uCut,cut);gl.uniform1f(PF.u.uWin,winZ);gl.uniform1f(PF.u.uWout,woutZ);gl.uniform3fv(PF.u.uEmb,EMB);
+  bindFill(fillVB,fillIB);gl.drawElements(gl.TRIANGLES,fillN,useU32?gl.UNSIGNED_INT:gl.UNSIGNED_SHORT,0);
+  let secP=null;
+  if(cut>-6.05){secP=capAt(cut);gl.bindBuffer(gl.ARRAY_BUFFER,capVB);gl.bufferSubData(gl.ARRAY_BUFFER,0,CAPV);bindFill(capVB,capIB);gl.drawElements(gl.TRIANGLES,CAPI.length,gl.UNSIGNED_SHORT,0);}
+  gl.disable(gl.POLYGON_OFFSET_FILL);
+  /* grid */
+  gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);
+  if(PG&&GA[GR.GRID]>.01){gl.useProgram(PG.p);unbindAll();gl.bindBuffer(gl.ARRAY_BUFFER,gridB);gl.enableVertexAttribArray(PG.a.aQ);gl.vertexAttribPointer(PG.a.aQ,2,gl.FLOAT,false,8,0);
+    gl.uniformMatrix4fv(PG.u.uVP,false,VP);gl.uniform1f(PG.u.uGround,GROUND);gl.uniform2f(PG.u.uFoc,craftP[0]*.6+tgt[0]*.4,craftP[2]*.6+tgt[2]*.4);gl.uniform1f(PG.u.uA,GA[GR.GRID]);
+    gl.uniform1f(PG.u.uR0,portrait?16:20);gl.uniform1f(PG.u.uR1,portrait?44:58);gl.drawArrays(gl.TRIANGLES,0,6);}
+  /* dynamic: silhouette + section outline */
+  const camObj=Q.rot(Q.conj(craftQ),v3.sub(camPos,craftP));
+  if(LITE&&frameN%2===0&&silhouette._n!==undefined)dynN=silhouette._n;else{dynN=0;silhouette(camObj,off,cut);silhouette._n=dynN;}
+  if(secP){for(let k=0;k<secP.length;k++)dynSeg(secP[k],secP[(k+1)%secP.length],GM.modOf(cut),GR.SEC,1.6,1);}
+  if(dynN){gl.bindBuffer(gl.ARRAY_BUFFER,dynLB);gl.bufferSubData(gl.ARRAY_BUFFER,0,DYN.subarray(0,dynN*LST));}
+  /* lines */
+  gl.useProgram(PL.p);unbindAll();
+  const U=PL.u;gl.uniformMatrix4fv(U.uVP,false,VP);gl.uniform3fv(U.uOff,OFF);gl.uniform2f(U.uRes,cv.width,cv.height);gl.uniform1f(U.uDpr,dpr);
+  gl.uniform1f(U.uGround,GROUND);gl.uniform1f(U.uCut,cut);gl.uniform1f(U.uWin,winZ);gl.uniform1f(U.uWout,woutZ);
+  gl.uniform1fv(U.uGA,GA);gl.uniform1fv(U.uGD,GD);
+  const drawL=(b,n,M,o)=>{o=o||{};gl.uniformMatrix4fv(U.uM,false,M);gl.uniform1f(U.uHid,o.hid?1:0);gl.uniform1f(U.uFlat,o.flat?1:0);bindLines(b);gl.drawArrays(gl.TRIANGLES,0,n);};
+  /* hidden lines (dashed, faint) */
+  gl.depthFunc(gl.GREATER);drawL(craftLB,craftLN,MC,{hid:1});gl.depthFunc(gl.LEQUAL);
+  drawL(craftLB,craftLN,MC);
+  if(dynN)drawL(dynLB,dynN,MC);
+  if(GA[GR.STA]>.003)drawL(worldLB,worldLN,I4);
+  /* plan projection of the outline on the ground */
+  if(projA>.01){const ga=GA[GR.OUT];const keep=new Float32Array(GA);GA.fill(0);GA[GR.OUT]=projA*.5;GD[GR.OUT]=1;gl.uniform1fv(U.uGA,GA);gl.uniform1fv(U.uGD,GD);drawL(craftLB,craftLN,MC,{flat:1});GA.set(keep);GA[GR.OUT]=ga;}
+  gl.depthMask(true);
+  /* ---- annotations ---- */
+  const pq=Math.round(cl(q,0,NSC-1));if(pq!==panQ||frameN%20===1){panQ=pq;const pn=secs[pq]&&secs[pq].querySelector('.pn,.closewrap');panR=pn?pn.getBoundingClientRect():null;}
+  const pr=panR;
+  ANN.forEach(a=>{let al=GA[a.g];if(a.g===GR.DIMP)al=Math.min(al,pD);if(a.g===GR.SEC)al=cutK*sc(1,.15,.3);
+    if(a.desk&&portrait)al=0;if(a.mob&&!portrait)al=0;
+    let s=null;
+    if(al>.02){let wp;if(a.sp==='w')wp=[a.p[0],a.p[1],a.p[2]];else{const o=off[a.m];wp=v3.add(Q.rot(craftQ,v3.add(a.p,o)),craftP);}s=project(wp);}
+    if(s){const hw=a._hw||(a._hw=(a.el.offsetWidth||40)/2),hh=a._hh||(a._hh=(a.el.offsetHeight||16)/2);
+      const al2=a.el.classList.contains('l')?[s[0],s[0]+hw*2]:a.el.classList.contains('r')?[s[0]-hw*2,s[0]]:[s[0]-hw,s[0]+hw];
+      if(al2[0]<8||al2[1]>W-8||s[1]<(portrait?104:84)||s[1]>H-(portrait?24:70))s=null;
+      else if(pr&&pr.bottom>0&&pr.top<H){if(portrait){if(s[1]+hh>pr.top-6)s=null;}else if(al2[0]<pr.right+12&&s[1]+hh>pr.top&&s[1]-hh<pr.bottom)s=null;}}
+    if(!s||al<.02){if(a.on){a.el.style.opacity=0;a.on=false;}return;}
+    a.el.style.transform='translate3d('+s[0].toFixed(1)+'px,'+s[1].toFixed(1)+'px,0)'+a.suf;a.el.style.opacity=al.toFixed(2);a.on=true;
+    if(a.k!==undefined)a.el.classList.toggle('on',a.k===G.step);});
+  /* readouts */
+  if((frameN%6===1||RM)&&roV._t!==VIEWS[pq]){roV._t=VIEWS[pq];roV.textContent=VIEWS[pq];}
+  const roO=(1-ss(5.45,5.85,q)).toFixed(2);if(roEl._o!==roO){roEl._o=roO;roEl.style.opacity=roO;}
+  need=false;
+}
+root.classList.add('gl');
+cv.addEventListener('webglcontextlost',e=>{e.preventDefault();noGL();});
+document.addEventListener('visibilitychange',()=>{lastT=performance.now();need=true;});
+requestAnimationFrame(frame);
+}catch(err){console.warn(err);root.classList.add('nogl');root.classList.remove('gl');}
+})();
+</script>
+</body>
+</html>
