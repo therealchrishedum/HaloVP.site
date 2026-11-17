@@ -481,47 +481,70 @@ h1,h2,h3,p,ol,ul,figure,figcaption{margin:0}ol,ul{list-style:none;padding:0}em{f
 @media (min-width:1024px){ .hk-cube .hk-cube-stage{margin-top:8px} }
 
 
-.tri{display:grid;gap:0;margin-top:44px;border-top:1px solid var(--hk-rule)}
-.tri>li{padding:26px 0;border-bottom:1px solid var(--hk-rule);min-width:0}
-@media (min-width:900px){.tri{grid-template-columns:repeat(3,1fr);border-top:0}.tri>li{border:0;border-left:1px solid var(--hk-rule);padding:0 28px}.tri>li:first-child{border-left:0;padding-left:0}}
-.tn{font-family:var(--hk-serif);font-size:clamp(30px,2.6vw,40px);line-height:1.05;margin-top:14px}.tn b{font:500 12px var(--hk-mono);letter-spacing:.12em;color:var(--hk-fg3);margin-right:12px;vertical-align:middle}
-.th{font-family:var(--hk-serif);font-weight:400;font-size:clamp(26px,2.2vw,34px);line-height:1.1;margin-top:14px}.th--l{margin-top:10px}
-.td{margin-top:10px;color:var(--hk-fg2);font-size:16px;max-width:24em}
-.rl{margin-top:14px}.rl li{padding:8px 0;border-top:1px solid var(--hk-rule);color:var(--hk-fg2);font-size:15.5px}
+.hw{overflow:visible}
+.hw .sub-t{fill:#262626;stroke:#5A5A5A;stroke-width:.6}.hw .sub-s.fx{fill:#141414;stroke:#3A3A3A;stroke-width:.5}.hw .sub-s.fy{fill:#1E1E1E;stroke:#3A3A3A;stroke-width:.5}
+.hw .pad{fill:#A6A6A6}.hw .bga{fill:#5A5A5A}
+.hw .pkg-t{fill:#101010;stroke:#6B6B6B;stroke-width:.8}.hw .pkg-s.fx{fill:#050505;stroke:#3A3A3A;stroke-width:.6}.hw .pkg-s.fy{fill:#1A1A1A;stroke:#3A3A3A;stroke-width:.6}
+.hw .lid-r{fill:none;stroke:#3A3A3A;stroke-width:.7}.hw .lid-r2{fill:none;stroke:#262626;stroke-width:.6}
+.hw .etch{fill:none;stroke:#5E5E5E;stroke-width:.55;stroke-linejoin:round}.hw .via{fill:#8E8E8E}
+.hw .win{fill:#000;stroke:#9A9A9A;stroke-width:.8}
+.hw .core-t{fill:#E83214}.hw .core-s.fx{fill:#9E200C}.hw .core-s.fy{fill:#C22A11}
+.hw .cgrid{fill:none;stroke:#000;stroke-opacity:.42;stroke-width:.55}.hw .cell{fill:#fff}
+.hw .mk{fill:#7A7A7A;font-family:var(--hk-mono);font-weight:500;letter-spacing:.12em}.hw .mk--k{fill:#E6E6E6}
+.hw .p1{fill:#5A5A5A}.hw .fid{stroke:#9A9A9A;stroke-width:.7}
+.hw .skt-t{fill:#1A1A1A;stroke:#5A5A5A;stroke-width:.7}.hw .skt-s.fx{fill:#0A0A0A;stroke:#3A3A3A;stroke-width:.5}.hw .skt-s.fy{fill:#141414;stroke:#3A3A3A;stroke-width:.5}
+.hw .skt-in{fill:#030303;stroke:#3A3A3A;stroke-width:.7}.hw .spr{fill:none;stroke:#8E8E8E;stroke-width:.7}.hw .algn{fill:none;stroke:#E6E6E6;stroke-width:1.2}
+.hw .pcb-t{fill:var(--hk-bg);stroke:var(--hk-fg3);stroke-width:.8}.hw .pcb-s.fx,.hw .pcb-s.fy{fill:var(--tr);stroke:var(--hk-fg3);stroke-width:.6}.hw .pcb-g{fill:none;stroke:var(--yl);stroke-width:.6}
+.hw .hole{fill:var(--hk-bg);stroke:var(--hk-fg3);stroke-width:.8}
+.hw .bus{fill:none;stroke:var(--hk-fg);stroke-width:1.05;stroke-linejoin:round}
+.hw .blk-t{fill:#151515;stroke:#6B6B6B;stroke-width:.7}.hw .blk-s.fx{fill:#050505;stroke:#3A3A3A;stroke-width:.5}.hw .blk-s.fy{fill:#1C1C1C;stroke:#3A3A3A;stroke-width:.5}.hw .blk-l{fill:none;stroke:#5A5A5A;stroke-width:.8}
+.hw .vl2{fill:var(--hk-fg2);font-family:var(--hk-mono);font-weight:500;letter-spacing:.14em}.hw .vl2--k{fill:var(--hk-fg)}
+.hw .drop{fill:none;stroke:var(--hk-fg3);stroke-width:.8;stroke-dasharray:3 3}
+.hw .ring{fill:none;stroke:var(--hk-fg);stroke-width:2}.hw .ring2{fill:none;stroke:var(--hk-fg3);stroke-width:.8;stroke-dasharray:2 3}
+.hw .stn-t{fill:#121212;stroke:#8E8E8E;stroke-width:.8}.hw .stn-s.fx{fill:#050505;stroke:#3A3A3A}.hw .stn-s.fy{fill:#1C1C1C;stroke:#3A3A3A}
+.hw .stn-e-t{fill:#E83214;stroke:#E83214}.hw .stn-e-s.fx{fill:#9E200C}.hw .stn-e-s.fy{fill:#C22A11}
+.hw .arw{fill:none;stroke:var(--hk-fg);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.hw .vl3{font:500 11px var(--hk-mono);letter-spacing:.12em;fill:var(--hk-fg);paint-order:stroke;stroke:var(--hk-bg);stroke-width:4px}.hw .vn{fill:var(--hk-fg3)}
+.anim .sl .hw .plug{transform:translateY(-36px);opacity:0;transition:transform 1.4s cubic-bezier(.2,.7,.2,1) .4s,opacity .8s ease .4s}.anim .sl.in .hw .plug{transform:none;opacity:1}
+.anim .hw .bus{stroke-dasharray:1 2;stroke-dashoffset:1.01;transition:stroke-dashoffset 1.6s ease 1s}.anim .sl.in .hw .bus{stroke-dashoffset:0}
+.lp .lp-r{fill:none;stroke:var(--hk-fg);stroke-width:2}.lp .lp-r2{fill:none;stroke:var(--hk-fg3);stroke-width:.8;stroke-dasharray:2 4}
+.lp .lp-n{fill:var(--hk-bg);stroke:var(--hk-fg);stroke-width:1.6}.lp .lp-ne{fill:var(--hk-ember)}.lp .lp-t{font:500 11px var(--hk-mono);fill:var(--hk-fg)}
+.lp .lp-l{font:500 12px var(--hk-mono);letter-spacing:.14em;fill:var(--hk-fg);paint-order:stroke;stroke:var(--hk-bg);stroke-width:5px}.lp .lp-a{fill:none;stroke:var(--hk-fg);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lp .lp-c{font:500 11px var(--hk-mono);letter-spacing:.2em;fill:var(--hk-fg3)}
+.brand{display:flex;align-items:center;gap:12px;font:500 clamp(14px,1.2vw,17px)/1 var(--hk-mono);letter-spacing:.32em;text-transform:uppercase;color:var(--hk-fg);margin-bottom:34px}.brand i{width:10px;height:10px;background:var(--hk-ember)}
+.gd{display:grid;gap:0;margin-top:40px;border-top:1px solid var(--hk-rule)}
+.gd>li{padding:24px 0;border-bottom:1px solid var(--hk-rule);min-width:0}
+@media (min-width:700px){.gd--4{grid-template-columns:repeat(2,1fr);column-gap:32px}}
+@media (min-width:1200px){.gd{border-top:0}.gd--4{grid-template-columns:repeat(4,1fr);column-gap:0}.gd--3{grid-template-columns:repeat(3,1fr)}.gd>li{border:0;border-left:1px solid var(--hk-rule);padding:0 24px}.gd>li:first-child{border-left:0;padding-left:0}}
+@media (min-width:900px) and (max-width:1199px){.gd--3{grid-template-columns:repeat(3,1fr);column-gap:24px;border-top:0}.gd--3>li{border:0}}
+.pn2{font-family:var(--hk-serif);font-size:clamp(25px,2.1vw,32px);line-height:1.08;margin-top:14px}.pn2 b{display:block;font:500 12px var(--hk-mono);letter-spacing:.12em;color:var(--hk-fg3);margin-bottom:8px}
+.th{font-family:var(--hk-serif);font-weight:400;font-size:clamp(25px,2.1vw,32px);line-height:1.1;margin-top:12px}.th--s{font-size:clamp(22px,1.8vw,27px)}
+.td{margin-top:8px;color:var(--hk-fg2);font-size:15.5px;max-width:26em}
+.dlv{margin-top:18px;border-top:2px solid var(--hk-fg);padding-top:10px}.dlv-k{font:500 10.5px var(--hk-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--hk-fg3)}
+.dlv-t{display:flex;align-items:center;gap:8px;font-weight:600;font-size:17px;margin-top:4px}.dlv-t::before{content:"";width:8px;height:8px;background:var(--hk-ember)}
+.dlv ul{margin-top:6px}.dlv li{font-size:14.5px;color:var(--hk-fg2);padding:5px 0;border-top:1px solid var(--hk-rule);font-variant-numeric:tabular-nums}
 .dn{display:flex;align-items:center;gap:10px;font-family:var(--hk-mono);font-size:12px;letter-spacing:.1em;color:var(--hk-fg3)}.dn i{width:8px;height:8px;background:var(--hk-ember)}
-.nb{font-weight:600;font-size:clamp(36px,3.6vw,58px);letter-spacing:-.035em;line-height:1;white-space:nowrap}.nb span{color:var(--hk-fg3);font-weight:400}
-.note{margin-top:30px;font-family:var(--hk-mono);font-size:12px;letter-spacing:.06em;color:var(--hk-fg3)}
+.uk{font:500 11px var(--hk-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--hk-fg3)}
+.ua{display:flex;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--hk-rule);color:var(--hk-fg);font-size:15.5px;font-weight:500}.ua span{color:var(--hk-fg3)}
+.nb{font-weight:600;font-size:clamp(32px,3vw,48px);letter-spacing:-.035em;line-height:1;white-space:nowrap}.nb span{color:var(--hk-fg3);font-weight:400}
+.note{margin-top:28px;font-family:var(--hk-mono);font-size:12px;letter-spacing:.06em;color:var(--hk-fg3)}
+.mini{margin-top:22px;border-top:1px solid var(--hk-rule)}.mini li{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--hk-rule);color:var(--hk-fg2);font-size:15px}.mini b{font-weight:600;font-size:30px;letter-spacing:-.03em;color:var(--hk-fg)}
 .vz-svg{display:block;width:100%;height:auto;overflow:visible}
-.vz-svg .ft{fill:var(--hk-bg);stroke:var(--hk-fg);stroke-width:1.3}.vz-svg .fl{fill:var(--tr);stroke:var(--hk-fg);stroke-width:1.3}.vz-svg .fr{fill:var(--hk-rule);stroke:var(--hk-fg);stroke-width:1.3}
-.vz-svg .pkg .ft{fill:var(--hk-bg)}
-.vz-svg .pin{fill:none;stroke:var(--hk-fg2);stroke-width:1.4}
-.vz-svg .die{fill:var(--tr);stroke:var(--hk-fg);stroke-width:1}.vz-svg .die--e{fill:var(--hk-ember);stroke:none}.vz-svg .die--g{fill:none;stroke:var(--hk-fg3);stroke-dasharray:4 3}
-.vz-svg .grd{fill:none;stroke:var(--hk-fg3);stroke-width:.6}
-.vz-svg .sock{fill:none;stroke:var(--hk-fg);stroke-width:1.4;stroke-dasharray:6 4}
-.vz-svg .pcb{fill:var(--hk-bg);stroke:var(--hk-fg3);stroke-width:1}.vz-svg .pcbe{fill:var(--tr);stroke:var(--hk-fg3);stroke-width:1}.vz-svg .pcbg{fill:none;stroke:var(--yl);stroke-width:.8}
-.vz-svg .trc{fill:none;stroke:var(--hk-fg);stroke-width:2.2;stroke-linejoin:round}.vz-svg .trc--g{stroke:var(--hk-fg3);stroke-dasharray:4 4}
-.vz-svg .via{fill:var(--hk-fg)}
-.vz-svg .ldr{fill:none;stroke:var(--hk-fg3);stroke-width:1}.vz-svg .ldr--d{stroke-dasharray:4 4}
-.vz-svg .prb{fill:var(--hk-ember)}
-.vz-svg .vl{font:500 11px var(--hk-mono);letter-spacing:.1em;fill:var(--hk-fg3);paint-order:stroke;stroke:var(--hk-bg);stroke-width:4px}.vz-svg .vl--k{fill:var(--hk-fg)}
-.vz-svg .pl .ft{fill:var(--hk-bg)}.vz-svg .pl--e .ft,.vz-svg .pl--e .fl,.vz-svg .pl--e .fr{fill:var(--hk-ember);stroke:var(--hk-ember)}.vz-svg .pl--e .ft{stroke:#000;stroke-width:.6}
-.vz-svg .pl--g path{fill:none;stroke:var(--hk-fg3);stroke-dasharray:6 4}
-.vz-svg .tg{fill:none;stroke:var(--hk-fg2);stroke-width:1.6;stroke-linecap:round}
-.vz-svg .cr{fill:none;stroke:var(--hk-fg);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.vz-svg .los{fill:none;stroke:var(--hk-fg3);stroke-dasharray:6 4}
-.vz-svg .kn{fill:var(--hk-bg)}.vz-svg .o{fill:none;stroke:var(--hk-fg);stroke-width:2}.vz-svg .hl{fill:var(--hk-ember)}
-.anim .vz-svg .d{stroke-dasharray:1 2;stroke-dashoffset:1.01;transition:stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1) .3s}.anim .sl.in .vz-svg .d{stroke-dashoffset:0}
-.anim .sl .vz-svg .die--e,.anim .sl .vz-svg .pl--e{opacity:0;transform:translateY(-24px);transition:opacity .8s ease .5s,transform 1s cubic-bezier(.2,.7,.2,1) .5s}.anim .sl.in .vz-svg .die--e,.anim .sl.in .vz-svg .pl--e{opacity:1;transform:none}
-.sv{margin-bottom:6px}
+.hw2{display:grid;gap:28px;align-items:center;margin-top:20px}@media (min-width:1100px){.hw2{grid-template-columns:5fr 7fr;gap:48px}.hw2 .gd--steps{grid-template-columns:repeat(2,1fr);column-gap:28px;border-top:1px solid var(--hk-rule)}.hw2 .gd--steps>li{border:0;border-bottom:1px solid var(--hk-rule);padding:18px 0}}
+.hw2-v{max-width:560px;width:100%;margin:0 auto}
+.sv{margin-bottom:8px}
+.sl--close .hk-cube{--hk-cube-edge:var(--hk-fg3)}
 
-.mx{font-size:clamp(48px,7vw,120px);max-width:14em}
-.mx2{display:flex;align-items:center;gap:.25em;font-family:var(--hk-serif);font-style:italic;font-size:clamp(72px,12vw,210px);line-height:.9;letter-spacing:-.03em;margin:12px 0 30px}.mx2 i{width:.16em;height:.16em;background:var(--hk-ember);margin-top:.35em}
+.sl--cover .h1{font-size:clamp(60px,8.4vw,150px);line-height:.9}
+@media (min-width:900px){.sl--cover .g{grid-template-columns:7fr 5fr}}
+.mh{font-family:var(--hk-serif);font-size:clamp(48px,5.6vw,96px);line-height:.95;letter-spacing:-.02em;color:var(--hk-fg3)}.mh span{display:block}.mh span:last-child{color:var(--hk-fg);font-style:italic}.mh i{display:inline-block;width:.16em;height:.16em;background:var(--hk-ember);margin-left:.12em}
 .gx{font-weight:600;font-size:clamp(64px,7vw,120px);letter-spacing:-.05em;line-height:.9}
-.wd{margin-top:36px;border-top:1px solid var(--hk-rule)}.wd li{display:grid;gap:8px;padding:20px 0;border-bottom:1px solid var(--hk-rule);align-items:baseline}
-@media (min-width:900px){.wd li{grid-template-columns:5fr 4fr;gap:40px}}
-.w1{font-family:var(--hk-serif);font-size:clamp(56px,7.6vw,128px);line-height:.9;letter-spacing:-.025em}.wd--s .w1{font-size:clamp(34px,4.2vw,68px);line-height:1}
-.w2{font-size:clamp(17px,1.4vw,20px);color:var(--hk-fg2)}
-.tri--xl .nb{font-size:clamp(40px,4.6vw,76px)}
+.wd{margin-top:30px;border-top:1px solid var(--hk-rule)}.wd li{display:grid;gap:6px;padding:18px 0;border-bottom:1px solid var(--hk-rule);align-items:baseline}
+@media (min-width:900px){.wd li{grid-template-columns:6fr 5fr;gap:40px}}
+.w1{display:flex;align-items:baseline;gap:18px;font-family:var(--hk-serif);font-size:clamp(46px,6vw,104px);line-height:.92;letter-spacing:-.025em}.w1 b{font:500 13px var(--hk-mono);color:var(--hk-fg3);letter-spacing:.1em}
+.wd--p .w1{font-size:clamp(30px,3.3vw,54px)}.wd--p li{padding:14px 0}
+.w2{font-size:clamp(16px,1.3vw,19px);color:var(--hk-fg2)}.w2 strong{display:block;color:var(--hk-fg);font-weight:600;margin-top:6px}
+.cy{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2em .5em;font-family:var(--hk-serif);font-size:clamp(44px,6vw,100px);line-height:1;letter-spacing:-.02em;margin-top:24px}.cy i{font-style:normal;color:var(--hk-fg3)}.cy em{display:inline-flex;align-items:center;gap:.2em}.cy em::after{content:"↺";font-style:normal;color:var(--hk-fg3)}
 
 </style>
 <script>
@@ -545,17 +568,18 @@ document.addEventListener('DOMContentLoaded',function(){try{
 </script>
 </head>
 <body>
-<header class="top t-dk"><a class="wm" href="#s1" aria-label="Halo Ventures, back to the first slide"><i aria-hidden="true"></i>HALO // VENTURES</a><p class="ctr" aria-hidden="true"><b id="ctr">01</b> / 07</p><div class="prog" aria-hidden="true"></div></header>
+<header class="top t-dk"><a class="wm" href="#s1" aria-label="Halo Ventures, back to the first slide"><i aria-hidden="true"></i>HALO // VENTURES</a><p class="ctr" aria-hidden="true"><b id="ctr">01</b> / 08</p><div class="prog" aria-hidden="true"></div></header>
 <div class="nav t-dk"><button type="button" id="prev" aria-label="Previous slide">↑</button><button type="button" id="next" aria-label="Next slide">↓</button></div>
 
 <main>
-<section data-t="dk" class="t-dk sl sl--cover" id="s1" aria-labelledby="h1"><div class="w"><p class="lb lb--k"><i></i>Halo Ventures · The next-gen GTM &amp; development accelerator</p><h1 class="h1 mx" id="h1">Everyone thinks a great product sells itself.</h1><p class="mx2">It doesn’t<i></i></p><p class="dk">43% of failed startups never found product-market fit. We build the go-to-market that finds it, from inside your company.</p><button type="button" class="hk-pill" data-hk-copy="chris@halovpartners.com" aria-label="Copy email address chris@halovpartners.com"><span class="hk-pt"><span class="hk-a">chris@halovpartners.com</span><span class="hk-b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg></button></div></section>
-<section data-t="lt" class="t-lt sl sl--wide" id="s2" aria-labelledby="h2"><div class="w"><p class="lb"><span>01</span>The problem</p><h2 class="h2" id="h2">It’s not what you build. <em>It’s what they buy.</em></h2><ol class="tri"><li><p class="gx">43%</p><p class="td">of failed startups never found product-market fit</p></li><li><p class="gx">84%</p><p class="td">of sales reps missed their target last year</p></li><li><p class="gx">19 mo</p><p class="td">average tenure of a VP of Sales</p></li></ol><p class="exs">Sources: VCBacked, The Startup Graveyard, 2026; Salesforce, State of Sales; Gong.</p></div></section>
-<section data-t="dk" class="t-dk sl sl--wide" id="s3" aria-labelledby="hs3"><div class="w"><p class="lb"><span>02</span>What we do</p><h2 class="h2" id="hs3">We build your go-to-market. <em>From the inside.</em></h2><ol class="wd"><li><span class="w1">Join</span><span class="w2">We join your team.</span></li><li><span class="w1">Prove</span><span class="w2">We find who buys and why, and close the first repeatable deals.</span></li><li><span class="w1">Build</span><span class="w2">We build the sales system, then hand it to your team.</span></li></ol></div></section>
-<section data-t="lt" class="t-lt sl sl--wide" id="s4" aria-labelledby="hs4"><div class="w"><p class="lb"><span>03</span>Why we are different</p><h2 class="h2" id="hs4">We don’t advise. <em>We take the field.</em></h2><ol class="wd wd--s"><li><span class="w1">Inside, not on the sidelines.</span><span class="w2">We sell next to your team.</span></li><li><span class="w1">Proof before you hire.</span><span class="w2">See what sells before you commit to a full-time executive.</span></li><li><span class="w1">Your team keeps it.</span><span class="w2">Nothing leaves with us.</span></li></ol></div></section>
-<section data-t="dk" class="t-dk sl sl--wide" id="s5" aria-labelledby="hs5"><div class="w"><p class="lb"><span>04</span>What you receive</p><h2 class="h2" id="hs5">You get the system. <em>Your team keeps it.</em></h2><ol class="tri tri--rec"><li><p class="dn"><i></i>01</p><h3 class="th th--l">Strategy</h3><ul class="rl"><li>Ideal customer profile</li><li>Positioning and sales message</li><li>Pricing and offer tests</li></ul></li><li><p class="dn"><i></i>02</p><h3 class="th th--l">System</h3><ul class="rl"><li>Sales playbook and talk tracks</li><li>Pipeline and CRM setup</li><li>Weekly metrics dashboard</li></ul></li><li><p class="dn"><i></i>03</p><h3 class="th th--l">Team</h3><ul class="rl"><li>Hiring plan and scorecards</li><li>Onboarding program</li><li>Weekly coaching</li></ul></li></ol></div></section>
-<section data-t="lt" class="t-lt sl sl--wide" id="s6" aria-labelledby="hs6"><div class="w"><p class="lb"><span>05</span>Track record</p><h2 class="h2" id="hs6">We have built this <em>before.</em></h2><ol class="tri tri--num tri--xl"><li><p class="nb">$50K <span>→</span> $7M+</p><p class="td">Revenue in 9 months</p></li><li><p class="nb">20 <span>→</span> 100+</p><p class="td">Sales reps at 150% of target</p></li><li><p class="nb">#195 <span>→</span> #8</p><p class="td">National rank in 12 months</p></li></ol><p class="note">$140M+ raised by founders we advised · About 10 companies at a time.</p></div></section>
-<section data-t="dk" class="t-dk sl sl--close" id="s7" aria-labelledby="h7"><div class="g"><div class="tx"><p class="lb"><span>06</span>Next step</p><h2 class="h2 cl" id="h7"><span>Change is inevitable.</span> <em>Growth is optional.</em></h2><p class="rd">Ready to grow?</p><button type="button" class="hk-pill" data-hk-copy="chris@halovpartners.com" aria-label="Copy email address chris@halovpartners.com"><span class="hk-pt"><span class="hk-a">chris@halovpartners.com</span><span class="hk-b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg></button><ol class="cs"><li><b>1</b>Copy the email.</li><li><b>2</b>Send two lines about your goal.</li><li><b>3</b>We meet on a short call to see if we fit.</li></ol></div><div class="vz"><figure class="hk-cube" data-hk-cube aria-label="Money failed startups lost since you opened this page. About $933 a second.">
+<section data-t="dk" class="t-dk sl sl--cover" id="s1" aria-labelledby="h1"><div class="g"><div class="tx"><p class="brand"><i></i>Halo Ventures</p><h1 class="h1" id="h1">Next-generation <em>go-to-market.</em></h1><p class="dk">The GTM &amp; development accelerator for founders and teams. We integrate with your team, build your Sales Playbook and scale what works.</p><button type="button" class="hk-pill" data-hk-copy="chris@halovpartners.com" aria-label="Copy email address chris@halovpartners.com"><span class="hk-pt"><span class="hk-a">chris@halovpartners.com</span><span class="hk-b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg></button></div><div class="vz"><p class="mh" aria-hidden="true"><span>We integrate.</span><span>We elevate.<i></i></span></p></div></div></section>
+<section data-t="lt" class="t-lt sl sl--wide" id="s2" aria-labelledby="h-s2"><div class="w"><p class="lb"><span>01</span>The problem</p><h2 class="h2" id="h-s2">Most startups don’t fail on product. <em>They fail on go-to-market.</em></h2><ol class="gd gd--3"><li><p class="gx">43%</p><p class="td">of failed startups never found product-market fit</p></li><li><p class="gx">84%</p><p class="td">of sales reps missed their target last year</p></li><li><p class="gx">19 mo</p><p class="td">average tenure of a VP of Sales</p></li></ol><p class="exs">Sources: VCBacked, The Startup Graveyard, 2026; Salesforce, State of Sales; Gong.</p></div></section>
+<section data-t="dk" class="t-dk sl sl--wide" id="s3" aria-labelledby="h-s3"><div class="w"><p class="lb"><span>02</span>The solution</p><h2 class="h2" id="h-s3">Four pillars. <em>One integrated team.</em></h2><p class="dk">We integrate with your team and elevate it. Each pillar ends in a deliverable you keep.</p><ol class="wd wd--p"><li><span class="w1"><b>01</b>Market research</span><span class="w2">Know who buys, why and what they pay.<strong>Market map · 3 ranked customer segments · 100 named target accounts</strong></span></li><li><span class="w1"><b>02</b>Business development</span><span class="w2">Open the pipeline. Close repeatable deals.<strong>Sales Playbook · Ideal customer, message, talk tracks · 5-stage pipeline in your CRM</strong></span></li><li><span class="w1"><b>03</b>Strategic partnerships</span><span class="w2">Find the partners that open new markets.<strong>Partner map · 10 ranked partners and channels · First 3 approached</strong></span></li><li><span class="w1"><b>04</b>Talent &amp; roster</span><span class="w2">Evaluate the roster. Spot future leaders and gaps.<strong>Roster scorecard · Every seat scored · A hiring plan for each gap</strong></span></li></ol></div></section>
+<section data-t="lt" class="t-lt sl sl--wide" id="s4" aria-labelledby="h-s4"><div class="w"><p class="lb"><span>03</span>How it works</p><h2 class="h2" id="h-s4">Integrate. Evaluate. Build. <em>Accelerate.</em></h2><p class="dk">Then we loop: measure every week, keep what works, fix what doesn’t.</p><p class="cy" aria-hidden="true">Integrate<i>→</i> Evaluate<i>→</i> Build<i>→</i> <em>Accelerate</em></p><ol class="gd gd--4"><li><p class="pn2"><b>01</b>Integrate</p><p class="td">We plug into your team and your pipeline.</p></li><li><p class="pn2"><b>02</b>Evaluate</p><p class="td">Market, roster and sales motion, scored.</p></li><li><p class="pn2"><b>03</b>Build</p><p class="td">Your Sales Playbook, pipeline and weekly metrics.</p></li><li><p class="pn2"><b>04</b>Accelerate</p><p class="td">Run it. Measure weekly. Improve. Repeat.</p></li></ol></div></section>
+<section data-t="dk" class="t-dk sl sl--wide" id="s5" aria-labelledby="h-s5"><div class="w"><p class="lb"><span>04</span>Why we are different</p><h2 class="h2" id="h-s5">We don’t advise. <em>We integrate.</em></h2><ol class="wd"><li><span class="w1" style="font-size:clamp(32px,3.6vw,60px)"><b>01</b>Integrated, not advisory.</span><span class="w2">We work inside your team, on your pipeline.</span></li><li><span class="w1" style="font-size:clamp(32px,3.6vw,60px)"><b>02</b>Every founder needs a Sales Playbook.</span><span class="w2">We build yours. Your team runs it.</span></li><li><span class="w1" style="font-size:clamp(32px,3.6vw,60px)"><b>03</b>Your team keeps it.</span><span class="w2">Every asset stays when we step out.</span></li></ol></div></section>
+<section data-t="lt" class="t-lt sl sl--wide" id="s6" aria-labelledby="h-s6"><div class="w"><p class="lb"><span>05</span>Use cases</p><h2 class="h2" id="h-s6">An accelerator for <em>any team we plug into.</em></h2><ol class="gd gd--4"><li><p class="uk">Use case 01</p><h3 class="th th--s">The founder still closes every deal.</h3><p class="ua"><span aria-hidden="true">→</span>We build the Sales Playbook so others can sell.</p></li><li><p class="uk">Use case 02</p><h3 class="th th--s">New reps are missing target.</h3><p class="ua"><span aria-hidden="true">→</span>We score the roster and rebuild the sales system.</p></li><li><p class="uk">Use case 03</p><h3 class="th th--s">Entering a new market or launching a product.</h3><p class="ua"><span aria-hidden="true">→</span>We map the market and open partner channels.</p></li><li><p class="uk">Use case 04</p><h3 class="th th--s">About to hire a VP of Sales.</h3><p class="ua"><span aria-hidden="true">→</span>We prove the playbook first, then hire to a scorecard.</p></li></ol></div></section>
+<section data-t="dk" class="t-dk sl sl--wide" id="s7" aria-labelledby="h-s7"><div class="w"><p class="lb"><span>06</span>Track record</p><h2 class="h2" id="h-s7">We have built this <em>before.</em></h2><ol class="gd gd--4 gd--num"><li><p class="nb">$50K <span>→</span> $7M+</p><p class="td">Revenue in 9 months</p></li><li><p class="nb">20 <span>→</span> 100+</p><p class="td">Sales reps at 150% of target</p></li><li><p class="nb">#195 <span>→</span> #8</p><p class="td">National rank in 12 months</p></li><li><p class="nb">$140M+</p><p class="td">Raised by founders we advised</p></li></ol><p class="note">We work with about 10 companies at a time.</p></div></section>
+<section data-t="lt" class="t-lt sl sl--close" id="s8" aria-labelledby="h-s8"><div class="g"><div class="tx"><p class="lb"><span>07</span>Next step</p><h2 class="h2 cl" id="h-s8"><span>Change is inevitable.</span> <em>Growth is optional.</em></h2><p class="rd">Ready to grow?</p><button type="button" class="hk-pill" data-hk-copy="chris@halovpartners.com" aria-label="Copy email address chris@halovpartners.com"><span class="hk-pt"><span class="hk-a">chris@halovpartners.com</span><span class="hk-b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg></button><ol class="cs"><li><b>1</b>Copy the email.</li><li><b>2</b>Send two lines about your goal.</li><li><b>3</b>We meet on a short call to see if we fit.</li></ol></div><div class="vz"><figure class="hk-cube" data-hk-cube aria-label="Money failed startups lost since you opened this page. About $933 a second.">
   <p class="hk-cube-lbl"><i aria-hidden="true"></i><span>Money failed startups lost since you opened this page</span></p>
   <p class="hk-cube-val hk-cube-nojs" aria-hidden="true">≈ $933 a second</p>
   <div class="hk-cube-stage" aria-hidden="true">
