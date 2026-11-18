@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="w">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halo Ventures · Series</title>
+<meta name="description" content="Halo Ventures. Next-generation go-to-market. We don’t wait for product-market fit. We build it.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>:root{
+  --em:#E83214;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gut:20px;--ease:cubic-bezier(.2,.8,.2,1);
+}
+[data-theme="k"]{--bg:#000;--fg:#fff;--mute:#8E8E93;--line:#2C2C2E;--soft:#1C1C1E;--vc:#1C1C1E;--strip:#1C1C1E;color-scheme:dark}
+[data-theme="w"]{--bg:#fff;--fg:#000;--mute:#636366;--line:#D1D1D6;--soft:#F2F2F7;--vc:#000;--strip:#000;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--bg);-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--em);outline-offset:3px}
+::selection{background:var(--em);color:#fff}
+h1,h2,h3,p{margin:0}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.012em;text-wrap:balance}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--gut)}
+.lbl{font:400 11px/1.5 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin:0 0 16px}
+
+/* top strip + nav */
+.strip{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;padding:10px var(--gut);background:var(--strip);color:#fff;font:400 12px/1.4 var(--mono);letter-spacing:.06em;text-decoration:none;text-align:center}
+.strip b{font-weight:500}
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;height:60px;padding:0 var(--gut);background:var(--bg);border-bottom:1px solid var(--line)}
+.wm{font:500 12px/1 var(--mono);letter-spacing:.22em;text-decoration:none;white-space:nowrap}
+.wm b{color:var(--em);font-weight:500}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;background:var(--fg);color:var(--bg);border:1px solid var(--fg);font:500 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background .3s var(--ease),color .3s var(--ease)}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--mute)}
+.btn.sm{min-height:40px;padding:0 14px;font-size:10.5px;letter-spacing:.16em;background:transparent;color:var(--fg);border-color:var(--mute)}
+@media (hover:hover){.btn:hover{background:transparent;color:var(--fg)}.btn.ghost:hover,.btn.sm:hover{border-color:var(--fg);background:var(--fg);color:var(--bg)}}
+
+/* hero */
+.hero{position:relative;padding:44px 0 56px;border-bottom:1px solid var(--line);overflow:hidden}
+[data-theme="k"] .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#2C2C2E 1px,transparent 1.2px);background-size:24px 24px;opacity:.6;pointer-events:none}
+.hgrid{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.hero h1{font-size:clamp(44px,11.6vw,92px);line-height:.96;margin:0 0 20px}
+.hero h1 em{font-style:italic;color:var(--em)}
+.lede{font-size:18px;line-height:1.4;color:var(--mute);max-width:30ch;margin:0 0 28px}
+.hvw{order:-1;max-width:340px;margin:0 auto;width:100%}
+.hv{display:block;width:100%;height:auto;color:var(--fg)}
+
+/* sections */
+.sec{padding:64px 0;border-bottom:1px solid var(--line)}
+.sec.tight{padding:40px 0}
+.sec h2{font-size:clamp(34px,8.4vw,60px);line-height:1;margin:0 0 32px}
+.two{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+
+/* value cards (the "Grow revenue / Manage jobs" block) */
+.vcs{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.vc{background:var(--vc);color:#fff;border-radius:14px;padding:32px 22px 26px;text-align:center;display:flex;flex-direction:column;align-items:center}
+[data-theme="k"] .vc{border:1px solid var(--line)}
+.vc h3{font:400 36px/1 var(--serif);letter-spacing:-.01em;margin:0 0 12px}
+.vc>p{font-size:16px;line-height:1.4;color:#C7C7CC;max-width:26ch;margin:0 0 26px}
+.mv{width:100%;max-width:300px;margin-top:auto;background:#000;border:1px solid #2C2C2E;border-radius:8px;padding:16px;font:400 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#8E8E93;text-align:left}
+.mv-pipe .r{display:grid;grid-template-columns:78px 1fr;align-items:center;gap:10px;height:26px}
+.mv-pipe i{display:block;height:10px;background:#fff}
+.mv-pipe i.e{background:var(--em)}
+.mv-pipe .r:last-child span{color:#fff}
+.mv-org{padding:10px;display:block;height:auto}
+.mv-time .r{display:grid;grid-template-columns:1fr 20px 1fr;align-items:center;height:30px;border-top:1px solid #2C2C2E}
+.mv-time .r:first-child{border-top:0}
+.mv-time b{font-weight:400;color:#636366}
+.mv-time .r span:last-child{color:#fff;text-align:right}
+.mv-time .r.e span:last-child{color:var(--em)}
+.mv-book{position:relative;height:138px;padding:0;border:0;background:none}
+.mv-book .p{position:absolute;left:calc(var(--i)*14px);right:calc((3 - var(--i))*14px);top:calc(var(--i)*30px);height:46px;background:#000;border:1px solid #636366;border-radius:4px;display:flex;align-items:center;gap:12px;padding:0 14px;color:#fff}
+.mv-book .p span{color:#8E8E93}
+.mv-book .p:last-child{border-color:var(--em)}
+.mv-book .p:last-child span{color:var(--em)}
+
+/* record */
+.trk{display:grid;grid-template-columns:1fr 1fr;gap:28px 16px}
+.trk b{display:block;font:400 clamp(30px,8vw,52px)/1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
+.trk span{display:block;margin-top:8px;font-size:14px;line-height:1.35;color:var(--mute)}
+
+/* finder */
+.finder{margin:-8px 0 36px}
+.fq{font-size:17px;margin:0 0 12px}
+.chips{display:flex;flex-direction:column;gap:8px}
+.chip{display:flex;align-items:center;gap:12px;min-height:48px;padding:0 16px;border:1px solid var(--line);text-align:left;font-size:15.5px;transition:border-color .25s}
+.chip::before{content:"";flex:none;width:10px;height:10px;border:1px solid var(--mute)}
+.chip[aria-pressed="true"]{border-color:var(--fg)}
+.chip[aria-pressed="true"]::before{background:var(--em);border-color:var(--em)}
+.fa{min-height:1.5em;margin:12px 0 0;font:400 12px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.fa b{color:var(--fg);font-weight:500}
+
+/* plans */
+.plans{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
+.plan{position:relative;border:1px solid var(--line);border-radius:18px;padding:30px 22px 14px;background:var(--bg);transition:border-color .3s,box-shadow .3s}
+.plan.rec,.plan.pick{border:2px solid var(--em);padding:29px 21px 13px}
+.ptag{position:absolute;left:20px;top:-13px;margin:0;padding:5px 10px;background:var(--bg);border:1px solid var(--em);border-radius:4px;color:var(--em);font:500 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.ptag:empty{display:none}
+.plan header{display:flex;align-items:center;gap:14px;margin:0 0 6px}
+.pn{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--mute);border-radius:8px;font:400 12px/1 var(--mono);letter-spacing:.08em;color:var(--mute)}
+.plan.rec .pn,.plan.pick .pn{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.plan h3{font:400 40px/1 var(--serif);letter-spacing:-.012em;margin:0}
+.ptl{font:italic 400 22px/1.15 var(--serif);color:var(--mute);margin:0 0 14px}
+.pfor{font-size:16.5px;line-height:1.4;min-height:2.8em;margin:0 0 22px}
+.price{display:flex;align-items:baseline;gap:4px;margin:0}
+.price b{font:400 56px/1 var(--serif);letter-spacing:-.02em}
+.price span{font:500 13px/1 var(--mono);letter-spacing:.06em;color:var(--mute)}
+.pnote{font:400 11px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:8px 0 20px}
+.plan .btn{width:100%;border-radius:999px}
+.best{margin:22px 0 0;padding:16px;background:var(--soft);border-radius:10px}
+.best .lbl{margin:0 0 6px}
+.bm{font-weight:600;font-size:16px;line-height:1.3}
+.bs{font-size:14px;line-height:1.4;color:var(--mute);margin-top:4px}
+.helps{margin:16px 0 0;padding:0 16px;font-size:15px;line-height:1.4}
+.helps .lbl{display:block;margin:0 0 4px}
+.plus{font-weight:600;font-size:16px;margin:26px 0 6px}
+.ft{border-top:1px solid var(--line)}
+.ft:first-child{border-top:0}
+.ft summary{display:grid;grid-template-columns:18px 1fr 22px;align-items:center;gap:12px;min-height:50px;padding:8px 0;cursor:pointer;list-style:none;font-size:16px;line-height:1.3}
+.ft summary::-webkit-details-marker{display:none}
+.ft summary svg{width:16px;height:16px}
+.ft summary i{display:grid;place-items:center;width:20px;height:20px;border:1px solid var(--mute);border-radius:50%;font:500 11px/1 var(--mono);color:var(--mute);transition:background .2s,color .2s,border-color .2s}
+.ft[open] summary i{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.ft p{margin:0;padding:0 34px 14px 30px;font-size:14.5px;line-height:1.45;color:var(--mute)}
+
+/* included / sectors / faq */
+.inc{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.inc li{position:relative;padding:15px 0 15px 26px;border-bottom:1px solid var(--line);font-size:16.5px;line-height:1.35;overflow-wrap:anywhere}
+.inc li::before{content:"";position:absolute;left:2px;top:22px;width:8px;height:8px;background:var(--fg)}
+.secs{border-top:1px solid var(--line)}
+.sr{padding:18px 0;border-bottom:1px solid var(--line)}
+.sr h3{font:400 28px/1.1 var(--serif);margin:0 0 6px}
+.sr p{font-size:15.5px;line-height:1.45;color:var(--mute)}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:10px 0;cursor:pointer;list-style:none;font-size:17.5px;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{font:400 20px/1 var(--mono);font-style:normal;color:var(--mute);transition:transform .3s var(--ease)}
+.faq details[open] summary i{transform:rotate(45deg);color:var(--em)}
+.faq p{margin:0;padding:0 0 18px;font-size:16px;line-height:1.5;color:var(--mute);max-width:56ch}
+
+/* close */
+.close{padding:84px 0 72px;text-align:center}
+.close h2{font-size:clamp(40px,10.4vw,84px);line-height:.98;margin:0 0 30px}
+.rtg{font:italic 400 clamp(28px,7vw,44px)/1 var(--serif);color:var(--em);margin:0 0 20px}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:14px;max-width:100%;min-height:64px;padding:0 28px;border-radius:999px;background:var(--em);color:#000;font:500 clamp(13.5px,3.9vw,17px)/1 var(--mono);letter-spacing:.02em;transition:transform .2s var(--ease)}
+.pill svg{flex:none;width:20px;height:20px}
+.pill:active{transform:scale(.98)}
+.pill #addr{user-select:all;-webkit-user-select:all}
+.toast{margin:16px 0 0;font:400 11px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font:400 11px/1.6 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer .wm{color:var(--fg)}
+footer b{color:var(--em);font-weight:400}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (min-width:720px){
+  :root{--gut:40px}
+  .strip{font-size:13px}
+  .nav{height:68px}
+  .wm{font-size:13px}
+  .hero{padding:72px 0 88px}
+  .hgrid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;gap:48px}
+  .hvw{order:0;max-width:440px}
+  .lede{font-size:20px}
+  .sec{padding:96px 0}
+  .sec.tight{padding:56px 0}
+  .vcs{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .vc{padding:44px 32px 34px}
+  .trk{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .trk b{font-size:clamp(24px,3.3vw,44px)}
+  .chips{flex-direction:row;flex-wrap:wrap}
+  .two{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:56px;align-items:start}
+  .two h2{margin:0}
+}
+@media (min-width:1000px){
+  .plans{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  .vcs{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .vc h3{font-size:32px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+
+h2 em,h1 em{font-style:italic}
+.hero h1{margin-bottom:28px}
+.sts{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+.st{padding:26px 0;border-bottom:1px solid var(--line)}
+.st .si{display:block;font:400 11px/1 var(--mono);letter-spacing:.18em;color:var(--em);margin-bottom:10px}
+.st b{display:block;font:400 clamp(56px,15vw,96px)/.95 var(--serif);letter-spacing:-.02em;white-space:nowrap}
+.st p{font-size:18px;line-height:1.35;margin-top:12px;max-width:26ch}
+.st small{display:block;margin-top:12px;font:400 10.5px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.say{text-align:left}.say h2{font-size:clamp(44px,10.5vw,104px);line-height:.96;margin:0}.say h2 em{color:var(--em)}
+.dbs{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+.db{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 12px;padding:22px 0;border-bottom:1px solid var(--line)}
+.db span{font:400 11px/1 var(--mono);letter-spacing:.18em;color:var(--mute);padding-top:14px}
+.db h3{font:400 clamp(40px,9vw,60px)/1 var(--serif);letter-spacing:-.012em;margin:0}
+.db p{grid-column:2;font-size:17px;line-height:1.35;color:var(--mute)}
+.mv-week .r{display:grid;grid-template-columns:62px 1fr;align-items:center;gap:10px;height:40px}
+.mv-week .r div{display:flex;gap:3px;height:22px}
+.mv-week i{display:flex;align-items:center;padding:0 8px;background:#fff;color:#000;font-style:normal;font-size:9px;letter-spacing:.1em;overflow:hidden}
+.mv-week i.o{background:none;border:1px dashed #636366}.mv-week i.e{background:var(--em)}
+.sr h3{margin:0}
+.srcs{margin-top:18px;font-size:9.5px;letter-spacing:.1em;opacity:.8}
+.hstack,.hled{display:grid;gap:10px}
+@media (min-width:720px){.sts{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}.dbs{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px;border-top:0}.db{border-top:1px solid var(--line);border-bottom:0;grid-template-columns:1fr;padding:22px 0 0}.db span{padding:0 0 28px}.db p{grid-column:1;margin-top:10px}}
+@media (min-width:1000px){.sts{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:28px}.st b{font-size:clamp(44px,5.2vw,72px)}}
+.s-series{--line:#ECEAE4}.s-series body,.s-series{background:#fff}
+.s-series h1,.s-series h2{font-family:var(--sans);font-weight:600;letter-spacing:-.04em}.s-series h1 em,.s-series h2 em{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;font-size:1.08em}
+.s-series .hero h1{font-size:clamp(40px,10vw,80px)}.s-series .sec h2{font-size:clamp(30px,7.2vw,52px)}.s-series .say h2{font-size:clamp(38px,9vw,84px)}
+.s-series .strip{margin:8px;border-radius:100px}.s-series .nav{border:0}
+.s-series .hero{margin:0 8px;border-radius:40px;border:0;background:#000;color:#fff;--fg:#fff;--bg:#000;--mute:#8E8E93;--line:#242427;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:28px 28px}
+.s-series .hero .btn{background:#fff;color:#000;border-color:#fff;border-radius:100px}
+.s-series .sec{border:0}.s-series .btn{border-radius:100px}.s-series .lbl::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--em);margin-right:9px;vertical-align:1px}
+.s-series .sts{border:0;gap:12px}.s-series .st{border:1px solid var(--line);border-radius:24px;padding:24px}
+.s-series .dbs{border:0;gap:12px}.s-series .db{border:1px solid var(--line)!important;border-radius:24px;padding:24px!important}
+.s-series .vc{border-radius:28px}.s-series .mv{border-radius:16px}.s-series .plan{border-radius:28px}.s-series .best{border-radius:16px}.s-series .chip{border-radius:12px}
+.s-series .say{margin:0 8px;border-radius:40px;background:#000;color:#fff;--mute:#8E8E93;padding-left:8px;padding-right:8px}
+.hstack .hs{display:grid;grid-template-columns:34px 1fr;gap:6px 10px;align-items:center;padding:18px 20px;border-radius:20px;background:#fff;color:#000}
+.hstack .hs span{font:400 11px/1 var(--mono);letter-spacing:.14em;color:#6E6E73}.hstack .hs b{font:400 30px/1 var(--serif)}.hstack .hs i{grid-column:1/-1;height:8px;border-radius:8px;background:#000;display:block}
+.hstack .hs.on{background:#0B0B0C;color:#fff;border:1px solid #242427}.hstack .hs.on i{background:var(--em)}.hstack .hs.on span{color:#8E8E93}</style></head>
+<body class="s-series">
+<a class="strip" href="#contact"><span>We work with about 10 teams at a time.</span><b>Book an intro call →</b></a>
+<header class="nav"><a class="wm" href="#top">HALO <b>//</b> VENTURES</a><a class="btn sm" href="#plans">See packages</a></header>
+<main id="top">
+<section class="hero"><div class="wrap hgrid"><div><p class="lbl">Halo Ventures</p><h1>Next-generation <em>go-to-market.</em></h1><a class="btn" href="#plans">Pick your package ↓</a></div><div class="hvw"><div class="hstack" role="img" aria-label="Three stages: design, build, scale"><div class="hs"><span>01</span><b>Design</b><i style="width:100%"></i></div><div class="hs"><span>02</span><b>Build</b><i style="width:66%"></i></div><div class="hs on"><span>03</span><b>Scale</b><i style="width:33%"></i></div></div></div></div></section>
+<section class="sec" id="problem"><div class="wrap"><p class="lbl">The problem</p><h2>It’s not what you build. <em>It’s what they buy.</em></h2>
+ <div class="sts"><div class="st"><span class="si">01</span><b>$177,171</b><p>Average cost of one bad sales hire.</p><small>SalesFuel, Voice of the Sales Manager</small></div><div class="st"><span class="si">02</span><b>78%</b><p>Sales reps who missed quota last year.</p><small>Fullcast, 2026 Benchmarks Report</small></div><div class="st"><span class="si">03</span><b>70%</b><p>Failed startups that ran out of money.</p><small>CB Insights · 431 VC-backed shutdowns since 2023</small></div><div class="st"><span class="si">04</span><b>43%</b><p>Failed startups that died from poor product-market fit.</p><small>CB Insights · 431 VC-backed shutdowns since 2023</small></div></div></div></section>
+<section class="sec say"><div class="wrap"><h2>We don’t wait for <span style="white-space:nowrap">product-market</span> fit. <em>We build it.</em></h2></div></section>
+<section class="sec" id="how"><div class="wrap"><p class="lbl">How we work</p><h2>Design. Build. <em>Scale.</em></h2>
+ <div class="dbs"><div class="db"><span>01</span><h3>Design</h3><p>The blueprint and the roadmap.</p></div><div class="db"><span>02</span><h3>Build</h3><p>The foundation and the framework.</p></div><div class="db"><span>03</span><h3>Scale</h3><p>Launch and scale with pace and precision.</p></div></div></div></section>
+<section class="sec" id="value"><div class="wrap"><p class="lbl">What it lets you do</p><h2>From founder-led to system-driven.</h2>
+ <div class="vcs"><article class="vc"><h3>Free the founder</h3><p>From every deal to the right deals.</p><div class="mv mv-week" aria-hidden="true"><div class="r"><span>Before</span><div><i style="flex:5">Deals</i><i class="o" style="flex:1"></i></div></div><div class="r"><span>After</span><div><i style="flex:1.4">Deals</i><i class="e" style="flex:4.6">Vision</i></div></div></div></article><article class="vc"><h3>Win on repeat</h3><p>A sales process that repeats.</p><div class="mv mv-pipe" aria-hidden="true"><div class="r"><span>Lead</span><i style="width:100%"></i></div><div class="r"><span>Qualified</span><i style="width:72%"></i></div><div class="r"><span>Proposal</span><i style="width:48%"></i></div><div class="r"><span>Won</span><i style="width:30%" class="e"></i></div></div></article><article class="vc"><h3>Build the bench</h3><p>Who to hire, when, and what each seat owns.</p><svg class="mv mv-org" viewBox="0 0 280 150" aria-hidden="true">
+<g fill="none" stroke="#636366" stroke-width="1"><path d="M140 34V52M60 52H220M60 52V66M140 52V66M220 52V66M60 88V100M30 100H90M30 100V112M90 100V112M220 88V100M190 100H250M190 100V112M250 100V112"/></g>
+<g font-family="IBM Plex Mono,monospace" font-size="8.5" letter-spacing="1.2" text-anchor="middle">
+<rect x="100" y="12" width="80" height="22" fill="#000" stroke="#fff"/><text x="140" y="26.5" fill="#fff">FOUNDER</text>
+<rect x="24" y="66" width="72" height="22" fill="#000" stroke="#8E8E93"/><text x="60" y="80.5" fill="#fff">SALES</text>
+<rect x="104" y="66" width="72" height="22" fill="#E83214" stroke="#E83214"/><text x="140" y="80.5" fill="#000">HALO</text>
+<rect x="184" y="66" width="72" height="22" fill="#000" stroke="#8E8E93"/><text x="220" y="80.5" fill="#fff">PARTNERS</text>
+<g fill="#000" stroke="#636366" stroke-dasharray="3 3"><rect x="8" y="112" width="44" height="18"/><rect x="68" y="112" width="44" height="18"/><rect x="168" y="112" width="44" height="18"/><rect x="228" y="112" width="44" height="18"/></g>
+<g fill="#8E8E93" font-size="7.5"><text x="30" y="124">SDR</text><text x="90" y="124">AE</text><text x="190" y="124">BD</text><text x="250" y="124">CS</text></g>
+</g></svg></article><article class="vc"><h3>Keep the playbook</h3><p>Messaging, scripts and process. Yours.</p><div class="mv mv-book" aria-hidden="true"><div class="p" style="--i:0"><span>01</span>Messaging</div><div class="p" style="--i:1"><span>02</span>Scripts</div><div class="p" style="--i:2"><span>03</span>Process</div><div class="p" style="--i:3"><span>04</span>Org chart</div></div></article></div></div></section>
+<section class="sec tight"><div class="wrap"><p class="lbl">Results our team has delivered</p><div class="trk"><div><b>$50K → $7M+</b><span>Revenue in 9 months.</span></div><div><b>20 → 100+</b><span>Reps at 150% of quota.</span></div><div><b>#195 → #8</b><span>Nationally, in 12 months.</span></div><div><b>$140M+</b><span>Raised, seed to Series B.</span></div></div></div></section>
+<section class="sec" id="plans"><div class="wrap"><p class="lbl">Packages</p><h2>Pick your package.</h2>
+ <div class="finder" role="group" aria-label="Where are you today?"><p class="fq">Where are you today?</p><div class="chips"><button type="button" class="chip" data-plan="0" aria-pressed="false">Founder sells every deal</button><button type="button" class="chip" data-plan="1" aria-pressed="false">Sellers, but no sales leader</button><button type="button" class="chip" data-plan="2" aria-pressed="false">Growing team, next round ahead</button></div><p class="fa" id="fa" aria-live="polite"></p></div>
+ <div class="plans"><article class="plan" id="plan0" data-name="Design">
+  <p class="ptag" data-def=""></p>
+  <header><span class="pn">01</span><h3>Design</h3></header>
+  <p class="ptl">The blueprint and the roadmap.</p>
+  <p class="pfor">For founders who still run every sale.</p>
+  
+  <a class="btn ghost" href="#contact">Book an intro call</a>
+  <div class="best"><p class="lbl">Best for</p><p class="bm">Pre-seed to Seed · founder-led sales</p></div>
+  <p class="plus">What you get:</p>
+  <div class="fts"><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Next-gen sales playbook</span><i aria-hidden="true">i</i></summary><p>Messaging, scripts, process and scorecards in one living document.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Ideal client profile</span><i aria-hidden="true">i</i></summary><p>Who buys, who signs and what triggers the purchase. Ranked by segment.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Messaging &amp; talk tracks</span><i aria-hidden="true">i</i></summary><p>Call, email, demo and follow-up scripts. Answers to your top 10 objections.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>KPI scorecard</span><i aria-hidden="true">i</i></summary><p>Weekly activity, pipeline and conversion targets for each seat.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Org chart &amp; hiring roadmap</span><i aria-hidden="true">i</i></summary><p>Seats, sequence, cost and quota per seat.</p></details></div>
+</article><article class="plan rec" id="plan1" data-name="Build">
+  <p class="ptag" data-def="Recommended">Recommended</p>
+  <header><span class="pn">02</span><h3>Build</h3></header>
+  <p class="ptl">The foundation and the framework.</p>
+  <p class="pfor">For teams with sellers and no sales leader.</p>
+  
+  <a class="btn" href="#contact">Book an intro call</a>
+  <div class="best"><p class="lbl">Best for</p><p class="bm">Seed to Series A · 2 to 8 sellers</p></div>
+  <p class="plus">Everything in Design, plus:</p>
+  <div class="fts"><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Fractional Head of Sales</span><i aria-hidden="true">i</i></summary><p>A senior sales leader inside your team every week.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Market research with ideal clients</span><i aria-hidden="true">i</i></summary><p>25 interviews with buyers who match your ideal client.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Weekly coaching &amp; call reviews</span><i aria-hidden="true">i</i></summary><p>One-on-ones and live call reviews for every seller.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Roster evaluation</span><i aria-hidden="true">i</i></summary><p>Every seller assessed. Future leaders named. Talent gaps flagged.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Hiring scorecards &amp; interviews</span><i aria-hidden="true">i</i></summary><p>The profile, the questions and the scorecard for each open seat.</p></details></div>
+</article><article class="plan" id="plan2" data-name="Scale">
+  <p class="ptag" data-def=""></p>
+  <header><span class="pn">03</span><h3>Scale</h3></header>
+  <p class="ptl">Launch and scale.</p>
+  <p class="pfor">For teams adding channels, partners and people.</p>
+  
+  <a class="btn ghost" href="#contact">Book an intro call</a>
+  <div class="best"><p class="lbl">Best for</p><p class="bm">Series A to B · 8 to 30 sellers</p></div>
+  <p class="plus">Everything in Build, plus:</p>
+  <div class="fts"><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Fractional Head of Growth</span><i aria-hidden="true">i</i></summary><p>Owns the full revenue plan: sales, partnerships and channels.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Strategic partnerships</span><i aria-hidden="true">i</i></summary><p>Partner targets mapped, pitched and signed.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Channel development</span><i aria-hidden="true">i</i></summary><p>Referral, reseller and affiliate channels designed, launched and measured.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Talent scouting &amp; recruiting</span><i aria-hidden="true">i</i></summary><p>We attract and select top sales talent for the seats on your org chart.</p></details><details class="ft"><summary><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>AI agents</span><i aria-hidden="true">i</i></summary><p>We build AI to accelerate people.</p></details></div>
+</article></div></div></section>
+<section class="sec"><div class="wrap two"><div><p class="lbl">In every package</p><h2>The standard.</h2></div><ul class="inc"><li>A senior leader on your account.</li><li>You own everything we build.</li><li>A working session every week.</li><li>We build with your team.</li></ul></div></section>
+<section class="sec"><div class="wrap two"><div><p class="lbl">Who we build with</p><h2>Four markets.</h2></div><div class="secs"><div class="sr"><h3>Tech &amp; AI</h3></div><div class="sr"><h3>Home Services</h3></div><div class="sr"><h3>Financial Services</h3></div><div class="sr"><h3>Healthcare &amp; Med Device</h3></div></div></div></section>
+<section class="sec"><div class="wrap two"><div><p class="lbl">Questions</p><h2>Straight answers.</h2></div><div class="faq">
+ <details><summary>What happens on the intro call?<i aria-hidden="true">+</i></summary><p>We see if we’re a good match. If we are, we set a timeline and get to work.</p></details>
+ <details><summary>Who owns the playbook?<i aria-hidden="true">+</i></summary><p>You do. Every script, process and scorecard stays with your team.</p></details>
+ <details><summary>Can we move between packages?<i aria-hidden="true">+</i></summary><p>Yes. Each package builds on the one before it.</p></details></div></div></section>
+<section class="close" id="contact"><div class="wrap"><h2>Change is inevitable.<br>Growth is optional.</h2><p class="rtg">Ready to grow?</p>
+ <button class="pill" type="button" id="copy"><span id="addr">chris@halovpartners.com</span><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="6.5" y="6.5" width="10" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M13.5 6.5V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v7A1.5 1.5 0 0 0 5 13.5h1.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><p class="toast" id="toast" aria-live="polite">Tap to copy. Email us to book an intro call.</p></div></section>
+</main>
+<footer><div class="wrap"><span class="wm">HALO <b>//</b> VENTURES</span><span>Brick by brick <b>//</b> Rain or shine</span></div><div class="wrap srcs">Sources: SalesFuel, Voice of the Sales Manager · Fullcast, 2026 Benchmarks Report · CB Insights, 431 VC-backed shutdowns since 2023</div></footer>
+<script>(function(){
+'use strict';
+var D=document,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function $$(s){return Array.prototype.slice.call(D.querySelectorAll(s));}
+
+/* reveal on scroll */
+if('IntersectionObserver' in window&&!RM){
+  D.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
+  $$('.vc,.plan,.trk>div,.sr,.sec h2,.st,.db').forEach(function(el){el.classList.add('rv');io.observe(el);});
+  setTimeout(function(){$$('.rv').forEach(function(el){el.classList.add('in');});},4000);
+}
+
+/* finder: one tap marks the matching package */
+var plans=$$('.plan'),chips=$$('.chip'),fa=D.getElementById('fa');
+chips.forEach(function(c){c.addEventListener('click',function(){
+  var i=+c.getAttribute('data-plan');
+  chips.forEach(function(x){x.setAttribute('aria-pressed',String(x===c));});
+  plans.forEach(function(p,k){
+    var tag=p.querySelector('.ptag');
+    p.classList.remove('rec');p.classList.toggle('pick',k===i);
+    tag.textContent=k===i?'Your fit':'';
+    var b=p.querySelector('.btn');b.classList.toggle('ghost',k!==i);
+  });
+  fa.innerHTML='Start with <b></b>';fa.querySelector('b').textContent=plans[i].getAttribute('data-name');
+  plans[i].scrollIntoView({behavior:RM?'auto':'smooth',block:'start'});
+});});
+
+/* copy email */
+var btn=D.getElementById('copy'),addr=D.getElementById('addr'),toast=D.getElementById('toast');
+btn.addEventListener('click',function(){
+  var t=addr.textContent.trim();
+  function ok(){toast.textContent='Copied. Paste it into a new email.';}
+  function sel(){try{var r=D.createRange();r.selectNodeContents(addr);var s=getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}toast.textContent='Selected. Copy the address above.';}
+  try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,sel);}else sel();}catch(e){sel();}
+});
+})();
+</script></body></html>
